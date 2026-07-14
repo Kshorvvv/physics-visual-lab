@@ -1,9 +1,9 @@
-/* Physics Visual Lab · Interface Overhaul v4.3.0 */
+/* Physics Visual Lab · Interface Overhaul v4.4.0 */
 (() => {
   "use strict";
 
   const SVG_NS = "http://www.w3.org/2000/svg";
-  const VERSION = "4.3.0";
+  const VERSION = "4.4.0";
   let passQueued = false;
   let applyingCircuit = false;
 
@@ -17,70 +17,187 @@
     return ["zh", "en", "ja", "ko", "ru", "uz", "th", "my", "shn"].find(code => value.startsWith(code)) || "en";
   }
 
+  function homeCopy() {
+    const copy = {
+      zh: {
+        evolution: "连续演化",
+        evolutionSub: "拉莫尔进动 · 状态随时间平滑变化",
+        apparatus: "投影测量",
+        apparatusSub: "Stern–Gerlach 磁场梯度",
+        outcomes: "离散读出",
+        outcomesSub: "单次事件只落在两个通道之一",
+        time: "时间",
+        angle: "锥角保持不变",
+        beam: "原子束",
+        gradient: "∂Bz/∂z",
+        detector: "探测屏",
+        footerA: "连续：态矢量与相位演化",
+        footerB: "测量：沿选定轴投影",
+        footerC: "离散：记录 +ℏ/2 或 −ℏ/2"
+      },
+      en: {
+        evolution: "Continuous evolution",
+        evolutionSub: "Larmor precession · smooth time evolution",
+        apparatus: "Projective measurement",
+        apparatusSub: "Stern–Gerlach field gradient",
+        outcomes: "Discrete readout",
+        outcomesSub: "one event lands in one of two channels",
+        time: "time",
+        angle: "fixed cone angle",
+        beam: "atomic beam",
+        gradient: "∂Bz/∂z",
+        detector: "detector",
+        footerA: "continuous: state and phase evolution",
+        footerB: "measurement: projection on an axis",
+        footerC: "discrete: record +ℏ/2 or −ℏ/2"
+      },
+      ja: {
+        evolution: "連続時間発展",
+        evolutionSub: "ラーモア歳差運動 · 滑らかな状態変化",
+        apparatus: "射影測定",
+        apparatusSub: "Stern–Gerlach 磁場勾配",
+        outcomes: "離散的な読出し",
+        outcomesSub: "一回の事象は二つの経路の一方へ",
+        time: "時間",
+        angle: "円錐角は一定",
+        beam: "原子ビーム",
+        gradient: "∂Bz/∂z",
+        detector: "検出器",
+        footerA: "連続：状態と位相の時間発展",
+        footerB: "測定：選択軸への射影",
+        footerC: "離散：+ℏ/2 または −ℏ/2"
+      },
+      ko: {
+        evolution: "연속 시간 진화",
+        evolutionSub: "라모어 세차 · 매끄러운 상태 변화",
+        apparatus: "사영 측정",
+        apparatusSub: "Stern–Gerlach 자기장 기울기",
+        outcomes: "이산 판독",
+        outcomesSub: "한 사건은 두 채널 중 하나에 기록",
+        time: "시간",
+        angle: "원뿔각 일정",
+        beam: "원자빔",
+        gradient: "∂Bz/∂z",
+        detector: "검출기",
+        footerA: "연속: 상태와 위상 진화",
+        footerB: "측정: 선택 축으로 사영",
+        footerC: "이산: +ℏ/2 또는 −ℏ/2"
+      }
+    };
+    return copy[languageCode()] || copy.en;
+  }
+
   function upgradeHomeVisual() {
     const visual = document.querySelector(".pvl-home-visual");
-    const code = languageCode();
-    const labels = {
-      zh: ["连续动力学", "测量", "离散结果"],
-      en: ["Continuous dynamics", "Measurement", "Discrete outcomes"],
-      ja: ["連続ダイナミクス", "測定", "離散的結果"],
-      ko: ["연속 동역학", "측정", "이산 결과"],
-      ru: ["Непрерывная динамика", "Измерение", "Дискретные результаты"],
-      uz: ["Uzluksiz dinamika", "O‘lchash", "Diskret natijalar"],
-      th: ["พลวัตต่อเนื่อง", "การวัด", "ผลลัพธ์ไม่ต่อเนื่อง"],
-      my: ["ဆက်တိုက် ဒိုင်းနမစ်", "တိုင်းတာမှု", "ကွဲပြားရလဒ်"],
-      shn: ["CONTINUOUS DYNAMICS", "MEASUREMENT", "DISCRETE OUTCOMES"]
-    }[code] || ["Continuous dynamics", "Measurement", "Discrete outcomes"];
-    const signature = `${VERSION}-${code}`;
-    if (!visual || visual.dataset.pvlOverhaul === signature) return;
+    if (!visual) return;
+    const c = homeCopy();
+    const signature = `${VERSION}-${languageCode()}`;
+    if (visual.dataset.pvlOverhaul === signature) return;
 
     visual.dataset.pvlOverhaul = signature;
-    visual.classList.add("pvl-home-visual-v2");
+    visual.className = "pvl-home-visual pvl-home-visual-v3";
     visual.removeAttribute("aria-hidden");
     visual.setAttribute("role", "img");
-    visual.setAttribute("aria-label", labels.join(" → "));
+    visual.setAttribute("aria-label", `${c.evolution} → ${c.apparatus} → ${c.outcomes}`);
     visual.innerHTML = `
-      <div class="pvl-hero-system">
-        <section class="pvl-system-column">
-          <div class="pvl-system-label">${esc(labels[0])}</div>
-          <div class="pvl-field-stage">
-            <div class="pvl-field-axis-x"></div>
-            <div class="pvl-field-axis-y"></div>
-            <div class="pvl-field-orbit"></div>
-            <div class="pvl-moment-vector"></div>
-          </div>
-          <div class="pvl-system-equation">dμ/dt = γ μ × B</div>
-        </section>
-        <section class="pvl-system-column pvl-measurement-column">
-          <div class="pvl-system-label">${esc(labels[1])}</div>
-          <div class="pvl-measurement-gate">
-            <div class="pvl-measurement-slit"></div>
-            <div class="pvl-wave-packet"></div>
-          </div>
-        </section>
-        <section class="pvl-system-column">
-          <div class="pvl-system-label">${esc(labels[2])}</div>
-          <div class="pvl-channel-stage">
-            <div class="pvl-channel plus"><span>+ℏ/2</span><i></i></div>
-            <div class="pvl-channel minus"><span>−ℏ/2</span><i></i></div>
-          </div>
-          <div class="pvl-channel-probability"><span>P₊ = |⟨+|ψ⟩|²</span><span>P₋ = |⟨−|ψ⟩|²</span></div>
-        </section>
-      </div>`;
+      <svg class="pvl-hero-physics" viewBox="0 0 960 560" aria-hidden="true">
+        <defs>
+          <linearGradient id="pvl-v44-beam" x1="0" x2="1"><stop offset="0" stop-color="#93e5e8" stop-opacity=".18"/><stop offset=".4" stop-color="#93e5e8"/><stop offset="1" stop-color="#93e5e8" stop-opacity=".22"/></linearGradient>
+          <linearGradient id="pvl-v44-vector" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#d7aa5d" stop-opacity=".2"/><stop offset="1" stop-color="#f0c875"/></linearGradient>
+          <marker id="pvl-v44-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#93e5e8"/></marker>
+          <marker id="pvl-v44-arrow-warm" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#f0c875"/></marker>
+          <filter id="pvl-v44-soft"><feGaussianBlur stdDeviation="6"/></filter>
+        </defs>
+
+        <g class="pvl-hero-panel pvl-hero-evolution">
+          <text class="pvl-hero-index" x="36" y="43">01</text>
+          <text class="pvl-hero-title" x="76" y="43">${esc(c.evolution)}</text>
+          <text class="pvl-hero-subtitle" x="36" y="68">${esc(c.evolutionSub)}</text>
+
+          <line class="pvl-hero-axis" x1="164" y1="116" x2="164" y2="395" marker-end="url(#pvl-v44-arrow)"/>
+          <text class="pvl-hero-axis-label" x="176" y="126">B ẑ</text>
+          <ellipse class="pvl-hero-orbit" cx="164" cy="285" rx="112" ry="43"/>
+          <path class="pvl-hero-cone" d="M164 348L52 285M164 348L276 285"/>
+          <path class="pvl-hero-angle" d="M164 321A38 38 0 0 1 187 316"/>
+          <text class="pvl-hero-axis-label" x="189" y="320">θ</text>
+
+          <g opacity=".22" transform="rotate(-58 164 348)"><line class="pvl-hero-ghost-vector" x1="164" y1="348" x2="164" y2="176"/><path class="pvl-hero-ghost-tip" d="M164 164l-8 18h16Z"/></g>
+          <g opacity=".34" transform="rotate(-30 164 348)"><line class="pvl-hero-ghost-vector" x1="164" y1="348" x2="164" y2="176"/><path class="pvl-hero-ghost-tip" d="M164 164l-8 18h16Z"/></g>
+          <g opacity=".5" transform="rotate(-3 164 348)"><line class="pvl-hero-ghost-vector" x1="164" y1="348" x2="164" y2="176"/><path class="pvl-hero-ghost-tip" d="M164 164l-8 18h16Z"/></g>
+          <g class="pvl-hero-live-vector" transform="rotate(26 164 348)"><line x1="164" y1="348" x2="164" y2="162"/><path d="M164 148l-9 20h18Z"/></g>
+          <circle class="pvl-hero-orbit-dot" r="7"><animateMotion dur="4.2s" repeatCount="indefinite" path="M52 285A112 43 0 1 0 276 285A112 43 0 1 0 52 285"/></circle>
+
+          <line class="pvl-hero-time" x1="48" y1="430" x2="278" y2="430" marker-end="url(#pvl-v44-arrow)"/>
+          <text class="pvl-hero-axis-label" x="48" y="420">φ(t)=ω<tspan baseline-shift="sub" font-size="9">L</tspan>t</text>
+          <text class="pvl-hero-axis-label" x="238" y="420">${esc(c.time)}</text>
+          <text class="pvl-hero-note" x="48" y="462">|μ| = const · ${esc(c.angle)}</text>
+        </g>
+
+        <line class="pvl-hero-divider" x1="330" y1="24" x2="330" y2="486"/>
+
+        <g class="pvl-hero-panel pvl-hero-measurement">
+          <text class="pvl-hero-index" x="362" y="43">02</text>
+          <text class="pvl-hero-title" x="402" y="43">${esc(c.apparatus)}</text>
+          <text class="pvl-hero-subtitle" x="362" y="68">${esc(c.apparatusSub)}</text>
+
+          <rect class="pvl-source-box" x="370" y="222" width="62" height="70" rx="7"/>
+          <circle class="pvl-source-dot" cx="401" cy="257" r="6"/>
+          <text class="pvl-hero-axis-label" x="370" y="312">${esc(c.beam)}</text>
+          <path class="pvl-input-beam" d="M432 257H494" marker-end="url(#pvl-v44-arrow)"/>
+
+          <path class="pvl-magnet north" d="M494 126h112v92h-54v78h-58Z"/>
+          <path class="pvl-magnet south" d="M494 388h112v-92h-54v-78h-58Z"/>
+          <text class="pvl-magnet-label" x="550" y="174">N</text>
+          <text class="pvl-magnet-label" x="550" y="348">S</text>
+          <line class="pvl-gradient-arrow" x1="522" y1="330" x2="522" y2="184" marker-end="url(#pvl-v44-arrow-warm)"/>
+          <text class="pvl-hero-axis-label" x="532" y="260" transform="rotate(-90 532 260)">${esc(c.gradient)}</text>
+
+          <path class="pvl-split-beam" d="M552 257C614 249 624 190 670 156"/>
+          <path class="pvl-split-beam" d="M552 257C614 265 624 324 670 358"/>
+          <circle class="pvl-packet warm" cx="648" cy="172" r="7"/>
+          <circle class="pvl-packet warm" cx="648" cy="342" r="7"/>
+        </g>
+
+        <line class="pvl-hero-divider" x1="690" y1="24" x2="690" y2="486"/>
+
+        <g class="pvl-hero-panel pvl-hero-outcomes">
+          <text class="pvl-hero-index" x="722" y="43">03</text>
+          <text class="pvl-hero-title" x="762" y="43">${esc(c.outcomes)}</text>
+          <text class="pvl-hero-subtitle" x="722" y="68">${esc(c.outcomesSub)}</text>
+
+          <rect class="pvl-detector" x="730" y="126" width="194" height="142" rx="5"/>
+          <rect class="pvl-detector" x="730" y="300" width="194" height="142" rx="5"/>
+          <line class="pvl-detector-edge" x1="730" y1="126" x2="730" y2="268"/>
+          <line class="pvl-detector-edge" x1="730" y1="300" x2="730" y2="442"/>
+          <text class="pvl-outcome-label" x="752" y="158">+ℏ/2</text>
+          <text class="pvl-outcome-label" x="752" y="332">−ℏ/2</text>
+          <circle class="pvl-hit" cx="854" cy="205" r="8"/>
+          <circle class="pvl-hit" cx="854" cy="377" r="8"/>
+          <path class="pvl-count-line" d="M756 244h28v-24h24v12h24v-38h24v50h36"/>
+          <path class="pvl-count-line" d="M756 418h28v-42h24v18h24v-28h24v52h36"/>
+          <text class="pvl-hero-axis-label" x="730" y="470">${esc(c.detector)} · N<tspan baseline-shift="sub" font-size="9">+</tspan>, N<tspan baseline-shift="sub" font-size="9">−</tspan></text>
+        </g>
+
+        <g class="pvl-hero-process-strip">
+          <text x="36" y="530">${esc(c.footerA)}</text>
+          <path d="M312 525h28" marker-end="url(#pvl-v44-arrow)"/>
+          <text x="364" y="530">${esc(c.footerB)}</text>
+          <path d="M655 525h28" marker-end="url(#pvl-v44-arrow)"/>
+          <text x="714" y="530">${esc(c.footerC)}</text>
+        </g>
+      </svg>`;
   }
 
   function springPath(endX, y = 210, startX = 55, coils = 8, amplitude = 18) {
     const lead = 22;
-    const tail = 10;
+    const tail = 9;
     const usableEnd = Math.max(startX + 72, endX - tail);
     const zigStart = startX + lead;
     const zigWidth = Math.max(34, usableEnd - zigStart);
     const step = zigWidth / (coils * 2);
     const parts = [`M${startX} ${y}`, `L${zigStart} ${y}`];
     for (let i = 1; i < coils * 2; i += 1) {
-      const x = zigStart + step * i;
-      const yy = y + (i % 2 ? -amplitude : amplitude);
-      parts.push(`L${x.toFixed(2)} ${yy}`);
+      parts.push(`L${(zigStart + step * i).toFixed(2)} ${(y + (i % 2 ? -amplitude : amplitude)).toFixed(2)}`);
     }
     parts.push(`L${usableEnd.toFixed(2)} ${y}`, `L${endX.toFixed(2)} ${y}`);
     return parts.join(" ");
@@ -89,7 +206,6 @@
   function fixOscillatorSpring() {
     const svg = document.querySelector(".oscillator-svg");
     if (!svg || svg.dataset.pvlSpringFix === VERSION) return;
-
     const massRect = svg.querySelector(".oscillator-mass");
     const spring = svg.querySelector(".oscillator-spring");
     const massGroup = massRect?.parentElement;
@@ -98,11 +214,10 @@
 
     const values = (animateX.getAttribute("values") || "").split(";").map(Number).filter(Number.isFinite);
     if (values.length < 2) return;
-
     const xMin = Math.min(...values);
     const xMax = Math.max(...values);
     const xCenter = (xMin + xMax) / 2;
-    const amplitude = Math.max(0, (xMax - xMin) / 2);
+    const amplitude = (xMax - xMin) / 2;
     const duration = animateX.getAttribute("dur") || "2s";
     const massWidth = Number(massRect.getAttribute("width")) || 105;
     const massY = Number(massRect.getAttribute("y")) || 165;
@@ -110,18 +225,13 @@
 
     animateX.remove();
     massRect.setAttribute("x", String(xCenter));
-
-    const existingTransform = massGroup.querySelector('animateTransform[data-pvl-spring-motion]');
-    if (!existingTransform) {
-      const animateTransform = document.createElementNS(SVG_NS, "animateTransform");
-      animateTransform.setAttribute("data-pvl-spring-motion", "true");
-      animateTransform.setAttribute("attributeName", "transform");
-      animateTransform.setAttribute("type", "translate");
-      animateTransform.setAttribute("values", `${-amplitude} 0;${amplitude} 0;${-amplitude} 0`);
-      animateTransform.setAttribute("dur", duration);
-      animateTransform.setAttribute("repeatCount", "indefinite");
-      massGroup.insertBefore(animateTransform, massGroup.firstChild);
-    }
+    const motion = document.createElementNS(SVG_NS, "animateTransform");
+    motion.setAttribute("attributeName", "transform");
+    motion.setAttribute("type", "translate");
+    motion.setAttribute("values", `${-amplitude} 0;${amplitude} 0;${-amplitude} 0`);
+    motion.setAttribute("dur", duration);
+    motion.setAttribute("repeatCount", "indefinite");
+    massGroup.insertBefore(motion, massGroup.firstChild);
 
     spring.setAttribute("d", springPath(xCenter));
     const animateD = document.createElementNS(SVG_NS, "animate");
@@ -145,14 +255,77 @@
     connector.appendChild(connectorMotion);
     massGroup.parentElement.insertBefore(connector, massGroup);
 
-    // Ensure the label follows the moving mass even if the original x is rounded.
     const label = massGroup.querySelector(".oscillator-mass-label");
     if (label) {
       label.setAttribute("x", String(xCenter + massWidth / 2));
       label.setAttribute("y", String(massY + massHeight / 2 + 7));
     }
-
     svg.dataset.pvlSpringFix = VERSION;
+  }
+
+  function normalizeText(value) {
+    return String(value || "")
+      .replace(/\s+/g, "")
+      .replace(/ω0/g, "ω₀")
+      .replace(/F0/g, "F₀")
+      .replace(/x¨/g, "ẍ")
+      .replace(/x˙/g, "ẋ");
+  }
+
+  function mathML(markup) {
+    return `<math class="pvl-mathml" display="block" xmlns="http://www.w3.org/1998/Math/MathML">${markup}</math>`;
+  }
+
+  function replaceKnownFormula(block) {
+    if (block.dataset.pvlFormula === VERSION) return;
+    const text = normalizeText(block.textContent);
+    let markup = "";
+    if (/^mẍ\+bẋ\+kx=F₀cos\(?ωt\)?$/i.test(text)) {
+      markup = `<mrow><mi>m</mi><mover><mi>x</mi><mo>¨</mo></mover><mo>+</mo><mi>b</mi><mover><mi>x</mi><mo>˙</mo></mover><mo>+</mo><mi>k</mi><mi>x</mi><mo>=</mo><msub><mi>F</mi><mn>0</mn></msub><mi>cos</mi><mo>⁡</mo><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow>`;
+    } else if (/^ω₀=√k\/?m$/.test(text) || (text.startsWith("ω₀=√") && text.includes("k") && text.endsWith("m"))) {
+      markup = `<mrow><msub><mi>ω</mi><mn>0</mn></msub><mo>=</mo><msqrt><mfrac><mi>k</mi><mi>m</mi></mfrac></msqrt></mrow>`;
+    } else if (/^x\(t\)=Re\[Xe\^?iωt\]$/i.test(text) || (text.startsWith("x(t)=Re[") && text.includes("iωt"))) {
+      markup = `<mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">Re</mi><mo>[</mo><mi>X</mi><msup><mi>e</mi><mrow><mi>i</mi><mi>ω</mi><mi>t</mi></mrow></msup><mo>]</mo></mrow>`;
+    } else if (text.startsWith("A(ω)=") && text.includes("F₀") && text.includes("bω")) {
+      markup = `<mrow><mi>A</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>=</mo><mfrac><msub><mi>F</mi><mn>0</mn></msub><msqrt><mrow><msup><mrow><mo>(</mo><mi>k</mi><mo>−</mo><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo>(</mo><mi>b</mi><mi>ω</mi><mo>)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mrow>`;
+    }
+    if (markup) block.innerHTML = mathML(markup);
+    block.dataset.pvlFormula = VERSION;
+  }
+
+  function wrapRadicalBeforeFraction(root) {
+    const fractions = [...root.querySelectorAll(".math-frac, .fraction")];
+    fractions.forEach(frac => {
+      if (frac.closest(".pvl-radical")) return;
+      let previous = frac.previousSibling;
+      while (previous?.nodeType === Node.TEXT_NODE && !previous.textContent.trim() && previous.previousSibling) previous = previous.previousSibling;
+      if (!previous || previous.nodeType !== Node.TEXT_NODE) return;
+      const raw = previous.textContent;
+      if (!/√\s*$/.test(raw)) return;
+      previous.textContent = raw.replace(/√\s*$/, "");
+      const radical = document.createElement("span");
+      radical.className = "pvl-radical";
+      const radicand = document.createElement("span");
+      radicand.className = "pvl-radicand";
+      frac.parentNode.insertBefore(radical, frac);
+      radical.appendChild(radicand);
+      radicand.appendChild(frac);
+    });
+  }
+
+  function upgradeTheoryMath() {
+    const blocks = document.querySelectorAll(".theory-equation, .formula-panel, .equation, .theory-note, .theory-warning");
+    blocks.forEach(block => {
+      replaceKnownFormula(block);
+      wrapRadicalBeforeFraction(block);
+      block.querySelectorAll(".math-frac, .fraction").forEach(frac => {
+        frac.dataset.pvlMath = VERSION;
+        const parts = frac.querySelectorAll(":scope > span");
+        if (parts.length >= 2 && !frac.getAttribute("aria-label")) {
+          frac.setAttribute("aria-label", `${parts[0].textContent} divided by ${parts[1].textContent}`);
+        }
+      });
+    });
   }
 
   function stateSignature(state) {
@@ -170,22 +343,45 @@
   }
 
   function primaryEdges(state) {
-    const nodeIds = new Set((state.nodes || []).map(n => String(n.id)));
-    return (state.components || []).filter(component => {
-      const a = String(component.nodes?.[0] ?? "");
-      const b = String(component.nodes?.[1] ?? "");
-      return a && b && a !== b && nodeIds.has(a) && nodeIds.has(b);
+    const ids = new Set((state.nodes || []).map(n => String(n.id)));
+    return (state.components || []).filter(c => {
+      const a = String(c.nodes?.[0] ?? "");
+      const b = String(c.nodes?.[1] ?? "");
+      return a && b && a !== b && ids.has(a) && ids.has(b);
     });
+  }
+
+  function validateCircuit(state) {
+    const nodeIds = new Set((state.nodes || []).map(n => String(n.id)));
+    const ground = nodeIds.has("0") || (state.nodes || []).some(n => /gnd|ground|参考地|接地/i.test(`${n.id} ${n.label}`));
+    const invalid = (state.components || []).filter(c => !(c.nodes || []).every(n => nodeIds.has(String(n))));
+    const shorted = (state.components || []).filter(c => String(c.nodes?.[0]) === String(c.nodes?.[1]));
+    return {
+      ok: ground && invalid.length === 0 && shorted.length === 0,
+      ground,
+      invalid: invalid.length,
+      shorted: shorted.length
+    };
   }
 
   function buildCircuitLayout(state) {
     const nodes = (state.nodes || []).map(n => ({...n, id: String(n.id)}));
     const nodeMap = new Map(nodes.map(n => [n.id, n]));
     const edges = primaryEdges(state);
-    const groundId = nodeMap.has("0") ? "0" : nodes.find(n => /gnd|ground|地/i.test(`${n.id} ${n.label}`))?.id;
+    const groundId = nodeMap.has("0") ? "0" : nodes.find(n => /gnd|ground|参考地|接地/i.test(`${n.id} ${n.label}`))?.id;
     const source = (state.components || []).find(c => ["vdc", "vsin", "idc", "isin"].includes(c.type));
-    const sourceId = String(source?.nodes?.[0] ?? nodes.find(n => n.id !== groundId)?.id ?? "");
+    const sourceId = String(source?.nodes?.find(n => String(n) !== groundId) ?? nodes.find(n => n.id !== groundId)?.id ?? "");
     const probeId = String(state.analysis?.probe ?? "");
+    const positions = new Map();
+
+    if (nodes.length <= 4 && sourceId && groundId) {
+      positions.set(sourceId, {x: 110, y: 100});
+      positions.set(groundId, {x: 110, y: 350});
+      if (probeId && nodeMap.has(probeId) && probeId !== sourceId && probeId !== groundId) positions.set(probeId, {x: 620, y: 220});
+      const rest = nodes.filter(n => !positions.has(n.id));
+      rest.forEach((n, i) => positions.set(n.id, {x: 365, y: 145 + i * 145}));
+      return {nodes, edges, positions, groundId, sourceId, probeId};
+    }
 
     const adjacency = new Map(nodes.map(n => [n.id, new Set()]));
     edges.forEach(edge => {
@@ -194,124 +390,84 @@
       adjacency.get(a)?.add(b);
       adjacency.get(b)?.add(a);
     });
-
     const rank = new Map();
     if (sourceId && nodeMap.has(sourceId)) {
       rank.set(sourceId, 0);
       const queue = [sourceId];
       while (queue.length) {
         const current = queue.shift();
-        const nextRank = (rank.get(current) || 0) + 1;
         for (const next of adjacency.get(current) || []) {
-          if (next === groundId) continue;
-          if (!rank.has(next)) {
-            rank.set(next, nextRank);
-            queue.push(next);
-          }
+          if (next === groundId || rank.has(next)) continue;
+          rank.set(next, (rank.get(current) || 0) + 1);
+          queue.push(next);
         }
       }
     }
-
-    let fallbackRank = Math.max(0, ...rank.values()) + 1;
-    nodes.forEach(node => {
-      if (node.id !== groundId && !rank.has(node.id)) rank.set(node.id, fallbackRank++);
-    });
-
-    if (probeId && rank.has(probeId)) {
-      const maxRank = Math.max(0, ...rank.values());
-      rank.set(probeId, maxRank + 1);
-    }
+    let fallback = Math.max(0, ...rank.values()) + 1;
+    nodes.forEach(n => { if (n.id !== groundId && !rank.has(n.id)) rank.set(n.id, fallback++); });
+    if (probeId && rank.has(probeId)) rank.set(probeId, Math.max(...rank.values()) + 1);
 
     const groups = new Map();
-    nodes.filter(n => n.id !== groundId).forEach(node => {
-      const r = rank.get(node.id) || 0;
+    nodes.filter(n => n.id !== groundId).forEach(n => {
+      const r = rank.get(n.id) || 0;
       if (!groups.has(r)) groups.set(r, []);
-      groups.get(r).push(node);
+      groups.get(r).push(n);
     });
-
     const ranks = [...groups.keys()].sort((a, b) => a - b);
-    const rankIndex = new Map(ranks.map((value, index) => [value, index]));
-    const positions = new Map();
-    const left = 92;
-    const right = 650;
-    const top = 80;
-    const bottom = 340;
-    const available = Math.max(1, ranks.length - 1);
-
-    ranks.forEach(r => {
-      const items = groups.get(r);
-      items.sort((a, b) => {
-        const aOut = a.id === probeId ? 1 : 0;
-        const bOut = b.id === probeId ? 1 : 0;
-        if (aOut !== bOut) return bOut - aOut;
-        return String(a.label).localeCompare(String(b.label));
-      });
-      const x = left + (right - left) * (rankIndex.get(r) / available);
-      items.forEach((node, index) => {
-        const y = items.length === 1 ? 205 : top + (bottom - top) * ((index + 0.5) / items.length);
-        positions.set(node.id, {x, y});
+    ranks.forEach((r, rankIndex) => {
+      const items = groups.get(r).sort((a, b) => String(a.label).localeCompare(String(b.label)));
+      const x = 92 + (ranks.length === 1 ? 0 : rankIndex / (ranks.length - 1)) * 540;
+      items.forEach((n, i) => {
+        const y = items.length === 1 ? 215 : 82 + (i + 0.5) / items.length * 270;
+        positions.set(n.id, {x, y});
       });
     });
-
-    if (sourceId && positions.has(sourceId)) positions.set(sourceId, {x: 110, y: 112});
-    if (groundId) positions.set(groundId, {x: 110, y: 350});
-    if (probeId && positions.has(probeId)) positions.set(probeId, {x: 630, y: 205});
-
-    // Gentle collision relaxation for labels and dense ranks.
-    for (let iteration = 0; iteration < 24; iteration += 1) {
-      const list = [...positions.entries()].filter(([id]) => id !== groundId && id !== sourceId && id !== probeId);
-      for (let i = 0; i < list.length; i += 1) {
-        for (let j = i + 1; j < list.length; j += 1) {
-          const [idA, a] = list[i];
-          const [idB, b] = list[j];
-          const dx = b.x - a.x;
-          const dy = b.y - a.y;
-          const dist = Math.hypot(dx, dy) || 1;
-          const minDist = 92;
-          if (dist < minDist) {
-            const push = (minDist - dist) * 0.12;
-            const nx = dx / dist;
-            const ny = dy / dist;
-            positions.set(idA, {x: clamp(a.x - nx * push, 70, 670), y: clamp(a.y - ny * push, 60, 370)});
-            positions.set(idB, {x: clamp(b.x + nx * push, 70, 670), y: clamp(b.y + ny * push, 60, 370)});
-          }
-        }
-      }
-    }
-
-    return {nodes, nodeMap, edges, positions, groundId, sourceId, probeId};
-  }
-
-  function quadraticPoint(a, c, b, t) {
-    const s = 1 - t;
-    return {
-      x: s * s * a.x + 2 * s * t * c.x + t * t * b.x,
-      y: s * s * a.y + 2 * s * t * c.y + t * t * b.y
-    };
+    if (sourceId && positions.has(sourceId)) positions.set(sourceId, {x: 105, y: 105});
+    if (groundId) positions.set(groundId, {x: 105, y: 355});
+    if (probeId && positions.has(probeId)) positions.set(probeId, {x: 625, y: 215});
+    return {nodes, edges, positions, groundId, sourceId, probeId};
   }
 
   function symbolBody(type) {
-    if (type === "resistor") return `<path class="pvl-symbol-core" d="M-30 0h7l5-10 10 20 10-20 10 20 10-20 5 10h3"/>`;
-    if (type === "capacitor") return `<path class="pvl-symbol-core" d="M-30 0h20M-10-14v28M10-14v28M10 0h20"/>`;
-    if (type === "inductor") return `<path class="pvl-symbol-core" d="M-30 0h5c0-15 13-15 13 0 0-15 13-15 13 0 0-15 13-15 13 0 0-15 13-15 13 0h4"/>`;
-    if (type === "wire") return `<path class="pvl-symbol-core" d="M-31 0h62"/>`;
-    if (type === "switch") return `<path class="pvl-symbol-core" d="M-30 0h13M-14 0l29-15M17 0h13"/><circle class="pvl-symbol-core" cx="-15" cy="0" r="2.5"/><circle class="pvl-symbol-core" cx="16" cy="0" r="2.5"/>`;
+    if (type === "resistor") return `<path class="pvl-symbol-core" d="M-32 0h7l5-10 10 20 10-20 10 20 10-20 5 10h7"/>`;
+    if (type === "capacitor") return `<path class="pvl-symbol-core" d="M-32 0h22M-10-15v30M10-15v30M10 0h22"/>`;
+    if (type === "inductor") return `<path class="pvl-symbol-core" d="M-32 0h5c0-16 13-16 13 0 0-16 13-16 13 0 0-16 13-16 13 0 0-16 13-16 13 0h7"/>`;
+    if (type === "wire") return `<path class="pvl-symbol-core" d="M-32 0h64"/>`;
+    if (type === "switch") return `<path class="pvl-symbol-core" d="M-32 0h14M-15 0l30-15M18 0h14"/><circle class="pvl-symbol-core" cx="-16" cy="0" r="2.5"/><circle class="pvl-symbol-core" cx="16" cy="0" r="2.5"/>`;
     if (["vdc", "vsin", "idc", "isin"].includes(type)) {
       const glyph = type === "vsin" || type === "isin" ? "∿" : type === "idc" ? "→" : "±";
-      return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10"/><circle class="pvl-symbol-core" r="20"/><text class="pvl-symbol-text" y="4" text-anchor="middle">${glyph}</text>`;
+      return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11"/><circle class="pvl-symbol-core" r="21"/><text class="pvl-symbol-glyph" y="5" text-anchor="middle">${glyph}</text>`;
     }
-    if (type === "voltmeter" || type === "ammeter") {
-      return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10"/><circle class="pvl-symbol-core" r="20"/><text class="pvl-symbol-text" y="4" text-anchor="middle">${type === "voltmeter" ? "V" : "A"}</text>`;
+    if (type === "voltmeter" || type === "ammeter") return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11"/><circle class="pvl-symbol-core" r="21"/><text class="pvl-symbol-glyph" y="5" text-anchor="middle">${type === "voltmeter" ? "V" : "A"}</text>`;
+    if (type === "diode" || type === "led") return `<path class="pvl-symbol-core" d="M-32 0h14M-18-12L5 0-18 12ZM6-14v28M6 0h26"/>`;
+    if (type === "lamp") return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11"/><circle class="pvl-symbol-core" r="21"/><path class="pvl-symbol-core" d="M-10-10 10 10M10-10-10 10"/>`;
+    if (type === "fuse") return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11"/><rect class="pvl-symbol-core" x="-21" y="-9" width="42" height="18" rx="3"/>`;
+    if (type === "opamp") return `<path class="pvl-symbol-core" d="M-29-23v46L21 0ZM21 0h11"/><text class="pvl-symbol-glyph" x="-18" y="-7" text-anchor="middle">+</text><text class="pvl-symbol-glyph" x="-18" y="15" text-anchor="middle">−</text>`;
+    if (type === "vcvs") return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11M0-23 21 0 0 23-21 0Z"/><text class="pvl-symbol-glyph" y="5" text-anchor="middle">±</text>`;
+    if (type === "vccs") return `<path class="pvl-symbol-core" d="M-32 0h11M21 0h11M0-23 21 0 0 23-21 0ZM0 12V-11M-6-4 0-12 6-4"/>`;
+    if (type === "npn") return `<path class="pvl-symbol-core" d="M-32 0h17M-15-18v36M-15-8 14-21M-15 8 14 21M5 13 14 21 4 22"/>`;
+    if (type === "nmos") return `<path class="pvl-symbol-core" d="M-32 0h13M-15-18v36M-5-18v36M-5-13h20M-5 13h20M15-13v26"/>`;
+    return `<path class="pvl-symbol-core" d="M-32 0h9M23 0h9"/><rect class="pvl-symbol-core" x="-23" y="-15" width="46" height="30" rx="4"/>`;
+  }
+
+  function routeEdge(a, b, index, count) {
+    const dx = b.x - a.x;
+    const dy = b.y - a.y;
+    const centerOffset = (index - (count - 1) / 2) * 82;
+    if (Math.abs(dx) >= 135) {
+      const sign = Math.sign(dx) || 1;
+      const x1 = a.x + sign * 58;
+      const x2 = b.x - sign * 58;
+      const laneY = clamp((a.y + b.y) / 2 + centerOffset, 78, 355);
+      const d = `M${a.x} ${a.y} L${x1} ${a.y} Q${x1} ${laneY} ${x1} ${laneY} L${x2} ${laneY} Q${x2} ${b.y} ${x2} ${b.y} L${b.x} ${b.y}`;
+      return {d, x: (x1 + x2) / 2, y: laneY, angle: dx >= 0 ? 0 : 180};
     }
-    if (type === "diode" || type === "led") return `<path class="pvl-symbol-core" d="M-30 0h13M-17-12L5 0-17 12ZM6-14v28M6 0h24"/>`;
-    if (type === "lamp") return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10"/><circle class="pvl-symbol-core" r="20"/><path class="pvl-symbol-core" d="M-10-10 10 10M10-10-10 10"/>`;
-    if (type === "fuse") return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10"/><rect class="pvl-symbol-core" x="-20" y="-9" width="40" height="18" rx="4"/>`;
-    if (type === "opamp") return `<path class="pvl-symbol-core" d="M-28-22v44L20 0ZM20 0h10"/><text class="pvl-symbol-text" x="-18" y="-7" text-anchor="middle">+</text><text class="pvl-symbol-text" x="-18" y="14" text-anchor="middle">−</text>`;
-    if (type === "vcvs") return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10M0-22 20 0 0 22-20 0Z"/><text class="pvl-symbol-text" y="4" text-anchor="middle">±</text>`;
-    if (type === "vccs") return `<path class="pvl-symbol-core" d="M-30 0h10M20 0h10M0-22 20 0 0 22-20 0Z M0 11V-10M-6-4 0-11 6-4"/>`;
-    if (type === "npn") return `<path class="pvl-symbol-core" d="M-30 0h16M-14-18v36M-14-8 13-20M-14 8 13 20M5 12 13 20 3 21"/>`;
-    if (type === "nmos") return `<path class="pvl-symbol-core" d="M-30 0h12M-14-18v36M-5-18v36M-5-13h20M-5 13h20M15-13v26"/>`;
-    return `<path class="pvl-symbol-core" d="M-30 0h8M22 0h8"/><rect class="pvl-symbol-core" x="-22" y="-14" width="44" height="28" rx="5"/>`;
+    const sign = Math.sign(dy) || 1;
+    const y1 = a.y + sign * 58;
+    const y2 = b.y - sign * 58;
+    const laneX = clamp((a.x + b.x) / 2 + centerOffset, 72, 650);
+    const d = `M${a.x} ${a.y} L${a.x} ${y1} Q${laneX} ${y1} ${laneX} ${y1} L${laneX} ${y2} Q${b.x} ${y2} ${b.x} ${y2} L${b.x} ${b.y}`;
+    return {d, x: laneX, y: (y1 + y2) / 2, angle: dy >= 0 ? 90 : -90};
   }
 
   function renderCircuitSchematic() {
@@ -319,20 +475,22 @@
     const workbench = window.PVLCircuitWorkbench;
     const wrap = document.querySelector(".cw-schematic-wrap");
     if (!workbench?.getState || !wrap) return;
-
     const state = workbench.getState();
     const signature = stateSignature(state);
     if (wrap.dataset.pvlCircuitSignature === signature) return;
 
     const layout = buildCircuitLayout(state);
-    const parallelGroups = new Map();
+    const validation = validateCircuit(state);
+    const groups = new Map();
     layout.edges.forEach(edge => {
-      const a = String(edge.nodes[0]);
-      const b = String(edge.nodes[1]);
-      const key = [a, b].sort().join("::");
-      if (!parallelGroups.has(key)) parallelGroups.set(key, []);
-      parallelGroups.get(key).push(edge);
+      const key = [String(edge.nodes[0]), String(edge.nodes[1])].sort().join("::");
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(edge);
     });
+    groups.forEach(items => items.sort((a, b) => {
+      const instrument = type => ["voltmeter", "ammeter"].includes(type) ? 1 : 0;
+      return instrument(a.type) - instrument(b.type) || String(a.name).localeCompare(String(b.name));
+    }));
 
     const edgeMarkup = layout.edges.map(edge => {
       const aId = String(edge.nodes[0]);
@@ -340,63 +498,55 @@
       const a = layout.positions.get(aId);
       const b = layout.positions.get(bId);
       if (!a || !b) return "";
-      const groupKey = [aId, bId].sort().join("::");
-      const siblings = parallelGroups.get(groupKey) || [edge];
-      const index = siblings.findIndex(item => item.id === edge.id);
-      const offset = (index - (siblings.length - 1) / 2) * 52;
-      const dx = b.x - a.x;
-      const dy = b.y - a.y;
-      const length = Math.hypot(dx, dy) || 1;
-      const nx = -dy / length;
-      const ny = dx / length;
-      const control = {x: (a.x + b.x) / 2 + nx * offset, y: (a.y + b.y) / 2 + ny * offset};
-      const mid = quadraticPoint(a, control, b, 0.5);
-      const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+      const siblings = groups.get([aId, bId].sort().join("::")) || [edge];
+      const index = siblings.indexOf(edge);
+      const route = routeEdge(a, b, index, siblings.length);
       const selected = state.selected === edge.id || state.selected === edge.name;
-      const label = edge.name || edge.id;
-      const value = edge.value ?? "";
-      const controls = (edge.nodes || []).slice(2).map((nodeId, controlIndex) => {
-        const sourcePoint = layout.positions.get(String(nodeId));
-        if (!sourcePoint) return "";
-        const bendY = mid.y + (controlIndex % 2 ? 34 : -34);
-        return `<path class="pvl-circuit-control-wire" d="M${sourcePoint.x} ${sourcePoint.y} Q${(sourcePoint.x + mid.x) / 2} ${bendY} ${mid.x} ${mid.y}"/>`;
+      const controls = (edge.nodes || []).slice(2).map((nodeId, i) => {
+        const point = layout.positions.get(String(nodeId));
+        if (!point) return "";
+        const targetX = route.x + (i % 2 ? 19 : -19);
+        const targetY = route.y + (i < 2 ? -22 : 22);
+        return `<path class="pvl-circuit-control-wire" d="M${point.x} ${point.y} L${targetX} ${targetY}"/>`;
       }).join("");
       return `${controls}
-        <path class="pvl-circuit-wire" d="M${a.x} ${a.y} Q${control.x} ${control.y} ${b.x} ${b.y}"/>
-        <g class="pvl-circuit-symbol${selected ? " is-selected" : ""}" data-pvl-circuit-select="${esc(edge.id)}" transform="translate(${mid.x} ${mid.y}) rotate(${angle})">
-          <rect class="pvl-symbol-mask" x="-38" y="-25" width="76" height="50" rx="8"/>
+        <path class="pvl-circuit-wire" d="${route.d}"/>
+        <g class="pvl-circuit-symbol${selected ? " is-selected" : ""}" data-pvl-circuit-select="${esc(edge.id)}" transform="translate(${route.x} ${route.y}) rotate(${route.angle})">
+          <rect class="pvl-symbol-mask" x="-45" y="-30" width="90" height="60" rx="6"/>
           ${symbolBody(edge.type)}
-          <g transform="rotate(${-angle})">
-            <text class="pvl-symbol-text" y="-30" text-anchor="middle">${esc(label)}</text>
-            <text class="pvl-symbol-value" y="36" text-anchor="middle">${esc(value)}</text>
+          <g transform="rotate(${-route.angle})">
+            <text class="pvl-symbol-name" y="-35" text-anchor="middle">${esc(edge.name || edge.id)}</text>
+            <text class="pvl-symbol-value" y="42" text-anchor="middle">${esc(edge.value ?? "")}</text>
           </g>
         </g>`;
     }).join("");
 
-    const nodeMarkup = layout.nodes.map(node => {
+    const nodes = layout.nodes.map(node => {
       const p = layout.positions.get(node.id);
       if (!p) return "";
-      const isGround = node.id === layout.groundId;
-      return `<g class="pvl-circuit-node${isGround ? " is-ground" : ""}" transform="translate(${p.x} ${p.y})">
-        <circle r="7"/>
-        <text y="-15" text-anchor="middle">${esc(node.label || node.id)}</text>
-        ${isGround ? `<path class="pvl-symbol-core" d="M0 7v10M-14 17h28M-9 23h18M-4 29h8"/>` : ""}
+      const ground = node.id === layout.groundId;
+      return `<g class="pvl-circuit-node${ground ? " is-ground" : ""}" transform="translate(${p.x} ${p.y})">
+        <circle r="7"/><text y="-16" text-anchor="middle">${esc(node.label || node.id)}</text>
+        ${ground ? `<path class="pvl-symbol-core" d="M0 7v10M-15 17h30M-10 23h20M-5 29h10"/>` : ""}
       </g>`;
     }).join("");
+
+    const meta = validation.ok
+      ? `NETLIST VERIFIED · ${layout.nodes.length} NODES · ${state.components.length} DEVICES`
+      : `CHECK CIRCUIT · ${validation.ground ? "GND OK" : "NO GND"} · ${validation.invalid} INVALID · ${validation.shorted} SHORTED`;
 
     applyingCircuit = true;
     wrap.dataset.pvlCircuitSignature = signature;
     wrap.innerHTML = state.components?.length ? `
       <svg class="pvl-circuit-schematic" viewBox="0 0 720 430" role="img" aria-label="Circuit schematic">
-        <text class="pvl-circuit-meta" x="24" y="26">TOPOLOGY-AWARE SCHEMATIC · ${layout.nodes.length} NODES · ${state.components.length} COMPONENTS</text>
-        ${edgeMarkup}
-        ${nodeMarkup}
-      </svg>` : `<div class="pvl-circuit-empty">${esc(workbench.__test?.TEXT?.[languageCode()]?.emptyCircuit || "Choose a reference experiment or add components.")}</div>`;
+        <text class="pvl-circuit-meta${validation.ok ? " is-ok" : " is-warning"}" x="24" y="27">${esc(meta)}</text>
+        ${edgeMarkup}${nodes}
+      </svg>` : `<div class="pvl-circuit-empty">Choose a reference experiment or add components.</div>`;
 
     wrap.querySelectorAll("[data-pvl-circuit-select]").forEach(element => {
       element.addEventListener("click", () => {
         const id = element.getAttribute("data-pvl-circuit-select");
-        const original = [...document.querySelectorAll('[data-cw-select]')].find(item => item.getAttribute("data-cw-select") === id && !wrap.contains(item));
+        const original = [...document.querySelectorAll("[data-cw-select]")].find(item => item.getAttribute("data-cw-select") === id && !wrap.contains(item));
         original?.click();
       });
     });
@@ -406,80 +556,31 @@
   function guideCopy() {
     const code = languageCode();
     const text = window.PVLCircuitWorkbench?.__test?.TEXT?.[code] || window.PVLCircuitWorkbench?.__test?.TEXT?.en || {};
-    const copies = {
-      zh: {
-        kicker: "WORKBENCH MANUAL",
-        title: "电路实验台使用说明",
-        intro: "自由拓扑很强，但不该让第一次使用的人迷路。按下面顺序操作，能把布局问题、接线问题和求解问题分开排查。",
-        start: "30 秒快速开始",
-        steps: [
-          `从“${text.presets || "标准实验模板"}”选择一个简单电路。`,
-          `确认存在 ${text.ground || "参考地"} 节点。`,
-          `先运行 ${text.operatingPoint || "DC 工作点"}，再做 AC 或瞬态。`,
-          "每次只改一个参数，观察结果后再继续。"
-        ],
-        rules: "连接规则",
-        rulesList: [
-          "同名节点在电气上相连；画得近不代表已经导通。",
-          "电压表并联，电流表串联。",
-          "理想电压源、理想导线和短路环混用时，可能造成矩阵奇异。",
-          "图中的曲线只负责避让；真正连接关系以节点名称为准。"
-        ],
-        troubleshoot: "出问题先看这里",
-        troubleList: [
-          text.noGround || "缺少参考地。",
-          text.floatingWarning || "可能存在悬空子电路。",
-          text.conflictWarning || "理想源回路可能冲突。",
-          text.nonlinearFailed || "非线性工作点没有收敛。"
-        ],
-        callout: "建议学习顺序：分压器 → RC → RLC → 惠斯通电桥 → 二极管 → 运放。"
-      },
-      en: {
-        kicker: "WORKBENCH MANUAL",
-        title: "Circuit workbench guide",
-        intro: "Arbitrary topology is powerful, but first-time use should still be guided. Follow this order to separate layout, wiring, and solver problems.",
-        start: "30-second start",
-        steps: [
-          `Begin with a ${text.presets || "reference experiment"}.`,
-          `Confirm that a ${text.ground || "ground"} node exists.`,
-          `Run ${text.operatingPoint || "DC operating point"} before AC or transient analysis.`,
-          "Change one parameter at a time and inspect the result."
-        ],
-        rules: "Connection rules",
-        rulesList: [
-          "Equal node names are electrically connected; nearby drawings are not automatically connected.",
-          "Voltmeters go in parallel; ammeters go in series.",
-          "Ideal-source and ideal-wire loops may produce a singular matrix.",
-          "Curved routes are visual spacing only; node names define the circuit."
-        ],
-        troubleshoot: "Troubleshooting",
-        troubleList: [
-          text.noGround || "Ground is missing.",
-          text.floatingWarning || "Possible floating subcircuit.",
-          text.conflictWarning || "Conflicting ideal-source loop.",
-          text.nonlinearFailed || "Nonlinear operating point did not converge."
-        ],
-        callout: "Recommended path: divider → RC → RLC → Wheatstone bridge → diode → op-amp."
-      }
+    if (code === "zh") return {
+      kicker: "WORKBENCH MANUAL",
+      title: "电路实验台使用说明",
+      intro: "图形只是网表的可视化；真正的连接关系由节点名称决定。建议先从模板开始，再逐步改拓扑。",
+      sections: [
+        ["快速开始", ["选择一个标准实验模板。", "确认存在 GND/0 参考节点。", "先运行直流工作点，再做交流或瞬态分析。", "一次只修改一个参数。"]],
+        ["接线规则", ["电压表并联，电流表串联。", "同名节点电气相连；画得近不代表导通。", "理想电源与理想导线形成闭环时可能导致矩阵奇异。", "弯折线路仅用于避免视觉重叠。"]],
+        ["建议顺序", ["分压器 → RC → RLC → 惠斯通电桥 → 二极管 → 运放。", text.limits || "教学模型不能替代厂商 SPICE 模型。"]]
+      ]
     };
-    return copies[code] || {
+    return {
       kicker: "WORKBENCH MANUAL",
       title: text.workbench || "Circuit workbench guide",
-      intro: text.editHint || "Use named nodes to build and analyze a circuit.",
-      start: text.presets || "Reference experiments",
-      steps: [text.presets, text.ground, text.operatingPoint, text.run].filter(Boolean),
-      rules: text.topology || "Topology",
-      rulesList: [text.seriesParallel, text.unitHelp, text.dcNote, text.acNote].filter(Boolean),
-      troubleshoot: text.warnings || "Diagnostics",
-      troubleList: [text.noGround, text.floatingWarning, text.conflictWarning, text.nonlinearFailed].filter(Boolean),
-      callout: text.limits || "Educational compact models are idealized."
+      intro: text.editHint || "Node names define the electrical circuit; the drawing is only a visualization.",
+      sections: [
+        ["Quick start", [text.presets || "Choose a reference experiment.", text.ground || "Confirm a ground node.", text.operatingPoint || "Run a DC operating point first.", "Change one parameter at a time."]],
+        ["Connection rules", ["Voltmeters go in parallel; ammeters go in series.", "Equal node names are connected.", "Ideal-source loops can make the matrix singular.", "Bent routes are only visual spacing."]],
+        ["Recommended path", ["Divider → RC → RLC → Wheatstone → diode → op-amp.", text.limits || "Educational models are idealized."]]
+      ]
     };
   }
 
   function ensureCircuitGuide() {
     const toolbar = document.querySelector(".cw-toolbar");
     if (!toolbar) return;
-
     const copy = guideCopy();
     let shell = document.querySelector(".pvl-circuit-guide-shell");
     if (!shell) {
@@ -487,27 +588,12 @@
       shell.className = "pvl-circuit-guide-shell";
       document.body.appendChild(shell);
     }
-
-    const guideSignature = `${languageCode()}-${JSON.stringify(copy)}`;
-    if (shell.dataset.pvlGuideSignature !== guideSignature) {
-      shell.dataset.pvlGuideSignature = guideSignature;
-      shell.innerHTML = `
-        <div class="pvl-circuit-guide-backdrop" data-pvl-guide-close></div>
-        <aside class="pvl-circuit-guide" role="dialog" aria-modal="true" aria-label="${esc(copy.title)}">
-          <header class="pvl-guide-head">
-            <div><small>${esc(copy.kicker)}</small><h2>${esc(copy.title)}</h2></div>
-            <button class="pvl-guide-close" type="button" data-pvl-guide-close aria-label="Close">×</button>
-          </header>
-          <section class="pvl-guide-section"><p>${esc(copy.intro)}</p></section>
-          <section class="pvl-guide-section"><h3>${esc(copy.start)}</h3><ol>${copy.steps.map(step => `<li>${esc(step)}</li>`).join("")}</ol></section>
-          <section class="pvl-guide-section"><h3>${esc(copy.rules)}</h3><ul>${copy.rulesList.map(step => `<li>${esc(step)}</li>`).join("")}</ul></section>
-          <section class="pvl-guide-section"><h3>${esc(copy.troubleshoot)}</h3><ul>${copy.troubleList.map(step => `<li>${esc(step)}</li>`).join("")}</ul><div class="pvl-guide-callout">${esc(copy.callout)}</div></section>
-        </aside>`;
-      shell.querySelectorAll("[data-pvl-guide-close]").forEach(element => {
-        element.addEventListener("click", () => shell.classList.remove("is-open"));
-      });
+    const signature = `${languageCode()}-${copy.title}`;
+    if (shell.dataset.signature !== signature) {
+      shell.dataset.signature = signature;
+      shell.innerHTML = `<div class="pvl-circuit-guide-backdrop" data-pvl-guide-close></div><aside class="pvl-circuit-guide" role="dialog" aria-modal="true"><header class="pvl-guide-head"><div><small>${esc(copy.kicker)}</small><h2>${esc(copy.title)}</h2></div><button type="button" class="pvl-guide-close" data-pvl-guide-close>×</button></header><p class="pvl-guide-intro">${esc(copy.intro)}</p>${copy.sections.map(([title, items]) => `<section class="pvl-guide-section"><h3>${esc(title)}</h3><ol>${items.filter(Boolean).map(item => `<li>${esc(item)}</li>`).join("")}</ol></section>`).join("")}</aside>`;
+      shell.querySelectorAll("[data-pvl-guide-close]").forEach(el => el.addEventListener("click", () => shell.classList.remove("is-open")));
     }
-
     let button = toolbar.querySelector(".pvl-circuit-guide-button");
     if (!button) {
       button = document.createElement("button");
@@ -516,18 +602,7 @@
       button.addEventListener("click", () => shell.classList.add("is-open"));
       (toolbar.lastElementChild || toolbar).appendChild(button);
     }
-    button.textContent = languageCode() === "zh" ? "使用说明" : languageCode() === "ja" ? "使い方" : languageCode() === "ko" ? "사용 안내" : "Guide";
-  }
-
-  function normalizeFormulaAccessibility() {
-    document.querySelectorAll(".math-frac, .fraction").forEach(frac => {
-      if (frac.dataset.pvlMath === VERSION) return;
-      frac.dataset.pvlMath = VERSION;
-      const parts = frac.querySelectorAll(":scope > span");
-      if (parts.length >= 2 && !frac.getAttribute("aria-label")) {
-        frac.setAttribute("aria-label", `${parts[0].textContent} divided by ${parts[1].textContent}`);
-      }
-    });
+    button.textContent = languageCode() === "zh" ? "使用说明" : "Guide";
   }
 
   function cleanupLegacyHotfix() {
@@ -543,9 +618,9 @@
     cleanupLegacyHotfix();
     upgradeHomeVisual();
     fixOscillatorSpring();
+    upgradeTheoryMath();
     renderCircuitSchematic();
     ensureCircuitGuide();
-    normalizeFormulaAccessibility();
   }
 
   function schedulePass() {
@@ -563,8 +638,8 @@
     document.addEventListener("keydown", event => {
       if (event.key === "Escape") document.querySelector(".pvl-circuit-guide-shell")?.classList.remove("is-open");
     });
-    setTimeout(schedulePass, 500);
-    setTimeout(schedulePass, 1600);
+    setTimeout(schedulePass, 450);
+    setTimeout(schedulePass, 1400);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", start, {once: true});
