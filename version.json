@@ -1,0 +1,12 @@
+{
+  "name": "Physics Visual Lab",
+  "version": "4.2.0",
+  "releaseDate": "2026-07-14",
+  "interactiveLabs": 19,
+  "foundationLabs": 16,
+  "openStudios": 3,
+  "circuitComponentTypes": 20,
+  "circuitReferenceExperiments": 20,
+  "circuitAnalysisModes": 4,
+  "languages": ["zh", "en", "ko", "uz", "ru", "my", "shn", "th", "ja"]
+}
