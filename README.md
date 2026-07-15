@@ -1,63 +1,38 @@
-# Physics Visual Lab v4.2.0
+# Physics Visual Lab · v5.0.0
 
-无需登录、无需后端，可部署到 GitHub Pages 的交互物理实验室。动画、数值求解与语言切换都在浏览器中离线完成。
+无需账号和后端的交互物理实验室。当前公开部署采用经过完整回归测试的单文件构建，样式、脚本、九语言内容与全部模拟器均内嵌在 `index.html` 中，避免分批上传造成入口与资源版本不一致。
 
-## 实验目录
+## 当前内容
 
-- Stern–Gerlach 专题：拉莫尔进动、基础分束、串联测量
-- 基础物理专题：16 个实验
-  - 力学与振动：斜抛、斜面、碰撞设计台、受迫阻尼振子、单摆
-  - 波动：弦上的驻波与简正模
-  - 电路与电磁学：RC 暂态、任意拓扑电路实验台、惠斯通电桥、RLC 交流谐振、法拉第感应
-  - 光学：薄透镜、双透镜光学设计台、双缝干涉、衍射光栅、偏振片组
+- 2 个一级专题；
+- 19 个交互实验，其中 3 个开放设计台；
+- 力学、振动与波、电路与电磁学、几何与波动光学；
+- 任意拓扑电路工作台：20 类元件、20 个参考电路、4 种分析模式；
+- 9 种完整离线语言；
+- 日间与夜间主题、移动端布局与减少动态效果支持。
 
-## 电路实验台
-
-电路工作台不是固定的串并联演示。用户可以添加命名节点与元件、修改端点连接和参数，并保存或导入 JSON 网表。
-
-- 20 类元件：R、C、L、导线、开关、灯、熔断器、独立电压/电流源、二极管、LED、NPN、NMOS、VCVS、VCCS、理想运放、电压表和电流表等
-- 4 类分析：DC 工作点、DC 扫描、AC 小信号扫频、瞬态分析
-- 求解方法：修正节点分析、Newton 迭代、复相量、后向 Euler 积分
-- 20 个教材与竞赛型模板：分压、电桥、RC、RLC、半波与全波桥式整流、运放增益与积分器、晶体管偏置、MOSFET 开关、戴维宁–诺顿等效、叠加定理、最大功率传输、二极管限幅、RC 波特响应、有源低通、共射/共源放大器、射极/源极跟随器
-
-器件采用教学级紧凑模型。实际产品、精密器件或安全关键设计应使用制造商 SPICE 模型复核。
-
-## 语言与主题
-
-- 完整语言：中文、English、日本語、한국어、Русский、O‘zbekcha、ไทย、မြန်မာ、ၵႂၢမ်းတႆး
-- 自动读取浏览器语言，也可在统一的二级菜单中手动切换；选择会保存在本机
-- 夜间与日间主题，可手动切换
-
-## 文件目录
+## 线上文件
 
 ```text
-index.html
-version.json
-README.md
-assets/
-  styles.css
-  larmor.js
-  stern-gerlach.js
-  app.js
-  i18n.js
-  ja-content.js
-  full-locales.js
-  catalog-locales.js
-  circuit-workbench.js
+index.html                 # v5.0.0 单文件生产构建
+version.json               # 发布版本与功能计数
+README.md                  # 项目说明
+PRIVACY.md                 # 隐私说明
+NOTICE.md                  # 版权与内容政策
+SECURITY.md                # 安全报告方式
+THIRD_PARTY_NOTICES.md     # 第三方软件许可证
 ```
 
-## 本地预览
+`index.html` 不依赖仓库中的旧 JavaScript 或 CSS 文件。发布时应整体替换该文件，不要将不同版本的入口、样式和脚本混合上传。
 
-建议在项目目录启动任意静态文件服务器：
+## 数据与隐私
 
-```bash
-python -m http.server 8000
-```
+v5.0.0 没有第一方分析脚本、广告 Cookie、账号系统或访问者 IP 数据库。语言、主题与电路草稿只保存在访问者自己的浏览器中。详见 [PRIVACY.md](PRIVACY.md)。
 
-随后打开 `http://localhost:8000/`。Python 仅用于本地传送静态文件，不参与动画或计算。
+## 权利状态
 
-## 部署到 GitHub Pages
+原创代码、文字、视觉设计、翻译与插图保留全部权利，第三方软件适用其各自许可证。详见 [NOTICE.md](NOTICE.md) 与 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
-把 `index.html`、`version.json`、`README.md` 与整个 `assets/` 文件夹上传到仓库根目录。在仓库 Settings → Pages 中选择从 `main` 分支根目录部署。
+---
 
-页面顶栏、`version.json`、HTML 版本元数据和资源查询参数均标记为 `v4.2.0`，用于识别版本并避免旧缓存。
+Physics Visual Lab · See equations in motion.
