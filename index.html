@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#030812">
-<meta name="pvl-version" content="4.5.2">
+<meta name="pvl-version" content="4.5.3">
 <meta name="description" content="交互物理实验、动态推导与可搭建电路分析工作台。">
-<title>物理可视化实验室 v4.5.2</title>
+<title>物理可视化实验室 v4.5.3</title>
 <link rel="stylesheet" href="styles.css?v=4.2.1-hotfix">
 <link rel="stylesheet" href="pvl-overhaul-v4.4.1.css?v=4.4.1">
 <link rel="stylesheet" href="pvl-product-v4.5.1.css?v=4.5.1">
@@ -33,36 +33,29 @@ try{
 <script>
 (() => {
   "use strict";
-  const VERSION = "4.5.2";
+  const VERSION = "4.5.3";
 
   function syncVersion() {
-    document.querySelectorAll(".pvl-version-badge").forEach((el) => {
-      el.textContent = `v${VERSION}`;
-      el.title = `Release ${VERSION} · 2026-07-15`;
-    });
-
-    const meta = document.querySelector('meta[name="pvl-version"]');
-    if (meta) meta.content = VERSION;
-
-    document.title = `物理可视化实验室 v${VERSION}`;
+    const badge = document.querySelector(".pvl-version-badge");
+    if (badge && badge.textContent !== `v${VERSION}`) {
+      badge.textContent = `v${VERSION}`;
+      badge.title = `Release ${VERSION} · 2026-07-15`;
+    }
     document.documentElement.dataset.pvlVersion = VERSION;
   }
 
-  function start() {
-    syncVersion();
-    new MutationObserver(syncVersion).observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-    window.addEventListener("hashchange", syncVersion);
-    window.addEventListener("pvl:languagechange", syncVersion);
+  function scheduleSync() {
+    [0, 80, 250, 800, 1800].forEach(ms => setTimeout(syncVersion, ms));
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", start, { once: true });
+    document.addEventListener("DOMContentLoaded", scheduleSync, { once: true });
   } else {
-    start();
+    scheduleSync();
   }
+
+  window.addEventListener("hashchange", scheduleSync);
+  window.addEventListener("pvl:languagechange", scheduleSync);
 })();
 </script>
 </body>
