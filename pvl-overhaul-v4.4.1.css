@@ -1,0 +1,197 @@
+/* Physics Visual Lab · Interface Stabilization v4.4.1 */
+:root{
+  --pvl-bg:#05080d;
+  --pvl-panel:#081019;
+  --pvl-panel-2:#0b151f;
+  --pvl-line:rgba(151,188,207,.16);
+  --pvl-line-strong:rgba(130,219,224,.34);
+  --pvl-text:#edf3f6;
+  --pvl-muted:#8b9ca6;
+  --pvl-dim:#566772;
+  --pvl-cyan:#82dbe0;
+  --pvl-cyan-bright:#a8eff0;
+  --pvl-warm:#f0c875;
+  --pvl-math:"Cambria Math","STIX Two Math","Latin Modern Math","Times New Roman",serif;
+}
+html,body{background:#05080d!important;color:var(--pvl-text)}
+body{letter-spacing:.004em}
+.site-header,.pvl-app-header,.pvl-experiment-bar,.experiment-bar{background:rgba(5,9,14,.94)!important;border-color:var(--pvl-line)!important;box-shadow:none!important}
+.site-header:after,.pvl-app-header:after,.pvl-experiment-bar:after{box-shadow:none!important;opacity:.34!important}
+button,.catalog-link,.pvl-home-actions a,.foundation-action-row button,.cw-toolbar button,.pvl-dialog-close{border-radius:7px!important}
+.visual-panel,.control-panel,.formula-panel,.foundation-panel,.foundation-readout,.collection-card,.experiment-card,.cw-stage,.cw-panel,.cw-results{box-shadow:none!important}
+
+/* Home hero */
+.pvl-home-hero{align-items:center!important;gap:clamp(30px,4.5vw,72px)!important}
+.pvl-home-hero h1{letter-spacing:-.052em!important;line-height:.98!important}
+.pvl-home-hero h1 em{color:#b9eef0!important;text-shadow:none!important}
+.pvl-home-lead,.lead,.section-heading p,.story-copy>p{color:#91a2ac!important;line-height:1.8!important}
+.pvl-home-visual-v3{position:relative!important;width:min(100%,720px)!important;min-height:520px!important;aspect-ratio:960/560;border:1px solid var(--pvl-line-strong)!important;border-radius:13px!important;background:#060b11!important;overflow:hidden!important;box-shadow:0 24px 64px rgba(0,0,0,.28)!important}
+.pvl-home-visual-v3:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(130,219,224,.038) 1px,transparent 1px),linear-gradient(90deg,rgba(130,219,224,.038) 1px,transparent 1px);background-size:34px 34px;pointer-events:none}
+.pvl-hero-physics{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pvl-hero-divider{stroke:rgba(150,187,205,.15);stroke-width:1}
+.pvl-hero-index{fill:var(--pvl-cyan);font:700 12px/1 var(--font-geist-mono),monospace;letter-spacing:.1em}
+.pvl-hero-title{fill:#e8f0f3;font:680 16px/1 var(--font-geist-sans),system-ui,sans-serif;letter-spacing:.02em}
+.pvl-hero-subtitle{fill:#667985;font:520 10px/1 var(--font-geist-sans),system-ui,sans-serif}
+.pvl-hero-axis,.pvl-hero-time{stroke:rgba(130,219,224,.55);stroke-width:1.4;fill:none}
+.pvl-hero-axis-label,.pvl-hero-note{fill:#81939e;font:550 10px/1 var(--font-geist-mono),monospace;letter-spacing:.035em}
+.pvl-hero-orbit{fill:none;stroke:rgba(130,219,224,.7);stroke-width:1.6}
+.pvl-hero-cone{fill:none;stroke:rgba(130,219,224,.18);stroke-width:1;stroke-dasharray:5 7}
+.pvl-hero-angle{fill:none;stroke:rgba(240,200,117,.62);stroke-width:1.2}
+.pvl-hero-ghost-vector{stroke:#d2b16b;stroke-width:3}
+.pvl-hero-ghost-tip{fill:#d2b16b}
+.pvl-hero-live-vector line{stroke:url(#pvl-v44-vector);stroke-width:5;stroke-linecap:round}
+.pvl-hero-live-vector path{fill:var(--pvl-warm)}
+.pvl-hero-orbit-dot{fill:var(--pvl-warm);filter:drop-shadow(0 0 6px rgba(240,200,117,.35))}
+.pvl-source-box{fill:#0a141e;stroke:rgba(130,219,224,.36);stroke-width:1.5}
+.pvl-source-dot{fill:var(--pvl-cyan)}
+.pvl-input-beam,.pvl-split-beam{fill:none;stroke:url(#pvl-v44-beam);stroke-width:2.2}
+.pvl-magnet{fill:#0a141e;stroke:rgba(130,219,224,.33);stroke-width:1.4}
+.pvl-magnet-label{fill:#8fa3ad;font:700 13px/1 var(--font-geist-mono),monospace}
+.pvl-gradient-arrow{stroke:rgba(240,200,117,.78);stroke-width:1.6}
+.pvl-packet{fill:var(--pvl-warm)}
+.pvl-detector{fill:rgba(9,18,27,.58);stroke:rgba(151,188,207,.2);stroke-width:1.2}
+.pvl-detector-edge{stroke:var(--pvl-cyan);stroke-width:3}
+.pvl-outcome-label{fill:#a9b8bf;font:600 15px/1 var(--pvl-math)}
+.pvl-hit{fill:var(--pvl-warm);opacity:.8}
+.pvl-count-line{fill:none;stroke:rgba(130,219,224,.28);stroke-width:1.2}
+.pvl-hero-process-strip text{fill:#778994;font:520 9.5px/1 var(--font-geist-mono),monospace;letter-spacing:.02em}
+.pvl-hero-process-strip path{stroke:rgba(130,219,224,.45);stroke-width:1}
+
+/* Theory dialog */
+.pvl-dialog-shell:not([hidden]){display:grid!important;place-items:center}
+.pvl-dialog-backdrop{background:rgba(1,4,8,.76)!important;backdrop-filter:blur(12px)!important}
+.pvl-dialog{width:min(980px,calc(100vw - 28px))!important;max-height:min(90vh,980px)!important;background:#070d14!important;border:1px solid var(--pvl-line-strong)!important;border-radius:13px!important;box-shadow:0 28px 80px rgba(0,0,0,.42)!important;overflow:hidden!important}
+.pvl-dialog-header{position:sticky!important;top:0;z-index:4;background:rgba(7,13,20,.97)!important;border-bottom:1px solid var(--pvl-line)!important;backdrop-filter:blur(12px)}
+.pvl-dialog-header h2{letter-spacing:-.025em!important;line-height:1.14!important}
+.pvl-dialog-header small{color:var(--pvl-cyan)!important;letter-spacing:.15em!important}
+.pvl-dialog-content{padding:clamp(22px,4vw,44px)!important;overflow:auto!important;overflow-x:hidden!important}
+.pvl-dialog-content p,.pvl-dialog-content li,.theory-intro{color:#a3b0b8!important;line-height:1.8!important;text-wrap:pretty}
+.theory-section{margin:34px 0!important}
+.theory-section h3,.theory-step h4{color:#edf3f6!important;letter-spacing:-.015em!important}
+.theory-step{display:grid!important;grid-template-columns:58px minmax(0,1fr)!important;gap:18px!important;padding:28px 0!important;border-bottom:1px solid var(--pvl-line)!important;align-items:start!important}
+.theory-step>span{width:46px!important;height:46px!important;display:grid!important;place-items:center!important;border:1px solid rgba(130,219,224,.32)!important;border-radius:50%!important;color:var(--pvl-cyan)!important;font:650 11px/1 var(--font-geist-mono),monospace!important}
+.theory-step>div{min-width:0}
+.theory-equation,.formula-panel,.equation{font-family:var(--pvl-math)!important;font-style:normal!important;font-size:clamp(21px,2.15vw,31px)!important;line-height:1.55!important;letter-spacing:0!important;color:#edf3f6!important;background:linear-gradient(90deg,rgba(12,27,39,.78),rgba(8,16,24,.52))!important;border:1px solid rgba(130,219,224,.19)!important;border-left:3px solid var(--pvl-cyan)!important;border-radius:8px!important;padding:20px 24px!important;margin:18px 0!important;min-height:0!important;height:auto!important;display:flex!important;align-items:center!important;justify-content:center!important;flex-wrap:wrap!important;gap:.24em!important;white-space:normal!important;overflow:visible!important;text-align:center!important}
+.theory-equation.amber{border-left-color:var(--pvl-warm)!important;background:linear-gradient(90deg,rgba(45,33,15,.42),rgba(8,16,24,.5))!important}
+.theory-note,.theory-warning{font-family:var(--font-geist-sans),system-ui,sans-serif!important;font-size:14px!important;line-height:1.8!important;padding:16px 18px!important;border-radius:8px!important;overflow:visible!important}
+.math-frac,.fraction{display:inline-flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;vertical-align:-.42em!important;min-width:1.55em!important;margin:0 .12em!important;line-height:1.02!important;white-space:nowrap!important}
+.math-frac>span:first-child,.fraction>span:first-child{width:100%;padding:0 .25em .14em!important;border-bottom:1.3px solid currentColor!important;text-align:center!important}
+.math-frac>span:last-child,.fraction>span:last-child{padding:.14em .25em 0!important;text-align:center!important}
+.pvl-radical{display:inline-flex;align-items:flex-start;vertical-align:-.18em;margin:0 .08em}
+.pvl-radical:before{content:"√";font-family:var(--pvl-math);font-size:1.34em;line-height:.92;transform:translateY(.08em)}
+.pvl-radicand{display:inline-flex;border-top:1.35px solid currentColor;padding:.08em .1em 0 .08em;min-height:1.1em}
+.pvl-mathml{font-family:var(--pvl-math);font-size:1em;line-height:1.45;overflow:visible;margin:0}
+.pvl-mathml mfrac{padding-inline:.08em}
+sup,sub{font-size:.72em!important;line-height:0!important;position:relative!important}
+sup{top:-.44em!important}sub{bottom:-.12em!important}
+
+/* Oscillator */
+.oscillator-svg .oscillator-spring{fill:none!important;stroke:var(--pvl-cyan)!important;stroke-width:4!important;stroke-linecap:round;stroke-linejoin:round;filter:none!important}
+.oscillator-svg .oscillator-mass{fill:#12323d!important;stroke:var(--pvl-cyan-bright)!important;stroke-width:2!important}
+.oscillator-svg .oscillator-equilibrium{stroke:rgba(240,200,117,.65)!important;stroke-dasharray:5 7}
+.oscillator-svg .oscillator-connector{fill:var(--pvl-cyan-bright)}
+
+/* Circuit workbench */
+.cw-stage,.cw-results,.cw-panel,.cw-analysis{background:#070c12!important;border-color:var(--pvl-line)!important;border-radius:9px!important}
+.cw-toolbar{min-height:64px;padding:12px 14px!important;border-bottom:1px solid var(--pvl-line)!important;background:#090f16!important}
+.cw-toolbar span{color:var(--pvl-cyan)!important;letter-spacing:.13em!important}.cw-toolbar strong{color:#eef4f6!important}
+.cw-toolbar button{color:#9eafb8!important;background:transparent!important;border:1px solid rgba(151,188,207,.18)!important;padding:8px 10px!important}
+.cw-toolbar button:hover{color:#edf3f6!important;border-color:var(--pvl-line-strong)!important;background:rgba(130,219,224,.05)!important}
+.cw-toolbar .pvl-circuit-guide-button{color:#071014!important;background:var(--pvl-cyan)!important;border-color:var(--pvl-cyan)!important;font-weight:750!important}
+.cw-schematic-wrap{position:relative;min-height:520px!important;background:linear-gradient(rgba(130,219,224,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(130,219,224,.035) 1px,transparent 1px),#060b11!important;background-size:28px 28px!important;overflow:hidden!important}
+.pvl-circuit-schematic{width:100%;height:100%;min-height:520px;display:block}
+.pvl-circuit-wire{fill:none;stroke:#7392a0;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.pvl-circuit-control-wire{fill:none;stroke:rgba(240,200,117,.62);stroke-width:1.45;stroke-dasharray:5 6;vector-effect:non-scaling-stroke}
+.pvl-symbol-mask{fill:#060b11;stroke:rgba(130,219,224,.12);stroke-width:1}
+.pvl-symbol-core{fill:none;stroke:#8babb8;stroke-width:2.35;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.pvl-circuit-symbol{cursor:pointer}.pvl-circuit-symbol:hover .pvl-symbol-core,.pvl-circuit-symbol.is-selected .pvl-symbol-core{stroke:var(--pvl-cyan-bright)}
+.pvl-symbol-glyph{fill:#dce7eb;font:650 13px/1 var(--font-geist-mono),monospace;paint-order:stroke;stroke:#060b11;stroke-width:3px}
+.pvl-symbol-name{fill:#d9e4e8;font:650 11px/1 var(--font-geist-mono),monospace;paint-order:stroke;stroke:#060b11;stroke-width:4px}
+.pvl-symbol-value{fill:#7d919b;font:550 10px/1 var(--font-geist-mono),monospace;paint-order:stroke;stroke:#060b11;stroke-width:4px}
+.pvl-circuit-node circle{fill:#07131a;stroke:var(--pvl-cyan);stroke-width:2;vector-effect:non-scaling-stroke}.pvl-circuit-node.is-ground circle{stroke:var(--pvl-warm)}
+.pvl-circuit-node text{fill:#b9c7cd;font:650 11px/1 var(--font-geist-mono),monospace;paint-order:stroke;stroke:#060b11;stroke-width:4px}
+.pvl-circuit-meta{fill:#60737d;font:600 9px/1 var(--font-geist-mono),monospace;letter-spacing:.11em}.pvl-circuit-meta.is-ok{fill:#6fa7a4}.pvl-circuit-meta.is-warning{fill:#d6a968}
+.pvl-circuit-empty{position:absolute;inset:0;display:grid;place-items:center;color:var(--pvl-muted)}
+
+/* Circuit guide */
+.pvl-circuit-guide-shell{position:fixed;inset:0;z-index:12000;display:none}.pvl-circuit-guide-shell.is-open{display:block}
+.pvl-circuit-guide-backdrop{position:absolute;inset:0;background:rgba(2,5,9,.76);backdrop-filter:blur(10px)}
+.pvl-circuit-guide{position:absolute;top:14px;right:14px;bottom:14px;width:min(520px,calc(100vw - 28px));overflow:auto;background:#080e15;border:1px solid var(--pvl-line-strong);border-radius:11px;padding:24px;box-shadow:0 28px 80px rgba(0,0,0,.45)}
+.pvl-guide-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;padding-bottom:18px;border-bottom:1px solid var(--pvl-line)}
+.pvl-guide-head small{color:var(--pvl-cyan);letter-spacing:.15em}.pvl-guide-head h2{margin:7px 0 0;font-size:25px}.pvl-guide-close{width:40px;height:40px;background:transparent;color:#dbe5e9;border:1px solid var(--pvl-line);cursor:pointer}
+.pvl-guide-intro{color:#9baab2;line-height:1.75}.pvl-guide-section{padding:18px 0;border-top:1px solid var(--pvl-line)}.pvl-guide-section h3{margin:0 0 10px;font-size:15px}.pvl-guide-section ol{margin:0;padding-left:20px;color:#96a7b0;line-height:1.8}
+
+@media(max-width:900px){
+  .pvl-home-visual-v3{min-height:0!important;aspect-ratio:960/620}
+  .pvl-hero-physics{transform-origin:top left}
+  .theory-step{grid-template-columns:42px minmax(0,1fr)!important;gap:12px!important}.theory-step>span{width:36px!important;height:36px!important}
+  .theory-equation,.formula-panel,.equation{font-size:clamp(19px,5.2vw,27px)!important;padding:17px 14px!important}
+}
+@media(max-width:620px){
+  .pvl-home-visual-v3{aspect-ratio:3/4;min-height:560px!important;overflow:auto!important}
+  .pvl-hero-physics{width:960px;height:560px;transform:scale(.62);transform-origin:0 0}
+}
+
+
+/* v4.4.1 stabilization: preserve dynamic home visual, make theory modal scroll reliably */
+.pvl-dialog-shell:not([hidden]){
+  position:fixed!important;
+  inset:0!important;
+  width:100vw!important;
+  height:100dvh!important;
+  overflow:hidden!important;
+  z-index:11000!important;
+}
+.pvl-dialog{
+  display:flex!important;
+  flex-direction:column!important;
+  width:min(980px,calc(100vw - 24px))!important;
+  max-height:calc(100dvh - 24px)!important;
+  min-height:0!important;
+  overflow:hidden!important;
+}
+.pvl-dialog-header{flex:0 0 auto!important}
+.pvl-dialog-content{
+  flex:1 1 auto!important;
+  min-height:0!important;
+  max-height:none!important;
+  overflow-y:auto!important;
+  overflow-x:hidden!important;
+  overscroll-behavior:contain!important;
+  -webkit-overflow-scrolling:touch!important;
+  touch-action:pan-y!important;
+  scrollbar-gutter:stable!important;
+}
+
+/* Stable equation rendering: no Android-native MathML dependency */
+.pvl-structured-equation{
+  display:inline-flex;
+  align-items:baseline;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:.13em;
+  font-family:var(--pvl-math);
+  font-size:1em;
+  line-height:1.35;
+}
+.pvl-structured-equation i{font-family:var(--pvl-math);font-style:italic}
+.pvl-structured-equation sub{font-size:.62em;transform:translateY(.28em)}
+.pvl-structured-equation sup{font-size:.62em;transform:translateY(-.55em)}
+.pvl-structured-equation .pvl-op{padding:0 .08em}
+.pvl-structured-equation .pvl-fn{font-style:normal;margin-left:.04em}
+.pvl-dot,.pvl-ddot{position:relative;display:inline-block;font-style:italic;font-family:var(--pvl-math);padding-top:.08em}
+.pvl-dot:before,.pvl-ddot:before{position:absolute;left:50%;transform:translateX(-50%);top:-.46em;font-style:normal;font-size:.7em;line-height:1}
+.pvl-dot:before{content:"·"}
+.pvl-ddot:before{content:"··";letter-spacing:.04em}
+.pvl-equation-svg{display:block;width:min(100%,460px);height:auto;overflow:visible;margin:auto}
+.pvl-equation-svg text{font-family:var(--pvl-math);fill:#edf3f6;paint-order:normal;stroke:none}
+.pvl-equation-svg .pvl-eq-main{font-size:48px;font-style:italic}
+.pvl-equation-svg .pvl-eq-frac{font-size:39px;font-style:italic}
+.pvl-equation-svg .pvl-eq-root,.pvl-equation-svg .pvl-eq-frac-line{fill:none;stroke:#edf3f6;stroke-width:3.1;stroke-linecap:square;stroke-linejoin:miter;vector-effect:non-scaling-stroke}
+
+@media(max-width:620px){
+  .pvl-dialog-shell:not([hidden]){place-items:stretch!important}
+  .pvl-dialog{width:100vw!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important;border-left:0!important;border-right:0!important}
+  .pvl-dialog-content{padding:20px 16px 46px!important}
+  .pvl-equation-svg{width:min(100%,360px)}
+}
