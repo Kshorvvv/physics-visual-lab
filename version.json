@@ -1,7 +1,8 @@
 {
   "name": "Physics Visual Lab",
-  "version": "4.2.0",
-  "releaseDate": "2026-07-14",
+  "version": "5.0.0",
+  "releaseDate": "2026-07-15",
+  "releaseChannel": "stable",
   "interactiveLabs": 19,
   "foundationLabs": 16,
   "openStudios": 3,
