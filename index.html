@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="zh-CN" data-pvl-version="5.3.0">
+<html lang="zh-CN" data-pvl-version="5.4.0">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#101c24">
   <meta name="color-scheme" content="dark light">
-  <meta name="pvl-version" content="5.3.0">
+  <meta name="pvl-version" content="5.4.0">
   <meta name="description" content="通过交互实验、动态推导与可搭建工作台，探索量子测量、力学、电路与光学。">
   <meta property="og:type" content="website">
   <meta property="og:title" content="物理可视化实验室">
   <meta property="og:description" content="可操作、可推导、可自行搭建的开放物理实验室。">
   <meta property="og:url" content="https://kshorvvv.github.io/physics-visual-lab/">
   <meta name="twitter:card" content="summary">
-  <title>物理可视化实验室 · v5.3.0</title>
+  <title>物理可视化实验室 · v5.4.0</title>
   <link rel="canonical" href="https://kshorvvv.github.io/physics-visual-lab/">
   <style data-pvl-inline="assets/base.css">
-/* Physics Visual Lab base styles · v5.3.0 */
+/* Physics Visual Lab base styles · v5.4.0 */
 :root{--font-geist-sans:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;--font-geist-mono:"SFMono-Regular", Consolas, "Liberation Mono", monospace;--background:#030812;--foreground:#eef5fa;--panel:#07121f;--panel-deep:#050d18;--line:#193247;--line-bright:#28516d;--cyan:#43d9ff;--cyan-dim:#159fc4;--amber:#f6b95b;--muted:#879bad;--muted-2:#5d7487}*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--background)}body{color:var(--foreground);font-family:var(--font-geist-sans), "Noto Sans SC", "Microsoft YaHei", sans-serif;background:radial-gradient(circle at 50% -20%,#145a801f,#0000 38rem),#030812;margin:0}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button:focus-visible,a:focus-visible,input:focus-visible{outline:2px solid var(--cyan);outline-offset:3px}.site-shell{min-height:100vh;overflow:hidden}.site-header{z-index:10;-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);background:#030912db;border-bottom:1px solid #345d798c;justify-content:space-between;align-items:center;height:76px;padding:0 clamp(20px,3vw,50px);display:flex;position:relative}.site-header:after{content:"";background:linear-gradient(90deg,#0000,#43d9ffcc,#0000);width:38%;height:1px;position:absolute;bottom:-1px;left:22%;box-shadow:0 0 12px #43d9ff8c}.brand{color:inherit;align-items:center;gap:14px;text-decoration:none;display:inline-flex}.brand-mark{clip-path:polygon(25% 7%,75% 7%,100% 50%,75% 93%,25% 93%,0 50%);border:1px solid #43d9ffcc;width:42px;height:42px;position:relative;transform:rotate(30deg);box-shadow:inset 0 0 16px #43d9ff1a}.brand-mark:before,.brand-mark:after,.brand-mark span{content:"";background:#43d9ffb3;position:absolute}.brand-mark:before{width:1px;height:31px;top:5px;left:50%}.brand-mark:after{height:1px;top:50%;left:8px;right:8px}.brand-mark span{width:6px;height:6px;box-shadow:0 0 10px var(--cyan);border-radius:50%;top:calc(50% - 3px);left:calc(50% - 3px)}.brand-copy{gap:2px;display:grid}.brand-copy strong{letter-spacing:.05em;font-size:17px;font-weight:650}.brand-copy small{color:#8194a7;font:500 9px/1 var(--font-geist-sans), sans-serif;letter-spacing:.22em}.header-meta{letter-spacing:.08em;color:#c5d1da;align-items:center;gap:16px;font-size:13px;display:flex}.header-topic{color:var(--cyan)}.header-dot{color:#405a70}.catalog-link{color:#b7c7d4;border:1px solid #4a708c85;border-radius:8px;margin-left:16px;padding:10px 15px;text-decoration:none;transition:color .18s ease,background-color .18s ease,border-color .18s ease,box-shadow .18s ease,opacity .18s ease,transform .18s ease}.catalog-link:hover{color:var(--cyan);background:#43d9ff0d;border-color:#43d9ff9e}.lab-page{width:min(1600px,100% - clamp(24px,4vw,72px));margin:0 auto;padding:30px 0 90px}.hero-intro{grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:40px;min-height:178px;padding:3px 20px 26px;display:grid}.eyebrow{color:#71889c;letter-spacing:.18em;align-items:center;gap:15px;margin:0 0 12px;font-size:10px;display:flex}.eyebrow span{color:var(--cyan);letter-spacing:.08em;align-items:center;gap:7px;font-size:11px;display:inline-flex}.eyebrow span:before{content:"";background:var(--cyan);width:6px;height:6px;box-shadow:0 0 10px var(--cyan);border-radius:50%}.hero-intro h1{letter-spacing:-.045em;margin:0;font-size:clamp(42px,4vw,68px);font-weight:680;line-height:1}.lead{color:#91a3b2;max-width:820px;margin:18px 0 0;font-size:clamp(14px,1.15vw,17px);line-height:1.85}.formula-panel{background-color:#050f1bc7;background-image:linear-gradient(#306c910b 1px,#0000 1px),linear-gradient(90deg,#306c910b 1px,#0000 1px),none;background-position:0 0,0 0,0 0;background-repeat:repeat,repeat,repeat;background-size:18px 18px;background-attachment:scroll,scroll,scroll;background-origin:padding-box,padding-box,padding-box;background-clip:border-box,border-box,border-box;border:1px solid #1b3b52;border-radius:13px;justify-content:center;align-items:center;gap:30px;min-width:390px;height:126px;padding:22px 30px;display:flex;box-shadow:inset 0 1px #76bee509}.equation{white-space:nowrap;color:#f1f5f7;align-items:center;gap:10px;font:italic clamp(22px,2vw,30px)/1.2 Georgia,Times New Roman,serif;display:flex}.fraction{text-align:center;line-height:1;display:inline-grid}.fraction span:first-child{border-bottom:1px solid #d7e0e6;padding:0 5px 5px}.fraction span:last-child{padding-top:5px}.equation sub{font-size:60%}.formula-divider{background:#254156;width:1px;height:64px}.instrument-grid{grid-template-columns:minmax(0,2.25fr) minmax(360px,.95fr);gap:18px;min-height:650px;display:grid}.visual-panel,.control-panel{background:linear-gradient(145deg,#071321fa,#030a13fa);border:1px solid #1b3b52;border-radius:15px;position:relative;overflow:hidden;box-shadow:inset 0 1px #75bbde0a,0 28px 80px #00000047}.visual-panel:before,.control-panel:before{content:"";pointer-events:none;z-index:3;border:1px solid #2b4f6847;border-radius:10px;position:absolute;inset:8px}.visual-grid{opacity:.22;background-image:linear-gradient(#2c688f1c 1px,#0000 1px),linear-gradient(90deg,#2c688f1c 1px,#0000 1px);background-size:32px 32px;position:absolute;inset:0;-webkit-mask-image:radial-gradient(circle,#000 15%,#0000 82%);mask-image:radial-gradient(circle,#000 15%,#0000 82%)}.larmor-canvas{cursor:grab;touch-action:none;width:100%;height:100%;position:absolute;inset:0}.larmor-canvas:active{cursor:grabbing}.telemetry{z-index:2;color:#b7c7d2;font:500 12px/1.3 var(--font-geist-mono), monospace;pointer-events:none;gap:6px;display:grid;position:absolute;top:28px;left:30px}.live-status{color:#8295a5;font-family:var(--font-geist-sans), sans-serif;letter-spacing:.05em;margin-bottom:5px}.live-status i{background:#607789;border-radius:50%;width:7px;height:7px;margin-right:7px;display:inline-block}.live-status.is-running{color:var(--cyan)}.live-status.is-running i{background:var(--cyan);box-shadow:0 0 12px var(--cyan);animation:1.8s ease-in-out infinite breathe}.view-actions{z-index:4;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:#040d18b8;border:1px solid #345b7599;border-radius:8px;padding:3px;display:flex;position:absolute;top:28px;right:28px}.view-actions button{color:#8195a6;letter-spacing:.04em;cursor:pointer;background:0 0;border:0;border-radius:5px;padding:7px 10px;font-size:10px}.view-actions button:hover{color:var(--cyan);background:#43d9ff0f}.canvas-hint{z-index:2;color:#60788a;pointer-events:none;gap:10px;font-size:10px;display:flex;position:absolute;bottom:22px;left:50%;transform:translate(-50%)}.canvas-hint span{white-space:nowrap;background:#030b149e;border:1px solid #32546c66;border-radius:20px;padding:6px 9px}.control-panel{padding:28px 30px 22px}.control-header{z-index:4;border-bottom:1px solid #1d384d;justify-content:space-between;align-items:flex-start;padding-bottom:20px;display:flex;position:relative}.panel-kicker{color:#627e92;font:500 9px/1 var(--font-geist-mono), monospace;letter-spacing:.14em;margin-bottom:5px;display:block}.control-header h2{letter-spacing:.03em;margin:0;font-size:20px}.control-index{color:#577286;font:500 10px/1 var(--font-geist-mono), monospace}.range-control{z-index:4;border-bottom:1px solid #244258b8;padding:22px 0 20px;position:relative}.range-heading{justify-content:space-between;align-items:center;gap:12px;margin-bottom:16px;display:flex}.range-heading label{color:#aebdca;font-size:13px}.range-heading i{color:#e7eef2;margin-left:4px;font:italic 17px/1 Georgia,serif}.range-heading output{color:#f5f8fa;font:550 14px/1 var(--font-geist-mono), monospace;white-space:nowrap}.control-range{appearance:none;cursor:pointer;background:0 0;width:100%;height:18px;margin:0;display:block}.control-range::-webkit-slider-runnable-track{background:linear-gradient(90deg, var(--cyan) 0%, var(--cyan) var(--fill), #25394a var(--fill), #25394a 100%);border-radius:10px;height:4px}.control-range::-moz-range-track{background:#25394a;border-radius:10px;height:4px}.control-range::-moz-range-progress{background:var(--cyan);border-radius:10px;height:4px}.control-range::-webkit-slider-thumb{appearance:none;background:var(--cyan);border:2px solid #dbf7ff;border-radius:50%;width:18px;height:18px;margin-top:-7px;box-shadow:0 0 0 4px #43d9ff14,0 0 14px #43d9ff99}.control-range::-moz-range-thumb{background:var(--cyan);border:2px solid #dbf7ff;border-radius:50%;width:16px;height:16px;box-shadow:0 0 14px #43d9ff99}.range-scale{color:#536c7f;font:500 9px/1 var(--font-geist-mono), monospace;justify-content:space-between;margin-top:5px;display:flex}.segmented-row{z-index:4;color:#aebdca;justify-content:space-between;align-items:center;gap:18px;padding:20px 0;font-size:13px;display:flex;position:relative}.segmented{background:#060e19;border:1px solid #29445a;border-radius:8px;flex:1;grid-template-columns:1fr 1fr;max-width:210px;padding:3px;display:grid}.segmented button{color:#71889a;cursor:pointer;background:0 0;border:0;border-radius:5px;padding:8px 14px}.segmented button.active{color:#dff9ff;background:linear-gradient(#1daacf57,#116f8e3b);box-shadow:inset 0 0 0 1px #43d9ff57}.transport-controls{z-index:4;border-bottom:1px solid #244258b8;grid-template-columns:1.25fr 1fr 1fr;gap:8px;padding-bottom:19px;display:grid;position:relative}.transport-controls button{color:#9fb0bd;cursor:pointer;background:#060f1be0;border:1px solid #35556d;border-radius:8px;min-height:49px;font-size:12px;transition:color .16s ease,background-color .16s ease,border-color .16s ease,box-shadow .16s ease,opacity .16s ease,transform .16s ease}.transport-controls button:hover{color:#e8f5fa;border-color:#4f7893;transform:translateY(-1px)}.transport-controls button span{margin-right:5px;font-size:15px}.transport-controls .primary-control{color:#fff;background:linear-gradient(145deg,#1486aa,#0f5e7b);border-color:#43d9ff99;box-shadow:0 8px 28px #1397bc33,inset 0 1px #ffffff29}.live-readout{z-index:4;grid-template-columns:1.3fr 1fr .8fr;gap:12px;padding:18px 0 11px;display:grid;position:relative}.live-readout div{min-width:0}.live-readout span{color:#587286;margin-bottom:7px;font-size:9px;display:block}.live-readout strong{color:#b9c9d4;font:500 10px/1.45 var(--font-geist-mono), monospace;overflow-wrap:anywhere;display:block}.timescale-note{z-index:4;color:#536f83;text-align:center;margin:0;font-size:9px;line-height:1.55;position:relative}.quick-lab,.physics-story,.module-catalog{margin-top:clamp(90px,10vw,150px)}.section-heading{max-width:760px;margin-bottom:36px}.section-heading>span,.section-label{color:var(--cyan);font:500 10px/1 var(--font-geist-mono), monospace;letter-spacing:.18em}.section-heading h2,.story-copy h2{letter-spacing:-.035em;margin:14px 0 12px;font-size:clamp(30px,3.3vw,50px);line-height:1.12}.section-heading p,.story-copy>p{color:#8499aa;margin:0;font-size:15px;line-height:1.8}.experiment-cards{grid-template-columns:repeat(3,1fr);gap:16px;display:grid}.experiment-card{min-height:215px;color:inherit;text-align:left;cursor:pointer;background:linear-gradient(135deg,#0c1f32eb,#050e19eb),#06101c;border:1px solid #19364c;border-radius:13px;padding:27px;transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease,transform .2s ease;position:relative;overflow:hidden}.experiment-card:after{content:"";filter:blur(4px);background:#43d9ff12;border-radius:50%;width:180px;height:180px;transition:color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease,opacity .2s ease,transform .2s ease;position:absolute;top:-90px;right:-90px}.experiment-card:hover{border-color:#43d9ff8c;transform:translateY(-3px);box-shadow:0 16px 50px #00000040}.experiment-card:hover:after{background:#43d9ff21}.card-number{color:#45657b;font:500 10px/1 var(--font-geist-mono), monospace;margin-bottom:34px;display:block}.experiment-card strong{margin-bottom:10px;font-size:18px;display:block}.experiment-card p{color:#7890a2;max-width:320px;margin:0;font-size:13px;line-height:1.65}.card-action{color:var(--cyan);letter-spacing:.05em;font-size:10px;position:absolute;bottom:23px;right:25px}.physics-story{background:radial-gradient(circle at 14% 30%,#2ea8d014,#0000 36%),linear-gradient(90deg,#0613209e,#040c1633);border-top:1px solid #18354a;border-bottom:1px solid #18354a;grid-template-columns:.9fr 1.1fr;align-items:center;gap:clamp(45px,8vw,130px);padding:clamp(38px,5vw,78px);display:grid}.story-copy>p{max-width:620px}.invariant-row{flex-wrap:wrap;gap:8px;margin-top:28px;display:flex}.invariant-row span{color:#93aabc;background:#040d17a6;border:1px solid #26465d;border-radius:5px;padding:8px 11px;font:italic 12px/1 Georgia,serif}.derivation{margin:0;padding:0;list-style:none;position:relative}.derivation:before{content:"";background:linear-gradient(var(--cyan), #43d9ff14);width:1px;position:absolute;top:21px;bottom:21px;left:20px}.derivation li{grid-template-columns:42px 1fr;align-items:center;gap:18px;padding:17px 0;display:grid;position:relative}.derivation li>span{z-index:1;width:42px;height:42px;color:var(--cyan);font:600 9px/1 var(--font-geist-mono), monospace;background:#071522;border:1px solid #2c6685;border-radius:50%;place-items:center;display:grid;position:relative}.derivation div{background:#05101cc2;border:1px solid #1d3b51;border-radius:10px;justify-content:space-between;align-items:center;gap:20px;min-height:72px;padding:13px 20px;display:flex}.derivation small{color:#72899a}.derivation strong{color:#edf4f7;font:italic clamp(18px,1.8vw,26px)/1 Georgia,serif}.catalog-heading{max-width:860px}.module-list{background:#1a3448;border:1px solid #1a3448;border-radius:13px;grid-template-columns:repeat(3,1fr);gap:1px;display:grid;overflow:hidden}.module-card{background:#050f1b;min-height:245px;padding:32px}.module-card.current{background:radial-gradient(circle at 80% 10%,#f6b95b1a,#0000 35%),linear-gradient(140deg,#0a1d2d,#06111d)}.module-card>span{color:#557185;font:500 9px/1 var(--font-geist-mono), monospace;letter-spacing:.09em}.module-card h3{margin:54px 0 9px;font-size:22px}.module-card p{color:#71889a;margin:0;font-size:12px}.module-card i{color:#4f6c7f;margin-top:26px;font-size:10px;font-style:normal;display:inline-block}.module-card.current i{color:var(--amber)}.site-footer{color:#536c7e;border-top:1px solid #142c3d;justify-content:space-between;align-items:center;min-height:100px;padding:0 clamp(24px,5vw,78px);font-size:11px;display:flex}@keyframes breathe{0%,to{opacity:.65}50%{opacity:1}}@media (width<=1180px){.hero-intro{grid-template-columns:1fr;gap:24px}.formula-panel{width:min(100%,620px);min-width:0}.instrument-grid{grid-template-columns:1fr}.visual-panel{min-height:640px}.control-panel{grid-template-columns:repeat(3,1fr);gap:0 28px;display:grid}.control-header,.segmented-row,.transport-controls,.live-readout,.timescale-note{grid-column:1/-1}.live-readout{max-width:760px}}@media (width<=780px){.site-header{height:68px;padding:0 16px}.brand-mark{width:34px;height:34px}.brand-copy strong{font-size:14px}.brand-copy small,.header-topic,.header-dot,.header-meta>span:last-of-type{display:none}.catalog-link{margin:0;padding:8px 10px;font-size:11px}.lab-page{width:calc(100% - 24px);padding-top:24px}.hero-intro{padding:0 4px 24px}.hero-intro h1{font-size:43px}.lead{line-height:1.7}.formula-panel{gap:18px;height:auto;min-height:105px;padding:19px 20px}.equation{font-size:20px}.formula-divider{height:52px}.visual-panel{min-height:520px}.telemetry{font-size:10px;top:24px;left:22px}.view-actions{top:22px;right:20px}.view-actions button{padding:6px 8px;font-size:9px}.canvas-hint span:nth-child(3){display:none}.control-panel{padding:25px 22px 20px;display:block}.transport-controls{grid-template-columns:1.2fr 1fr 1fr}.transport-controls button{min-height:46px;font-size:11px}.quick-lab,.physics-story,.module-catalog{margin-top:82px}.experiment-cards,.module-list{grid-template-columns:1fr}.physics-story{grid-template-columns:1fr;gap:45px;padding:42px 22px}.derivation div{flex-direction:column;align-items:flex-start}.module-card{min-height:205px}.module-card h3{margin-top:40px}}@media (width<=480px){.brand{gap:9px}.brand-copy strong{font-size:12px}.catalog-link{border:0;padding:8px 0}.hero-intro h1{font-size:38px}.eyebrow{gap:8px;display:grid}.formula-panel{justify-content:space-around;gap:10px}.equation{gap:6px;font-size:17px}.visual-panel{min-height:470px}.canvas-hint{gap:5px}.canvas-hint span{padding:5px 7px;font-size:9px}.segmented-row{flex-direction:column;align-items:flex-start}.segmented{width:100%;max-width:none}.transport-controls{grid-template-columns:1fr 1fr}.transport-controls .primary-control{grid-column:1/-1}.live-readout{grid-template-columns:1fr 1fr}.live-readout div:first-child{grid-column:1/-1}.site-footer{flex-direction:column;justify-content:center;gap:8px}}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,:before,:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
 
 .legacy-catalog-hidden{display:none!important}
@@ -377,7 +377,7 @@ html[data-theme="day"] .cw-toolbar,html[data-theme="day"] .cw-analysis,html[data
 
 </style>
   <style data-pvl-inline="assets/ui-foundation.css">
-/* Physics Visual Lab · foundation interface layer · v5.3.0 */
+/* Physics Visual Lab · foundation interface layer · v5.4.0 */
 :root{
   --pvl-bg:#05080d;
   --pvl-panel:#081019;
@@ -577,7 +577,7 @@ sup{top:-.44em!important}sub{bottom:-.12em!important}
 
 </style>
   <style data-pvl-inline="assets/ui-instrument.css">
-/* Physics Visual Lab · instrument workspace layer · v5.3.0 */
+/* Physics Visual Lab · instrument workspace layer · v5.4.0 */
 :root{
   --pvl45-bg:#05090f;
   --pvl45-panel:#081019;
@@ -813,7 +813,7 @@ sup{top:-.44em!important}sub{bottom:-.12em!important}
 
 </style>
   <style data-pvl-inline="assets/ui-v5.css">
-/* Physics Visual Lab · visual system v5.3.0
+/* Physics Visual Lab · visual system v5.4.0
    Luminous scientific editorial + precision instrument UI.
    Teal = action/data, blue-violet = state, coral/amber = physical signal. */
 
@@ -1473,7 +1473,7 @@ button:not(:disabled):not(.pvl-dialog-backdrop):active,
   transition-duration: 100ms !important;
 }
 
-/* v5.3 scientific story: exact SVG curves, glass depth, and explicit stages. */
+/* v5.4 scientific story: exact SVG curves, glass depth, and explicit stages. */
 .pvl-home-visual.pvl53-hero {
   isolation: isolate;
   overflow: hidden !important;
@@ -1824,9 +1824,434 @@ html[data-theme="day"] .pvl-dialog-header, html[data-theme="day"] .theory-equati
   button:active, a[href]:active, .directory-card:active, .collection-card:active, .foundation-sub-card:active { transform: none !important; }
 }
 
+/* v5.4 circuit composer: beginner-first, professional underneath. */
+body[data-route="circuit-studio"] .foundation-workbench { align-items: start; }
+body[data-route="circuit-studio"] .foundation-visual-panel,
+body[data-route="circuit-studio"] .foundation-controls { overflow: clip; }
+.cw-learning-bar {
+  min-height: 74px;
+  display: grid;
+  grid-template-columns: auto minmax(180px, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--v51-line);
+  background: var(--v51-surface);
+}
+.cw-mode-switch {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--v51-line);
+  border-radius: 10px;
+  background: var(--v51-bg);
+}
+.cw-mode-switch button {
+  min-height: 32px;
+  padding: 0 10px;
+  color: var(--v51-faint);
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 680;
+}
+.cw-mode-switch button.active { color: var(--v51-text); background: var(--v51-layer); box-shadow: inset 0 0 0 1px var(--v51-line); }
+.cw-learning-prompt { min-width: 0; display: grid; gap: 5px; }
+.cw-learning-prompt small { color: var(--v51-accent) !important; font: 700 7px/1 var(--v51-mono) !important; letter-spacing: .12em !important; text-transform: uppercase; }
+.cw-learning-prompt strong { overflow: hidden; color: var(--v51-text); font-size: 11px; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+.cw-learning-steps { display: flex; align-items: center; gap: 5px; }
+.cw-learning-steps span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 8px;
+  color: var(--v51-faint);
+  border: 1px solid var(--v51-line);
+  border-radius: 8px;
+  font-size: 8px;
+  white-space: nowrap;
+}
+.cw-learning-steps i { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: var(--v51-layer); font: 700 7px/1 var(--v51-mono); font-style: normal; }
+.cw-learning-steps span.done { color: var(--v51-text); border-color: color-mix(in srgb, var(--v51-accent) 52%, var(--v51-line)); background: color-mix(in srgb, var(--v51-accent) 8%, transparent); }
+.cw-learning-steps span.done i { color: var(--v51-accent-ink); background: var(--v51-accent); }
+
+.cw-schematic-wrap {
+  min-height: 470px;
+  isolation: isolate;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(120, 205, 189, .045), transparent 42%),
+    var(--v51-bg) !important;
+}
+.cw-schematic { min-height: 470px; touch-action: none; user-select: none; }
+.cw-schematic > rect { fill: var(--v51-bg) !important; }
+.cw-schematic pattern path { stroke: var(--v51-line) !important; opacity: .42 !important; }
+.cw-empty {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  min-height: 0 !important;
+  display: grid;
+  place-items: center;
+  padding: 34px;
+  pointer-events: none;
+}
+.cw-empty > div {
+  width: min(500px, 100%);
+  padding: clamp(22px, 4vw, 34px);
+  color: var(--v51-text);
+  border: 1px solid var(--v51-line-strong);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--v51-surface) 91%, transparent);
+  box-shadow: 0 22px 58px rgba(2, 11, 16, .18);
+  -webkit-backdrop-filter: blur(18px) saturate(125%);
+  backdrop-filter: blur(18px) saturate(125%);
+  pointer-events: auto;
+}
+.cw-empty small { color: var(--v51-accent); font: 700 8px/1 var(--v51-mono); letter-spacing: .14em; text-transform: uppercase; }
+.cw-empty strong { display: block; margin-top: 12px; font-size: clamp(19px, 2.2vw, 28px); font-weight: 650; letter-spacing: -.025em; }
+.cw-empty p { max-width: 450px; margin: 12px 0 0; color: var(--v51-muted); font-size: 11px; line-height: 1.7; }
+.cw-empty span { display: block; margin-top: 9px; color: var(--v51-faint); font-size: 9px; line-height: 1.6; }
+.cw-empty > div > div { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-top: 20px; }
+.cw-empty button {
+  min-height: 40px;
+  padding: 7px 10px;
+  color: var(--v51-muted);
+  border: 1px solid var(--v51-line);
+  border-radius: 9px;
+  background: var(--v51-bg);
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 650;
+}
+.cw-empty button:first-child { color: var(--v51-accent-ink); border-color: var(--v51-accent); background: var(--v51-accent); }
+.cw-empty button:last-child { grid-column: 1 / -1; }
+.cw-drop-label {
+  position: absolute;
+  z-index: 8;
+  left: 50%;
+  top: 50%;
+  padding: 14px 18px;
+  color: var(--v51-accent-ink);
+  border-radius: 12px;
+  background: var(--v51-accent);
+  box-shadow: 0 16px 44px rgba(2, 11, 16, .25);
+  font-size: 11px;
+  font-weight: 750;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -44%) scale(.94);
+}
+.cw-schematic-wrap.is-drop-target { box-shadow: inset 0 0 0 2px var(--v51-accent) !important; }
+.cw-schematic-wrap.is-drop-target .cw-drop-label { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+.cw-schematic-wrap.is-drop-target .cw-empty { opacity: .18; }
+.cw-drag-ghost {
+  position: fixed;
+  z-index: 4000;
+  left: 0;
+  top: 0;
+  padding: 9px 12px;
+  color: var(--v51-accent-ink);
+  border-radius: 9px;
+  background: var(--v51-accent);
+  box-shadow: 0 12px 34px rgba(2, 11, 16, .28);
+  pointer-events: none;
+  font-size: 10px;
+  font-weight: 700;
+  will-change: transform;
+}
+.cw-part-button.is-dragging { opacity: .42; transform: scale(.98); }
+.cw-part-button { touch-action: pan-y; }
+.cw-node { cursor: crosshair; }
+.cw-node-halo { fill: transparent !important; stroke: transparent !important; stroke-width: 1 !important; }
+.cw-node-port { fill: var(--v51-accent) !important; stroke: var(--v51-accent-strong) !important; stroke-width: 1.4 !important; }
+.cw-node:hover .cw-node-halo, .cw-node.is-wiring .cw-node-halo { fill: color-mix(in srgb, var(--v51-accent) 12%, transparent) !important; stroke: color-mix(in srgb, var(--v51-accent) 52%, transparent) !important; }
+.cw-node.is-wiring .cw-node-port { fill: var(--v51-signal) !important; stroke: var(--v51-text) !important; }
+.cw-wire-preview { fill: none; stroke: var(--v51-accent); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 7 6; pointer-events: none; }
+
+.cw-simple-run {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--v51-line);
+  background: var(--v51-surface);
+}
+.cw-simple-run > div { min-width: 0; display: grid; gap: 5px; }
+.cw-simple-run small { color: var(--v51-accent); font: 700 7px/1 var(--v51-mono); letter-spacing: .12em; text-transform: uppercase; }
+.cw-simple-run strong { color: var(--v51-muted); font-size: 9px; font-weight: 560; line-height: 1.45; }
+.cw-simple-run button {
+  flex: 0 0 auto;
+  min-width: 148px;
+  min-height: 42px;
+  color: var(--v51-accent-ink);
+  border: 1px solid var(--v51-accent);
+  border-radius: 9px;
+  background: var(--v51-accent);
+  cursor: pointer;
+  font-size: 9px;
+  font-weight: 760;
+}
+.cw-simple-run button:disabled { color: var(--v51-faint); border-color: var(--v51-line); background: var(--v51-layer); cursor: not-allowed; }
+.cw-advanced-analysis { border-top: 1px solid var(--v51-line); background: var(--v51-bg); }
+.cw-advanced-analysis > summary { min-height: 48px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 15px; color: var(--v51-muted); cursor: pointer; list-style: none; }
+.cw-advanced-analysis > summary::-webkit-details-marker { display: none; }
+.cw-advanced-analysis > summary span { font-size: 10px; font-weight: 680; }
+.cw-advanced-analysis > summary small { color: var(--v51-faint); font: 650 7px/1 var(--v51-mono); letter-spacing: .08em; }
+.cw-advanced-analysis > summary::after { content: "+"; color: var(--v51-accent); }
+.cw-advanced-analysis[open] > summary::after { content: "−"; }
+.cw-advanced-analysis .cw-analysis { border-top: 1px solid var(--v51-line) !important; }
+
+.cw-starter-library > p { margin: 0; padding: 0 12px 13px; color: var(--v51-faint); font-size: 8px; line-height: 1.45; }
+.cw-quick-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; padding: 0 10px 10px; }
+.cw-quick-grid .cw-part-button {
+  min-height: 54px;
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+  padding: 7px;
+  color: var(--v51-muted);
+  text-align: left;
+  border: 1px solid var(--v51-line);
+  border-radius: 9px;
+  background: var(--v51-bg);
+  cursor: grab;
+}
+.cw-quick-grid .cw-part-button:active { cursor: grabbing; }
+.cw-quick-grid .cw-part-button b { width: 32px; height: 32px; display: grid; place-items: center; color: var(--v51-accent); border: 1px solid var(--v51-line-strong); border-radius: 7px; background: transparent; font: 700 8px/1 var(--v51-mono); }
+.cw-quick-grid .cw-part-button span { overflow: hidden; font-size: 9px; line-height: 1.3; text-overflow: ellipsis; }
+.cw-full-library > .cw-palette-group { border-top: 1px solid var(--v51-line); }
+.cw-full-library > .cw-palette-group > summary { padding-left: 16px; }
+.cw-controls-scroll > section, .cw-controls-scroll > details { background: var(--v51-surface) !important; border-color: var(--v51-line) !important; }
+.cw-controls-scroll > details[open] > summary { border-color: var(--v51-line) !important; }
+
+/* A true day system: opaque paper surfaces, one shadow language, no dark glass leakage. */
+html[data-theme="day"] {
+  --v51-bg: #f4f3ee;
+  --v51-surface: #fffef9;
+  --v51-layer: #ebece7;
+  --v51-layer-2: #dfe5e1;
+  --v51-text: #1c302d;
+  --v51-muted: #5a6d68;
+  --v51-faint: #667873;
+  --v51-line: #d4d9d3;
+  --v51-line-strong: #b8c4be;
+  --v51-accent: #2f8278;
+  --v51-accent-strong: #256d65;
+  --v51-accent-ink: #f8fffc;
+  --v51-signal: #9e6330;
+  --v51-danger: #a85f58;
+  --v53-sky: #4d83a8;
+  --v53-lilac: #706ba3;
+  --v53-coral: #b9685e;
+  --v53-glass: rgba(255, 254, 249, .92);
+  --v53-glass-strong: rgba(255, 254, 249, .98);
+  --v51-shadow: 0 18px 48px rgba(54, 70, 64, .10);
+}
+html[data-theme="day"], html[data-theme="day"] body { background: #f4f3ee !important; }
+html[data-theme="day"] body {
+  color: var(--v51-text) !important;
+  background:
+    radial-gradient(circle at 8% 0%, rgba(47, 130, 120, .055), transparent 28rem),
+    linear-gradient(180deg, #f8f7f2 0%, #f2f1ec 100%) !important;
+}
+html[data-theme="day"] .pvl-app-header {
+  border-bottom-color: var(--v51-line) !important;
+  background: rgba(250, 249, 244, .96) !important;
+  box-shadow: 0 1px 0 rgba(28, 48, 45, .025), 0 10px 30px rgba(54, 70, 64, .055) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(110%);
+  backdrop-filter: blur(18px) saturate(110%);
+}
+html[data-theme="day"] .brand-mark span { background: #faf9f4 !important; }
+html[data-theme="day"] .pvl-global-nav {
+  border-color: var(--v51-line) !important;
+  background: #ebece7 !important;
+  box-shadow: inset 0 1px rgba(255, 255, 255, .72) !important;
+}
+html[data-theme="day"] .pvl53-nav-indicator {
+  border-color: #c9d7d2 !important;
+  background: #fffef9 !important;
+  box-shadow: 0 2px 7px rgba(54, 70, 64, .10) !important;
+}
+html[data-theme="day"] .theme-toggle,
+html[data-theme="day"] .language-trigger {
+  color: var(--v51-muted) !important;
+  border-color: var(--v51-line) !important;
+  background: #fffef9 !important;
+  box-shadow: 0 1px 2px rgba(54, 70, 64, .045) !important;
+}
+html[data-theme="day"] .language-switcher.is-open .language-trigger { color: var(--v51-text) !important; border-color: var(--v51-accent) !important; background: #f1f7f4 !important; }
+html[data-theme="day"] .language-popover {
+  border-color: var(--v51-line) !important;
+  background: rgba(255, 254, 249, .985) !important;
+  box-shadow: 0 20px 55px rgba(54, 70, 64, .13) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(105%);
+  backdrop-filter: blur(18px) saturate(105%);
+}
+html[data-theme="day"] .language-options button { color: var(--v51-muted) !important; border-color: var(--v51-line) !important; background: #f7f7f2 !important; }
+html[data-theme="day"] .language-options button.active { color: var(--v51-text) !important; border-color: var(--v51-accent) !important; background: #eaf4f1 !important; }
+
+html[data-theme="day"] .pvl-home-visual.pvl53-hero {
+  border-color: #bdcec8 !important;
+  background:
+    radial-gradient(circle at 22% 38%, rgba(47, 130, 120, .09), transparent 35%),
+    radial-gradient(circle at 82% 30%, rgba(77, 131, 168, .075), transparent 34%),
+    linear-gradient(145deg, #fbfcf8 0%, #eef3ef 100%) !important;
+  box-shadow: 0 20px 54px rgba(54, 70, 64, .105) !important;
+}
+html[data-theme="day"] .pvl53-hero-aurora { opacity: .38; filter: blur(44px) saturate(.9); }
+html[data-theme="day"] .pvl53-hero-field { fill: rgba(255, 255, 255, .06) !important; }
+html[data-theme="day"] .pvl53-grid-line { stroke: rgba(47, 105, 98, .105) !important; }
+html[data-theme="day"] .pvl53-reference-axis { stroke: rgba(47, 105, 98, .22) !important; }
+html[data-theme="day"] .pvl53-science-stage { opacity: .5; filter: saturate(.76); }
+html[data-theme="day"] .pvl53-hero[data-hero-stage="1"] .pvl53-stage-one,
+html[data-theme="day"] .pvl53-hero[data-hero-stage="2"] .pvl53-stage-two,
+html[data-theme="day"] .pvl53-hero[data-hero-stage="3"] .pvl53-stage-three { opacity: 1; filter: saturate(1); }
+html[data-theme="day"] .pvl53-orbit-shell { stroke: rgba(47, 130, 120, .50) !important; }
+html[data-theme="day"] .pvl53-orbit { stroke: rgba(77, 131, 168, .58) !important; }
+html[data-theme="day"] .pvl53-cone-ring { stroke: rgba(158, 99, 48, .70) !important; }
+html[data-theme="day"] .pvl53-axis-arrow { stroke: rgba(47, 105, 98, .64) !important; }
+html[data-theme="day"] .pvl53-pole { stroke: rgba(62, 91, 86, .38) !important; }
+html[data-theme="day"] .pvl53-readout > path { stroke: rgba(47, 105, 98, .62) !important; }
+html[data-theme="day"] .pvl53-tag rect,
+html[data-theme="day"] .pvl53-measurement-chip rect,
+html[data-theme="day"] .pvl53-readout rect { fill: rgba(255, 254, 249, .94) !important; stroke: rgba(47, 105, 98, .30) !important; }
+html[data-theme="day"] .pvl53-signal-dot,
+html[data-theme="day"] .pvl53-source-dot,
+html[data-theme="day"] .pvl53-readout circle { filter: drop-shadow(0 3px 5px rgba(158, 99, 48, .26)); }
+html[data-theme="day"] .pvl53-branch-glow { stroke: rgba(77, 131, 168, .10); filter: blur(6px); }
+html[data-theme="day"] .pvl53-hero .pvl45-hero-badge {
+  border-color: var(--v51-line) !important;
+  background: rgba(255, 254, 249, .90) !important;
+  -webkit-backdrop-filter: blur(10px) saturate(105%) !important;
+  backdrop-filter: blur(10px) saturate(105%) !important;
+}
+html[data-theme="day"] .pvl53-hero-stages {
+  border-color: var(--v51-line) !important;
+  background: rgba(255, 254, 249, .94) !important;
+  box-shadow: 0 12px 30px rgba(54, 70, 64, .09) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(105%);
+  backdrop-filter: blur(12px) saturate(105%);
+}
+html[data-theme="day"] .pvl53-hero-stages button { border-color: var(--v51-line) !important; }
+html[data-theme="day"] .pvl53-hero-stages button.active { background: #eaf3f0 !important; }
+html[data-theme="day"] .pvl53-hero-stages button.active::before { background: linear-gradient(90deg, var(--v51-accent), var(--v53-sky)); }
+
+html[data-theme="day"] .visual-panel,
+html[data-theme="day"] .control-panel,
+html[data-theme="day"] .sg-visual-panel,
+html[data-theme="day"] .sg-control-panel,
+html[data-theme="day"] .foundation-visual-panel,
+html[data-theme="day"] .foundation-controls,
+html[data-theme="day"] .foundation-panel,
+html[data-theme="day"] .foundation-readout,
+html[data-theme="day"] .cw-stage,
+html[data-theme="day"] .cw-results {
+  color: var(--v51-text) !important;
+  border-color: var(--v51-line) !important;
+  background: var(--v51-surface) !important;
+  box-shadow: none !important;
+}
+html[data-theme="day"] .foundation-visual,
+html[data-theme="day"] .cw-schematic-wrap,
+html[data-theme="day"] .cw-analysis,
+html[data-theme="day"] .cw-advanced-analysis { background: #f5f7f4 !important; }
+html[data-theme="day"] .cw-toolbar,
+html[data-theme="day"] .cw-learning-bar,
+html[data-theme="day"] .cw-simple-run,
+html[data-theme="day"] .cw-controls-scroll,
+html[data-theme="day"] .cw-controls-scroll > section,
+html[data-theme="day"] .cw-controls-scroll > details { color: var(--v51-text) !important; background: #fffef9 !important; }
+html[data-theme="day"] .cw-toolbar button,
+html[data-theme="day"] .cw-action-row button,
+html[data-theme="day"] .cw-file-actions button,
+html[data-theme="day"] .cw-wide,
+html[data-theme="day"] .cw-quick-grid .cw-part-button,
+html[data-theme="day"] .cw-palette-group button,
+html[data-theme="day"] .cw-preset-grid button {
+  color: var(--v51-muted) !important;
+  border-color: var(--v51-line) !important;
+  background: #f7f8f4 !important;
+  box-shadow: none !important;
+}
+html[data-theme="day"] .cw-empty > div {
+  border-color: #c4d0cb;
+  background: rgba(255, 254, 249, .96);
+  box-shadow: 0 18px 46px rgba(54, 70, 64, .12);
+  -webkit-backdrop-filter: blur(12px) saturate(105%);
+  backdrop-filter: blur(12px) saturate(105%);
+}
+html[data-theme="day"] .cw-empty button { color: var(--v51-muted); border-color: var(--v51-line); background: #f5f7f3; }
+html[data-theme="day"] .cw-empty button:first-child { color: var(--v51-accent-ink); border-color: var(--v51-accent); background: var(--v51-accent); }
+html[data-theme="day"] .cw-schematic > rect { fill: #f6f8f5 !important; }
+html[data-theme="day"] .cw-schematic pattern path { stroke: #cfdcd6 !important; opacity: .7 !important; }
+html[data-theme="day"] .cw-wire,
+html[data-theme="day"] .cw-symbol line,
+html[data-theme="day"] .cw-symbol path,
+html[data-theme="day"] .cw-symbol rect,
+html[data-theme="day"] .cw-node path { stroke: #587773 !important; }
+html[data-theme="day"] .cw-symbol rect,
+html[data-theme="day"] .cw-vdc .cw-symbol circle,
+html[data-theme="day"] .cw-vsin .cw-symbol circle,
+html[data-theme="day"] .cw-idc .cw-symbol circle,
+html[data-theme="day"] .cw-isin .cw-symbol circle,
+html[data-theme="day"] .cw-ammeter .cw-symbol circle { fill: #fffef9 !important; stroke: #587773 !important; }
+html[data-theme="day"] .cw-symbol text,
+html[data-theme="day"] .cw-symbol-name { fill: #263d39 !important; }
+html[data-theme="day"] .cw-symbol-value,
+html[data-theme="day"] .cw-node text { fill: #637873 !important; }
+html[data-theme="day"] .cw-node-port { fill: var(--v51-accent) !important; stroke: #f8fffc !important; }
+html[data-theme="day"] .cw-analysis-tabs { border-color: var(--v51-line) !important; background: #e9ede9 !important; }
+html[data-theme="day"] .cw-analysis-tabs button { color: var(--v51-muted) !important; background: transparent !important; }
+html[data-theme="day"] .cw-analysis-tabs button.active { color: var(--v51-text) !important; background: #fffef9 !important; box-shadow: 0 1px 4px rgba(54, 70, 64, .10) !important; }
+html[data-theme="day"] .cw-analysis-form input,
+html[data-theme="day"] .cw-analysis-form select,
+html[data-theme="day"] .cw-form-grid input,
+html[data-theme="day"] .cw-form-grid select,
+html[data-theme="day"] .cw-node-list input,
+html[data-theme="day"] .cw-json,
+html[data-theme="day"] .cw-result-cards > div,
+html[data-theme="day"] .cw-result-table,
+html[data-theme="day"] .cw-diagnostics,
+html[data-theme="day"] .cw-chart { color: var(--v51-text) !important; border-color: var(--v51-line) !important; background: #f8f9f5 !important; }
+html[data-theme="day"] .cw-result-cards strong { color: var(--v51-text) !important; }
+html[data-theme="day"] .pvl-dialog { background: #fffef9 !important; box-shadow: 0 24px 70px rgba(54, 70, 64, .18) !important; }
+html[data-theme="day"] .pvl-dialog-backdrop { background: rgba(50, 63, 59, .25) !important; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+
+@media (hover: hover) and (pointer: fine) {
+  .cw-quick-grid .cw-part-button:hover, .cw-empty button:hover { color: var(--v51-text); border-color: var(--v51-accent); transform: translateY(-1px); }
+  html[data-theme="day"] .theme-toggle:hover,
+  html[data-theme="day"] .language-trigger:hover,
+  html[data-theme="day"] .pvl-global-nav a:hover { color: var(--v51-text) !important; background: #f7f8f4 !important; }
+}
+
+@media (max-width: 980px) {
+  .cw-learning-bar { grid-template-columns: auto 1fr; }
+  .cw-learning-steps { grid-column: 1 / -1; }
+}
+@media (max-width: 680px) {
+  .cw-learning-bar { grid-template-columns: 1fr; }
+  .cw-learning-steps { grid-column: auto; display: grid; grid-template-columns: repeat(3, 1fr); }
+  .cw-learning-steps span { justify-content: center; padding-inline: 5px; }
+  .cw-learning-steps span { font-size: 0; }
+  .cw-learning-steps i { font-size: 7px; }
+  .cw-schematic-wrap, .cw-schematic { min-height: 390px; }
+  .cw-empty { padding: 14px; }
+  .cw-empty > div { padding: 20px; }
+  .cw-empty > div > div { grid-template-columns: 1fr; }
+  .cw-simple-run { align-items: stretch; flex-direction: column; }
+  .cw-simple-run button { width: 100%; }
+  .cw-quick-grid { grid-template-columns: 1fr 1fr; }
+}
+
 </style>
   <script>
-    window.PVL_RELEASE = Object.freeze({ version: "5.3.0", date: "2026-07-17" });
+    window.PVL_RELEASE = Object.freeze({ version: "5.4.0", date: "2026-07-17" });
     try {
       if (localStorage.getItem("physics-visual-lab-theme") === "day") {
         document.documentElement.dataset.theme = "day";
@@ -1839,7 +2264,7 @@ html[data-theme="day"] .pvl-dialog-header, html[data-theme="day"] .theory-equati
   <div id="root"></div>
   <noscript>本实验室需要 JavaScript 才能运行。This laboratory requires JavaScript.</noscript>
   <script type="module" data-pvl-inline="assets/larmor.js">
-/* Larmor precession renderer · Physics Visual Lab v5.3.0 */
+/* Larmor precession renderer · Physics Visual Lab v5.4.0 */
 var e=(e,t)=>()=>(t||(e((t={exports:{}}).exports,t),e=null),t.exports);(function(){let e=document.createElement(`link`).relList;if(e&&e.supports&&e.supports(`modulepreload`))return;for(let e of document.querySelectorAll(`link[rel="modulepreload"]`))n(e);new MutationObserver(e=>{for(let t of e)if(t.type===`childList`)for(let e of t.addedNodes)e.tagName===`LINK`&&e.rel===`modulepreload`&&n(e)}).observe(document,{childList:!0,subtree:!0});function t(e){let t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin===`use-credentials`?t.credentials=`include`:e.crossOrigin===`anonymous`?t.credentials=`omit`:t.credentials=`same-origin`,t}function n(e){if(e.ep)return;e.ep=!0;let n=t(e);fetch(e.href,n)}})();var t=e((e=>{var t=Symbol.for(`react.transitional.element`),n=Symbol.for(`react.portal`),r=Symbol.for(`react.fragment`),i=Symbol.for(`react.strict_mode`),a=Symbol.for(`react.profiler`),o=Symbol.for(`react.consumer`),s=Symbol.for(`react.context`),c=Symbol.for(`react.forward_ref`),l=Symbol.for(`react.suspense`),u=Symbol.for(`react.memo`),d=Symbol.for(`react.lazy`),f=Symbol.for(`react.activity`),p=Symbol.iterator;function m(e){return typeof e!=`object`||!e?null:(e=p&&e[p]||e[`@@iterator`],typeof e==`function`?e:null)}var h={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}},g=Object.assign,_={};function v(e,t,n){this.props=e,this.context=t,this.refs=_,this.updater=n||h}v.prototype.isReactComponent={},v.prototype.setState=function(e,t){if(typeof e!=`object`&&typeof e!=`function`&&e!=null)throw Error(`takes an object of state variables to update or a function which returns an object of state variables.`);this.updater.enqueueSetState(this,e,t,`setState`)},v.prototype.forceUpdate=function(e){this.updater.enqueueForceUpdate(this,e,`forceUpdate`)};function y(){}y.prototype=v.prototype;function b(e,t,n){this.props=e,this.context=t,this.refs=_,this.updater=n||h}var x=b.prototype=new y;x.constructor=b,g(x,v.prototype),x.isPureReactComponent=!0;var S=Array.isArray;function C(){}var w={H:null,A:null,T:null,S:null},ee=Object.prototype.hasOwnProperty;function te(e,n,r){var i=r.ref;return{$$typeof:t,type:e,key:n,ref:i===void 0?null:i,props:r}}function ne(e,t){return te(e.type,t,e.props)}function T(e){return typeof e==`object`&&!!e&&e.$$typeof===t}function re(e){var t={"=":`=0`,":":`=2`};return`$`+e.replace(/[=:]/g,function(e){return t[e]})}var ie=/\/+/g;function ae(e,t){return typeof e==`object`&&e&&e.key!=null?re(``+e.key):t.toString(36)}function oe(e){switch(e.status){case`fulfilled`:return e.value;case`rejected`:throw e.reason;default:switch(typeof e.status==`string`?e.then(C,C):(e.status=`pending`,e.then(function(t){e.status===`pending`&&(e.status=`fulfilled`,e.value=t)},function(t){e.status===`pending`&&(e.status=`rejected`,e.reason=t)})),e.status){case`fulfilled`:return e.value;case`rejected`:throw e.reason}}throw e}function se(e,r,i,a,o){var s=typeof e;(s===`undefined`||s===`boolean`)&&(e=null);var c=!1;if(e===null)c=!0;else switch(s){case`bigint`:case`string`:case`number`:c=!0;break;case`object`:switch(e.$$typeof){case t:case n:c=!0;break;case d:return c=e._init,se(c(e._payload),r,i,a,o)}}if(c)return o=o(e),c=a===``?`.`+ae(e,0):a,S(o)?(i=``,c!=null&&(i=c.replace(ie,`$&/`)+`/`),se(o,r,i,``,function(e){return e})):o!=null&&(T(o)&&(o=ne(o,i+(o.key==null||e&&e.key===o.key?``:(``+o.key).replace(ie,`$&/`)+`/`)+c)),r.push(o)),1;c=0;var l=a===``?`.`:a+`:`;if(S(e))for(var u=0;u<e.length;u++)a=e[u],s=l+ae(a,u),c+=se(a,r,i,s,o);else if(u=m(e),typeof u==`function`)for(e=u.call(e),u=0;!(a=e.next()).done;)a=a.value,s=l+ae(a,u++),c+=se(a,r,i,s,o);else if(s===`object`){if(typeof e.then==`function`)return se(oe(e),r,i,a,o);throw r=String(e),Error(`Objects are not valid as a React child (found: `+(r===`[object Object]`?`object with keys {`+Object.keys(e).join(`, `)+`}`:r)+`). If you meant to render a collection of children, use an array instead.`)}return c}function ce(e,t,n){if(e==null)return e;var r=[],i=0;return se(e,r,``,``,function(e){return t.call(n,e,i++)}),r}function le(e){if(e._status===-1){var t=e._result;t=t(),t.then(function(t){(e._status===0||e._status===-1)&&(e._status=1,e._result=t)},function(t){(e._status===0||e._status===-1)&&(e._status=2,e._result=t)}),e._status===-1&&(e._status=0,e._result=t)}if(e._status===1)return e._result.default;throw e._result}var E=typeof reportError==`function`?reportError:function(e){if(typeof window==`object`&&typeof window.ErrorEvent==`function`){var t=new window.ErrorEvent(`error`,{bubbles:!0,cancelable:!0,message:typeof e==`object`&&e&&typeof e.message==`string`?String(e.message):String(e),error:e});if(!window.dispatchEvent(t))return}else if(typeof process==`object`&&typeof process.emit==`function`){process.emit(`uncaughtException`,e);return}console.error(e)},D={map:ce,forEach:function(e,t,n){ce(e,function(){t.apply(this,arguments)},n)},count:function(e){var t=0;return ce(e,function(){t++}),t},toArray:function(e){return ce(e,function(e){return e})||[]},only:function(e){if(!T(e))throw Error(`React.Children.only expected to receive a single React element child.`);return e}};e.Activity=f,e.Children=D,e.Component=v,e.Fragment=r,e.Profiler=a,e.PureComponent=b,e.StrictMode=i,e.Suspense=l,e.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=w,e.__COMPILER_RUNTIME={__proto__:null,c:function(e){return w.H.useMemoCache(e)}},e.cache=function(e){return function(){return e.apply(null,arguments)}},e.cacheSignal=function(){return null},e.cloneElement=function(e,t,n){if(e==null)throw Error(`The argument must be a React element, but you passed `+e+`.`);var r=g({},e.props),i=e.key;if(t!=null)for(a in t.key!==void 0&&(i=``+t.key),t)!ee.call(t,a)||a===`key`||a===`__self`||a===`__source`||a===`ref`&&t.ref===void 0||(r[a]=t[a]);var a=arguments.length-2;if(a===1)r.children=n;else if(1<a){for(var o=Array(a),s=0;s<a;s++)o[s]=arguments[s+2];r.children=o}return te(e.type,i,r)},e.createContext=function(e){return e={$$typeof:s,_currentValue:e,_currentValue2:e,_threadCount:0,Provider:null,Consumer:null},e.Provider=e,e.Consumer={$$typeof:o,_context:e},e},e.createElement=function(e,t,n){var r,i={},a=null;if(t!=null)for(r in t.key!==void 0&&(a=``+t.key),t)ee.call(t,r)&&r!==`key`&&r!==`__self`&&r!==`__source`&&(i[r]=t[r]);var o=arguments.length-2;if(o===1)i.children=n;else if(1<o){for(var s=Array(o),c=0;c<o;c++)s[c]=arguments[c+2];i.children=s}if(e&&e.defaultProps)for(r in o=e.defaultProps,o)i[r]===void 0&&(i[r]=o[r]);return te(e,a,i)},e.createRef=function(){return{current:null}},e.forwardRef=function(e){return{$$typeof:c,render:e}},e.isValidElement=T,e.lazy=function(e){return{$$typeof:d,_payload:{_status:-1,_result:e},_init:le}},e.memo=function(e,t){return{$$typeof:u,type:e,compare:t===void 0?null:t}},e.startTransition=function(e){var t=w.T,n={};w.T=n;try{var r=e(),i=w.S;i!==null&&i(n,r),typeof r==`object`&&r&&typeof r.then==`function`&&r.then(C,E)}catch(e){E(e)}finally{t!==null&&n.types!==null&&(t.types=n.types),w.T=t}},e.unstable_useCacheRefresh=function(){return w.H.useCacheRefresh()},e.use=function(e){return w.H.use(e)},e.useActionState=function(e,t,n){return w.H.useActionState(e,t,n)},e.useCallback=function(e,t){return w.H.useCallback(e,t)},e.useContext=function(e){return w.H.useContext(e)},e.useDebugValue=function(){},e.useDeferredValue=function(e,t){return w.H.useDeferredValue(e,t)},e.useEffect=function(e,t){return w.H.useEffect(e,t)},e.useEffectEvent=function(e){return w.H.useEffectEvent(e)},e.useId=function(){return w.H.useId()},e.useImperativeHandle=function(e,t,n){return w.H.useImperativeHandle(e,t,n)},e.useInsertionEffect=function(e,t){return w.H.useInsertionEffect(e,t)},e.useLayoutEffect=function(e,t){return w.H.useLayoutEffect(e,t)},e.useMemo=function(e,t){return w.H.useMemo(e,t)},e.useOptimistic=function(e,t){return w.H.useOptimistic(e,t)},e.useReducer=function(e,t,n){return w.H.useReducer(e,t,n)},e.useRef=function(e){return w.H.useRef(e)},e.useState=function(e){return w.H.useState(e)},e.useSyncExternalStore=function(e,t,n){return w.H.useSyncExternalStore(e,t,n)},e.useTransition=function(){return w.H.useTransition()},e.version=`19.2.0`})),n=e(((e,n)=>{n.exports=t()})),r=e((e=>{function t(e,t){var n=e.length;e.push(t);a:for(;0<n;){var r=n-1>>>1,a=e[r];if(0<i(a,t))e[r]=t,e[n]=a,n=r;else break a}}function n(e){return e.length===0?null:e[0]}function r(e){if(e.length===0)return null;var t=e[0],n=e.pop();if(n!==t){e[0]=n;a:for(var r=0,a=e.length,o=a>>>1;r<o;){var s=2*(r+1)-1,c=e[s],l=s+1,u=e[l];if(0>i(c,n))l<a&&0>i(u,c)?(e[r]=u,e[l]=n,r=l):(e[r]=c,e[s]=n,r=s);else if(l<a&&0>i(u,n))e[r]=u,e[l]=n,r=l;else break a}}return t}function i(e,t){var n=e.sortIndex-t.sortIndex;return n===0?e.id-t.id:n}if(e.unstable_now=void 0,typeof performance==`object`&&typeof performance.now==`function`){var a=performance;e.unstable_now=function(){return a.now()}}else{var o=Date,s=o.now();e.unstable_now=function(){return o.now()-s}}var c=[],l=[],u=1,d=null,f=3,p=!1,m=!1,h=!1,g=!1,_=typeof setTimeout==`function`?setTimeout:null,v=typeof clearTimeout==`function`?clearTimeout:null,y=typeof setImmediate<`u`?setImmediate:null;function b(e){for(var i=n(l);i!==null;){if(i.callback===null)r(l);else if(i.startTime<=e)r(l),i.sortIndex=i.expirationTime,t(c,i);else break;i=n(l)}}function x(e){if(h=!1,b(e),!m)if(n(c)!==null)m=!0,S||(S=!0,T());else{var t=n(l);t!==null&&ae(x,t.startTime-e)}}var S=!1,C=-1,w=5,ee=-1;function te(){return g?!0:!(e.unstable_now()-ee<w)}function ne(){if(g=!1,S){var t=e.unstable_now();ee=t;var i=!0;try{a:{m=!1,h&&(h=!1,v(C),C=-1),p=!0;var a=f;try{b:{for(b(t),d=n(c);d!==null&&!(d.expirationTime>t&&te());){var o=d.callback;if(typeof o==`function`){d.callback=null,f=d.priorityLevel;var s=o(d.expirationTime<=t);if(t=e.unstable_now(),typeof s==`function`){d.callback=s,b(t),i=!0;break b}d===n(c)&&r(c),b(t)}else r(c);d=n(c)}if(d!==null)i=!0;else{var u=n(l);u!==null&&ae(x,u.startTime-t),i=!1}}break a}finally{d=null,f=a,p=!1}i=void 0}}finally{i?T():S=!1}}}var T;if(typeof y==`function`)T=function(){y(ne)};else if(typeof MessageChannel<`u`){var re=new MessageChannel,ie=re.port2;re.port1.onmessage=ne,T=function(){ie.postMessage(null)}}else T=function(){_(ne,0)};function ae(t,n){C=_(function(){t(e.unstable_now())},n)}e.unstable_IdlePriority=5,e.unstable_ImmediatePriority=1,e.unstable_LowPriority=4,e.unstable_NormalPriority=3,e.unstable_Profiling=null,e.unstable_UserBlockingPriority=2,e.unstable_cancelCallback=function(e){e.callback=null},e.unstable_forceFrameRate=function(e){0>e||125<e?console.error(`forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported`):w=0<e?Math.floor(1e3/e):5},e.unstable_getCurrentPriorityLevel=function(){return f},e.unstable_next=function(e){switch(f){case 1:case 2:case 3:var t=3;break;default:t=f}var n=f;f=t;try{return e()}finally{f=n}},e.unstable_requestPaint=function(){g=!0},e.unstable_runWithPriority=function(e,t){switch(e){case 1:case 2:case 3:case 4:case 5:break;default:e=3}var n=f;f=e;try{return t()}finally{f=n}},e.unstable_scheduleCallback=function(r,i,a){var o=e.unstable_now();switch(typeof a==`object`&&a?(a=a.delay,a=typeof a==`number`&&0<a?o+a:o):a=o,r){case 1:var s=-1;break;case 2:s=250;break;case 5:s=1073741823;break;case 4:s=1e4;break;default:s=5e3}return s=a+s,r={id:u++,callback:i,priorityLevel:r,startTime:a,expirationTime:s,sortIndex:-1},a>o?(r.sortIndex=a,t(l,r),n(c)===null&&r===n(l)&&(h?(v(C),C=-1):h=!0,ae(x,a-o))):(r.sortIndex=s,t(c,r),m||p||(m=!0,S||(S=!0,T()))),r},e.unstable_shouldYield=te,e.unstable_wrapCallback=function(e){var t=f;return function(){var n=f;f=t;try{return e.apply(this,arguments)}finally{f=n}}}})),i=e(((e,t)=>{t.exports=r()})),a=e((e=>{var t=n();function r(e){var t=`https://react.dev/errors/`+e;if(1<arguments.length){t+=`?args[]=`+encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)t+=`&args[]=`+encodeURIComponent(arguments[n])}return`Minified React error #`+e+`; visit `+t+` for the full message or use the non-minified dev environment for full errors and additional helpful warnings.`}function i(){}var a={d:{f:i,r:function(){throw Error(r(522))},D:i,C:i,L:i,m:i,X:i,S:i,M:i},p:0,findDOMNode:null},o=Symbol.for(`react.portal`);function s(e,t,n){var r=3<arguments.length&&arguments[3]!==void 0?arguments[3]:null;return{$$typeof:o,key:r==null?null:``+r,children:e,containerInfo:t,implementation:n}}var c=t.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;function l(e,t){if(e===`font`)return``;if(typeof t==`string`)return t===`use-credentials`?t:``}e.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE=a,e.createPortal=function(e,t){var n=2<arguments.length&&arguments[2]!==void 0?arguments[2]:null;if(!t||t.nodeType!==1&&t.nodeType!==9&&t.nodeType!==11)throw Error(r(299));return s(e,t,null,n)},e.flushSync=function(e){var t=c.T,n=a.p;try{if(c.T=null,a.p=2,e)return e()}finally{c.T=t,a.p=n,a.d.f()}},e.preconnect=function(e,t){typeof e==`string`&&(t?(t=t.crossOrigin,t=typeof t==`string`?t===`use-credentials`?t:``:void 0):t=null,a.d.C(e,t))},e.prefetchDNS=function(e){typeof e==`string`&&a.d.D(e)},e.preinit=function(e,t){if(typeof e==`string`&&t&&typeof t.as==`string`){var n=t.as,r=l(n,t.crossOrigin),i=typeof t.integrity==`string`?t.integrity:void 0,o=typeof t.fetchPriority==`string`?t.fetchPriority:void 0;n===`style`?a.d.S(e,typeof t.precedence==`string`?t.precedence:void 0,{crossOrigin:r,integrity:i,fetchPriority:o}):n===`script`&&a.d.X(e,{crossOrigin:r,integrity:i,fetchPriority:o,nonce:typeof t.nonce==`string`?t.nonce:void 0})}},e.preinitModule=function(e,t){if(typeof e==`string`)if(typeof t==`object`&&t){if(t.as==null||t.as===`script`){var n=l(t.as,t.crossOrigin);a.d.M(e,{crossOrigin:n,integrity:typeof t.integrity==`string`?t.integrity:void 0,nonce:typeof t.nonce==`string`?t.nonce:void 0})}}else t??a.d.M(e)},e.preload=function(e,t){if(typeof e==`string`&&typeof t==`object`&&t&&typeof t.as==`string`){var n=t.as,r=l(n,t.crossOrigin);a.d.L(e,n,{crossOrigin:r,integrity:typeof t.integrity==`string`?t.integrity:void 0,nonce:typeof t.nonce==`string`?t.nonce:void 0,type:typeof t.type==`string`?t.type:void 0,fetchPriority:typeof t.fetchPriority==`string`?t.fetchPriority:void 0,referrerPolicy:typeof t.referrerPolicy==`string`?t.referrerPolicy:void 0,imageSrcSet:typeof t.imageSrcSet==`string`?t.imageSrcSet:void 0,imageSizes:typeof t.imageSizes==`string`?t.imageSizes:void 0,media:typeof t.media==`string`?t.media:void 0})}},e.preloadModule=function(e,t){if(typeof e==`string`)if(t){var n=l(t.as,t.crossOrigin);a.d.m(e,{as:typeof t.as==`string`&&t.as!==`script`?t.as:void 0,crossOrigin:n,integrity:typeof t.integrity==`string`?t.integrity:void 0})}else a.d.m(e)},e.requestFormReset=function(e){a.d.r(e)},e.unstable_batchedUpdates=function(e,t){return e(t)},e.useFormState=function(e,t,n){return c.H.useFormState(e,t,n)},e.useFormStatus=function(){return c.H.useHostTransitionStatus()},e.version=`19.2.0`})),o=e(((e,t)=>{function n(){if(!(typeof __REACT_DEVTOOLS_GLOBAL_HOOK__>`u`||typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE!=`function`))try{__REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(n)}catch(e){console.error(e)}}n(),t.exports=a()})),s=e((e=>{var t=i(),r=n(),a=o();function s(e){var t=`https://react.dev/errors/`+e;if(1<arguments.length){t+=`?args[]=`+encodeURIComponent(arguments[1]);for(var n=2;n<arguments.length;n++)t+=`&args[]=`+encodeURIComponent(arguments[n])}return`Minified React error #`+e+`; visit `+t+` for the full message or use the non-minified dev environment for full errors and additional helpful warnings.`}function c(e){return!(!e||e.nodeType!==1&&e.nodeType!==9&&e.nodeType!==11)}function l(e){var t=e,n=e;if(e.alternate)for(;t.return;)t=t.return;else{e=t;do t=e,t.flags&4098&&(n=t.return),e=t.return;while(e)}return t.tag===3?n:null}function u(e){if(e.tag===13){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function d(e){if(e.tag===31){var t=e.memoizedState;if(t===null&&(e=e.alternate,e!==null&&(t=e.memoizedState)),t!==null)return t.dehydrated}return null}function f(e){if(l(e)!==e)throw Error(s(188))}function p(e){var t=e.alternate;if(!t){if(t=l(e),t===null)throw Error(s(188));return t===e?e:null}for(var n=e,r=t;;){var i=n.return;if(i===null)break;var a=i.alternate;if(a===null){if(r=i.return,r!==null){n=r;continue}break}if(i.child===a.child){for(a=i.child;a;){if(a===n)return f(i),e;if(a===r)return f(i),t;a=a.sibling}throw Error(s(188))}if(n.return!==r.return)n=i,r=a;else{for(var o=!1,c=i.child;c;){if(c===n){o=!0,n=i,r=a;break}if(c===r){o=!0,r=i,n=a;break}c=c.sibling}if(!o){for(c=a.child;c;){if(c===n){o=!0,n=a,r=i;break}if(c===r){o=!0,r=a,n=i;break}c=c.sibling}if(!o)throw Error(s(189))}}if(n.alternate!==r)throw Error(s(190))}if(n.tag!==3)throw Error(s(188));return n.stateNode.current===n?e:t}function m(e){var t=e.tag;if(t===5||t===26||t===27||t===6)return e;for(e=e.child;e!==null;){if(t=m(e),t!==null)return t;e=e.sibling}return null}var h=Object.assign,g=Symbol.for(`react.element`),_=Symbol.for(`react.transitional.element`),v=Symbol.for(`react.portal`),y=Symbol.for(`react.fragment`),b=Symbol.for(`react.strict_mode`),x=Symbol.for(`react.profiler`),S=Symbol.for(`react.consumer`),C=Symbol.for(`react.context`),w=Symbol.for(`react.forward_ref`),ee=Symbol.for(`react.suspense`),te=Symbol.for(`react.suspense_list`),ne=Symbol.for(`react.memo`),T=Symbol.for(`react.lazy`),re=Symbol.for(`react.activity`),ie=Symbol.for(`react.memo_cache_sentinel`),ae=Symbol.iterator;function oe(e){return typeof e!=`object`||!e?null:(e=ae&&e[ae]||e[`@@iterator`],typeof e==`function`?e:null)}var se=Symbol.for(`react.client.reference`);function ce(e){if(e==null)return null;if(typeof e==`function`)return e.$$typeof===se?null:e.displayName||e.name||null;if(typeof e==`string`)return e;switch(e){case y:return`Fragment`;case x:return`Profiler`;case b:return`StrictMode`;case ee:return`Suspense`;case te:return`SuspenseList`;case re:return`Activity`}if(typeof e==`object`)switch(e.$$typeof){case v:return`Portal`;case C:return e.displayName||`Context`;case S:return(e._context.displayName||`Context`)+`.Consumer`;case w:var t=e.render;return e=e.displayName,e||=(e=t.displayName||t.name||``,e===``?`ForwardRef`:`ForwardRef(`+e+`)`),e;case ne:return t=e.displayName||null,t===null?ce(e.type)||`Memo`:t;case T:t=e._payload,e=e._init;try{return ce(e(t))}catch{}}return null}var le=Array.isArray,E=r.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,D=a.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE,ue={pending:!1,data:null,method:null,action:null},de=[],fe=-1;function pe(e){return{current:e}}function me(e){0>fe||(e.current=de[fe],de[fe]=null,fe--)}function O(e,t){fe++,de[fe]=e.current,e.current=t}var he=pe(null),ge=pe(null),_e=pe(null),ve=pe(null);function ye(e,t){switch(O(_e,t),O(ge,e),O(he,null),t.nodeType){case 9:case 11:e=(e=t.documentElement)&&(e=e.namespaceURI)?Vd(e):0;break;default:if(e=t.tagName,t=t.namespaceURI)t=Vd(t),e=Hd(t,e);else switch(e){case`svg`:e=1;break;case`math`:e=2;break;default:e=0}}me(he),O(he,e)}function be(){me(he),me(ge),me(_e)}function xe(e){e.memoizedState!==null&&O(ve,e);var t=he.current,n=Hd(t,e.type);t!==n&&(O(ge,e),O(he,n))}function Se(e){ge.current===e&&(me(he),me(ge)),ve.current===e&&(me(ve),Qf._currentValue=ue)}var Ce,we;function Te(e){if(Ce===void 0)try{throw Error()}catch(e){var t=e.stack.trim().match(/\n( *(at )?)/);Ce=t&&t[1]||``,we=-1<e.stack.indexOf(`
     at`)?` (<anonymous>)`:-1<e.stack.indexOf(`@`)?`@unknown:0:0`:``}return`
 `+Ce+e+we}var Ee=!1;function De(e,t){if(!e||Ee)return``;Ee=!0;var n=Error.prepareStackTrace;Error.prepareStackTrace=void 0;try{var r={DetermineComponentFrameRoot:function(){try{if(t){var n=function(){throw Error()};if(Object.defineProperty(n.prototype,`props`,{set:function(){throw Error()}}),typeof Reflect==`object`&&Reflect.construct){try{Reflect.construct(n,[])}catch(e){var r=e}Reflect.construct(e,[],n)}else{try{n.call()}catch(e){r=e}e.call(n.prototype)}}else{try{throw Error()}catch(e){r=e}(n=e())&&typeof n.catch==`function`&&n.catch(function(){})}}catch(e){if(e&&r&&typeof e.stack==`string`)return[e.stack,r.stack]}return[null,null]}};r.DetermineComponentFrameRoot.displayName=`DetermineComponentFrameRoot`;var i=Object.getOwnPropertyDescriptor(r.DetermineComponentFrameRoot,`name`);i&&i.configurable&&Object.defineProperty(r.DetermineComponentFrameRoot,`name`,{value:`DetermineComponentFrameRoot`});var a=r.DetermineComponentFrameRoot(),o=a[0],s=a[1];if(o&&s){var c=o.split(`
@@ -1852,7 +2277,7 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/stern-gerlach.js">
-/* Stern–Gerlach simulations · Physics Visual Lab v5.3.0 */
+/* Stern–Gerlach simulations · Physics Visual Lab v5.4.0 */
 (() => {
   "use strict";
 
@@ -2555,11 +2980,11 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/circuit-workbench.js">
-/* Arbitrary-topology electrical circuit workbench · Physics Visual Lab v5.3.0 */
+/* Arbitrary-topology electrical circuit workbench · Physics Visual Lab v5.4.0 */
 (() => {
   "use strict";
 
-  const STORAGE_KEY = "pvl-circuit-workbench-v4";
+  const STORAGE_KEY = "pvl-circuit-workbench-v5";
   const SUPPORTED = ["zh", "en", "ko", "uz", "ru", "my", "shn", "th", "ja"];
   const $ = (root, selector) => root?.querySelector(selector);
   const $$ = (root, selector) => [...(root?.querySelectorAll(selector) || [])];
@@ -2622,6 +3047,19 @@ Error generating stack: `+e.message+`
     led:"လွတ်ႇ LED",npn:"NPN ထရၢၼ်ႇၸိတ်ႉသတိူဝ်ႇ",nmos:"NMOS ထရၢၼ်ႇၸိတ်ႉသတိူဝ်ႇ",wheatstone:"ဝူင်းပရိတ်ႉ Wheatstone",rcStep:"ၽွၼ်းတွပ်ႇၶၵ်ႉ RC",rlcBandpass:"ၵၢၼ်ၶဝ်ႈၵၼ် RLC",mosfetSwitch:"သဝိတ်ႉ MOSFET",rcLowpass:"ၽွၼ်းတွပ်ႇ Bode တူဝ်ၵၼ်ႈၶွၼ်းတႅမ်ႇ RC",activeLowpass:"တူဝ်ၵၼ်ႈၶွၼ်းတႅမ်ႇ op-amp",commonEmitter:"တူဝ်ၶႂၢၵ်ႈ BJT emitter ႁူမ်ႈ",commonSource:"တူဝ်ၶႂၢၵ်ႈ MOSFET source ႁူမ်ႈ"
   });
 
+  const BUILDER_TEXT = {
+    en:{blankTitle:"Start with an empty circuit board",blankLead:"Drag a component onto the board, then connect two terminals. Nothing is pre-wired for you.",blankHint:"On touch screens, tap a component to place it. Tap one terminal and then another to draw a wire.",choosePath:"Choose how you want to begin",freeBuild:"Free build",guidedLamp:"Light a lamp",guidedDivider:"Build a divider",guidedRC:"Explore RC charging",loadExample:"Open a complete example",quickParts:"Starter components",dragHint:"Drag onto the board · or tap to place",fullLibrary:"Complete component library",learnMode:"Guided",proMode:"Professional",stepParts:"Place components",stepWires:"Connect the loop",stepMeasure:"Run and observe",connectHint:"Drag from one terminal to another, or tap the two terminals in order.",proAnalysis:"Advanced analysis",proTools:"Professional tools",simpleRun:"Run this circuit",simpleRunHint:"The solver will check the circuit first and explain what still needs attention.",selectSecondTerminal:"Now choose the second terminal.",wireConnected:"Wire connected.",alreadyConnected:"Those terminals are already connected.",placedComponent:"Component placed. Connect its round terminals next.",dropHere:"Drop component here",clearBoard:"Clear board",freePrompt:"Build anything you like",lampPrompt:"Use a DC source, a lamp and wires to make a closed loop.",dividerPrompt:"Use a source and two resistors; measure the midpoint voltage.",rcPrompt:"Use a source, resistor and capacitor; then choose transient analysis."},
+    zh:{blankTitle:"从一张空白电路板开始",blankLead:"把元件拖进画布，再连接两个端点。这里不会替你预先接好任何线路。",blankHint:"触屏设备可以点按元件来放置；依次点按两个圆形端点即可画出导线。",choosePath:"选择你的开始方式",freeBuild:"自由搭建",guidedLamp:"点亮一盏灯",guidedDivider:"搭一个分压器",guidedRC:"观察 RC 充电",loadExample:"打开完整示例",quickParts:"入门常用元件",dragHint:"拖入画布 · 或点按放置",fullLibrary:"完整专业元件库",learnMode:"引导模式",proMode:"专业模式",stepParts:"放置元件",stepWires:"连接回路",stepMeasure:"运行并观察",connectHint:"从一个端点拖到另一个端点；也可以依次点按两个端点。",proAnalysis:"高级分析",proTools:"专业工具",simpleRun:"运行这个电路",simpleRunHint:"求解器会先检查连接，并告诉你还缺少什么。",selectSecondTerminal:"现在请选择第二个端点。",wireConnected:"导线已连接。",alreadyConnected:"这两个端点已经连接。",placedComponent:"元件已放置，下一步连接它的圆形端点。",dropHere:"松手放置元件",clearBoard:"清空画布",freePrompt:"按你的想法自由搭建",lampPrompt:"使用直流电源、灯泡与导线构成闭合回路。",dividerPrompt:"使用一个电源和两个电阻，并测量中点电压。",rcPrompt:"使用电源、电阻和电容，再选择瞬态分析。"},
+    ja:{blankTitle:"空の回路ボードから始める",blankLead:"部品をボードへドラッグし、2つの端子を接続します。配線済みの回路はありません。",blankHint:"タッチ画面では部品をタップして配置し、2つの丸い端子を順にタップして配線できます。",choosePath:"始め方を選ぶ",freeBuild:"自由に作る",guidedLamp:"ランプを点灯",guidedDivider:"分圧器を作る",guidedRC:"RC充電を観察",loadExample:"完成例を開く",quickParts:"基本部品",dragHint:"ボードへドラッグ・またはタップして配置",fullLibrary:"完全な部品ライブラリ",learnMode:"ガイド",proMode:"プロ",stepParts:"部品を置く",stepWires:"回路をつなぐ",stepMeasure:"実行して観察",connectHint:"端子から別の端子へドラッグするか、2端子を順にタップします。",proAnalysis:"高度な解析",proTools:"プロ向けツール",simpleRun:"この回路を実行",simpleRunHint:"ソルバがまず接続を確認し、不足している点を説明します。",selectSecondTerminal:"次の端子を選んでください。",wireConnected:"配線しました。",alreadyConnected:"その端子間は接続済みです。",placedComponent:"部品を配置しました。次に丸い端子を接続します。",dropHere:"ここにドロップ",clearBoard:"ボードを消去",freePrompt:"自由な発想で回路を作る",lampPrompt:"直流電源、ランプ、導線で閉回路を作ります。",dividerPrompt:"電源と2本の抵抗を使い、中点電圧を測ります。",rcPrompt:"電源、抵抗、コンデンサを使い、過渡解析を選びます。"},
+    ko:{blankTitle:"빈 회로판에서 시작",blankLead:"부품을 보드로 끌어온 뒤 두 단자를 연결하세요. 미리 배선된 회로는 없습니다.",blankHint:"터치 화면에서는 부품을 눌러 배치하고 둥근 단자 두 개를 차례로 눌러 배선할 수 있습니다.",choosePath:"시작 방법 선택",freeBuild:"자유 제작",guidedLamp:"램프 켜기",guidedDivider:"분압기 만들기",guidedRC:"RC 충전 관찰",loadExample:"완성 예제 열기",quickParts:"기본 부품",dragHint:"보드로 끌기 · 또는 눌러 배치",fullLibrary:"전체 전문 부품 라이브러리",learnMode:"안내",proMode:"전문",stepParts:"부품 배치",stepWires:"회로 연결",stepMeasure:"실행하고 관찰",connectHint:"한 단자에서 다른 단자로 끌거나 두 단자를 차례로 누르세요.",proAnalysis:"고급 해석",proTools:"전문 도구",simpleRun:"이 회로 실행",simpleRunHint:"해석기가 먼저 연결을 확인하고 부족한 점을 알려 줍니다.",selectSecondTerminal:"이제 두 번째 단자를 선택하세요.",wireConnected:"도선을 연결했습니다.",alreadyConnected:"이미 연결된 단자입니다.",placedComponent:"부품을 배치했습니다. 이제 둥근 단자를 연결하세요.",dropHere:"여기에 놓기",clearBoard:"보드 비우기",freePrompt:"원하는 회로를 자유롭게 만드세요",lampPrompt:"DC 전원, 램프, 도선으로 닫힌 회로를 만드세요.",dividerPrompt:"전원과 저항 두 개로 중간점 전압을 측정하세요.",rcPrompt:"전원, 저항, 커패시터를 놓고 과도 해석을 선택하세요."},
+    ru:{blankTitle:"Начните с пустой монтажной области",blankLead:"Перетащите компонент на поле и соедините две клеммы. Готовых проводов здесь нет.",blankHint:"На сенсорном экране коснитесь компонента для размещения, затем по очереди коснитесь двух круглых клемм.",choosePath:"Выберите способ начала",freeBuild:"Свободная сборка",guidedLamp:"Зажечь лампу",guidedDivider:"Собрать делитель",guidedRC:"Исследовать заряд RC",loadExample:"Открыть готовый пример",quickParts:"Базовые компоненты",dragHint:"Перетащите на поле · или коснитесь",fullLibrary:"Полная библиотека компонентов",learnMode:"С подсказками",proMode:"Профессиональный",stepParts:"Разместить компоненты",stepWires:"Замкнуть цепь",stepMeasure:"Запустить и наблюдать",connectHint:"Проведите от одной клеммы к другой или коснитесь их по очереди.",proAnalysis:"Расширенный анализ",proTools:"Профессиональные инструменты",simpleRun:"Запустить цепь",simpleRunHint:"Сначала решатель проверит соединения и подскажет, чего не хватает.",selectSecondTerminal:"Теперь выберите вторую клемму.",wireConnected:"Провод подключён.",alreadyConnected:"Эти клеммы уже соединены.",placedComponent:"Компонент размещён. Теперь соедините круглые клеммы.",dropHere:"Отпустите для размещения",clearBoard:"Очистить поле",freePrompt:"Соберите любую схему",lampPrompt:"Соберите замкнутую цепь из источника постоянного тока, лампы и проводов.",dividerPrompt:"Возьмите источник и два резистора; измерьте напряжение средней точки.",rcPrompt:"Возьмите источник, резистор и конденсатор; выберите переходный анализ."},
+    uz:{blankTitle:"Bo‘sh sxema maydonidan boshlang",blankLead:"Komponentni maydonga sudrab qo‘ying va ikki terminalni ulang. Oldindan ulangan simlar yo‘q.",blankHint:"Sensorli ekranda komponentni bosib joylashtiring, so‘ng ikki dumaloq terminalni ketma-ket bosing.",choosePath:"Boshlash usulini tanlang",freeBuild:"Erkin yig‘ish",guidedLamp:"Chiroqni yoqish",guidedDivider:"Kuchlanish bo‘lgich",guidedRC:"RC zaryadini kuzatish",loadExample:"Tayyor misolni ochish",quickParts:"Asosiy komponentlar",dragHint:"Maydonga sudrang · yoki bosib joylang",fullLibrary:"To‘liq professional kutubxona",learnMode:"Yo‘riqnoma",proMode:"Professional",stepParts:"Komponentlarni joylash",stepWires:"Zanjirni ulash",stepMeasure:"Ishga tushirish",connectHint:"Bir terminaldan boshqasiga sudrang yoki ikkisini ketma-ket bosing.",proAnalysis:"Kengaytirilgan tahlil",proTools:"Professional vositalar",simpleRun:"Zanjirni ishga tushirish",simpleRunHint:"Yechuvchi avval ulanishlarni tekshiradi va yetishmayotgan narsani ko‘rsatadi.",selectSecondTerminal:"Endi ikkinchi terminalni tanlang.",wireConnected:"Sim ulandi.",alreadyConnected:"Bu terminallar allaqachon ulangan.",placedComponent:"Komponent joylandi. Endi dumaloq terminallarni ulang.",dropHere:"Shu yerga qo‘ying",clearBoard:"Maydonni tozalash",freePrompt:"Istalgan sxemani erkin yig‘ing",lampPrompt:"DC manba, chiroq va simlardan yopiq zanjir tuzing.",dividerPrompt:"Manba va ikki rezistor bilan o‘rta nuqta kuchlanishini o‘lchang.",rcPrompt:"Manba, rezistor va kondensator qo‘yib, o‘tkinchi tahlilni tanlang."},
+    th:{blankTitle:"เริ่มจากกระดานวงจรว่าง",blankLead:"ลากอุปกรณ์ลงบนกระดานแล้วเชื่อมขั้วสองจุด ระบบจะไม่ต่อสายไว้ล่วงหน้า",blankHint:"บนหน้าจอสัมผัส แตะอุปกรณ์เพื่อวาง แล้วแตะขั้ววงกลมสองจุดตามลำดับเพื่อเดินสาย",choosePath:"เลือกวิธีเริ่มต้น",freeBuild:"สร้างอย่างอิสระ",guidedLamp:"จุดหลอดไฟ",guidedDivider:"สร้างวงจรแบ่งแรงดัน",guidedRC:"ดูการชาร์จ RC",loadExample:"เปิดตัวอย่างสำเร็จรูป",quickParts:"อุปกรณ์พื้นฐาน",dragHint:"ลากลงกระดาน · หรือแตะเพื่อวาง",fullLibrary:"คลังอุปกรณ์ฉบับเต็ม",learnMode:"แบบมีคำแนะนำ",proMode:"มืออาชีพ",stepParts:"วางอุปกรณ์",stepWires:"ต่อวงจร",stepMeasure:"รันและสังเกต",connectHint:"ลากจากขั้วหนึ่งไปอีกขั้ว หรือแตะขั้วทั้งสองตามลำดับ",proAnalysis:"การวิเคราะห์ขั้นสูง",proTools:"เครื่องมือมืออาชีพ",simpleRun:"รันวงจรนี้",simpleRunHint:"ตัวแก้สมการจะตรวจการเชื่อมต่อก่อนและบอกสิ่งที่ยังขาด",selectSecondTerminal:"เลือกขั้วที่สอง",wireConnected:"เชื่อมสายแล้ว",alreadyConnected:"ขั้วทั้งสองเชื่อมอยู่แล้ว",placedComponent:"วางอุปกรณ์แล้ว ต่อไปให้เชื่อมขั้ววงกลม",dropHere:"ปล่อยเพื่อวาง",clearBoard:"ล้างกระดาน",freePrompt:"สร้างวงจรได้ตามต้องการ",lampPrompt:"ใช้แหล่งจ่าย DC หลอดไฟ และสายไฟสร้างวงจรปิด",dividerPrompt:"ใช้แหล่งจ่ายและตัวต้านทานสองตัว แล้ววัดแรงดันจุดกึ่งกลาง",rcPrompt:"ใช้แหล่งจ่าย ตัวต้านทาน และตัวเก็บประจุ แล้วเลือกการวิเคราะห์ชั่วครู่"},
+    my:{blankTitle:"ဆားကစ်ဘုတ်အလွတ်မှ စတင်ပါ",blankLead:"အစိတ်အပိုင်းကို ဘုတ်ပေါ်သို့ ဆွဲချပြီး terminal နှစ်ခုကို ဆက်ပါ။ ကြိုတင်ချိတ်ထားသော ဝါယာမရှိပါ။",blankHint:"ထိတွေ့မျက်နှာပြင်တွင် အစိတ်အပိုင်းကို နှိပ်၍ထားပြီး စက်ဝိုင်း terminal နှစ်ခုကို အစဉ်လိုက်နှိပ်ပါ။",choosePath:"စတင်မည့်နည်းကို ရွေးပါ",freeBuild:"လွတ်လပ်စွာ တည်ဆောက်",guidedLamp:"မီးလုံးထွန်းရန်",guidedDivider:"ဗို့အားခွဲစက် တည်ဆောက်",guidedRC:"RC အားသွင်းမှု ကြည့်ရန်",loadExample:"ပြီးပြည့်စုံသော နမူနာဖွင့်ရန်",quickParts:"အခြေခံအစိတ်အပိုင်းများ",dragHint:"ဘုတ်ပေါ်သို့ ဆွဲပါ · သို့မဟုတ် နှိပ်၍ထားပါ",fullLibrary:"အစိတ်အပိုင်းစာကြည့်တိုက် အပြည့်အစုံ",learnMode:"လမ်းညွှန်",proMode:"ကျွမ်းကျင်",stepParts:"အစိတ်အပိုင်းထားရန်",stepWires:"ဆားကစ်ချိတ်ရန်",stepMeasure:"မောင်းနှင်ပြီး ကြည့်ရန်",connectHint:"terminal တစ်ခုမှ နောက်တစ်ခုသို့ ဆွဲပါ၊ သို့မဟုတ် နှစ်ခုကို အစဉ်လိုက်နှိပ်ပါ။",proAnalysis:"အဆင့်မြင့် ခွဲခြမ်းစိတ်ဖြာမှု",proTools:"ကျွမ်းကျင်ကိရိယာများ",simpleRun:"ဤဆားကစ်ကို မောင်းရန်",simpleRunHint:"solver က ချိတ်ဆက်မှုကို အရင်စစ်ပြီး လိုအပ်ချက်ကို ပြောပြပါမည်။",selectSecondTerminal:"ဒုတိယ terminal ကို ရွေးပါ။",wireConnected:"ဝါယာချိတ်ပြီးပါပြီ။",alreadyConnected:"ထို terminal နှစ်ခု ချိတ်ပြီးသားဖြစ်သည်။",placedComponent:"အစိတ်အပိုင်းထားပြီးပါပြီ။ စက်ဝိုင်း terminal များကို ဆက်ပါ။",dropHere:"ဤနေရာတွင် ချပါ",clearBoard:"ဘုတ်ရှင်းရန်",freePrompt:"လိုသလို ဆားကစ်တည်ဆောက်ပါ",lampPrompt:"DC အရင်းအမြစ်၊ မီးလုံးနှင့် ဝါယာများဖြင့် အပိတ်ပတ်လမ်း တည်ဆောက်ပါ။",dividerPrompt:"အရင်းအမြစ်နှင့် resistor နှစ်ခုသုံး၍ အလယ်မှတ်ဗို့အားကို တိုင်းပါ။",rcPrompt:"အရင်းအမြစ်၊ resistor နှင့် capacitor သုံးပြီး transient analysis ကို ရွေးပါ။"},
+    shn:{blankTitle:"တႄႇတီႈပၢင်ဝူင်းၾႆးၾႃႉပဝ်ႇ",blankLead:"လၢၵ်ႈ component သႂ်ႇပၢင် ယဝ်ႉၵွင်ႉ terminal သွင်ဢၼ်။ ဢမ်ႇမီးသၢႆၵွင်ႉဝႆႉ။",blankHint:"တီႈၼႃႈၸေႃး touch ၼဵၵ်း component ဝၢင်း ယဝ်ႉၼဵၵ်း terminal ဝူင်းသွင်ဢၼ်ပဵၼ်လမ်း။",choosePath:"လိူၵ်ႈလၢႆးတႄႇ",freeBuild:"ႁဵတ်းလွတ်ႈလႅဝ်း",guidedLamp:"ပိူင်ႇလွတ်ႇၾႆး",guidedDivider:"ႁဵတ်း voltage divider",guidedRC:"တူၺ်း RC charging",loadExample:"ပိုတ်ႇတူဝ်ယၢင်ႇတဵမ်",quickParts:"component ပိုၼ်ႉထၢၼ်",dragHint:"လၢၵ်ႈသႂ်ႇပၢင် · ဢမ်ႇၼၼ် ၼဵၵ်းဝၢင်း",fullLibrary:"component library တဵမ်",learnMode:"မီးၽူႈၼႄ",proMode:"ပရေႃႇၾႅတ်ႉသျိၼ်ႇၼႄႇ",stepParts:"ဝၢင်း component",stepWires:"ၵွင်ႉဝူင်း",stepMeasure:"လႅၼ်ႈလႄႈတူၺ်း",connectHint:"လၢၵ်ႈ terminal ဢၼ်ၼိုင်ႈၸူးဢၼ်ၼိုင်ႈ၊ ဢမ်ႇၼၼ် ၼဵၵ်းသွင်ဢၼ်ပဵၼ်လမ်း။",proAnalysis:"analysis သုင်",proTools:"ၶိူင်ႈမိုဝ်း professional",simpleRun:"လႅၼ်ႈဝူင်းၼႆႉ",simpleRunHint:"solver တေထတ်းၵၢၼ်ၵွင်ႉဢွၼ်တၢင်း ယဝ်ႉၼႄဢၼ်ယင်းလိုဝ်ႈ။",selectSecondTerminal:"လိူၵ်ႈ terminal တုတိယ။",wireConnected:"ၵွင်ႉသၢႆယဝ်ႉ။",alreadyConnected:"terminal သွင်ဢၼ်ၼႆႉၵွင်ႉဝႆႉယဝ်ႉ။",placedComponent:"ဝၢင်း component ယဝ်ႉ။ ၵွင်ႉ terminal ဝူင်းမၼ်း။",dropHere:"ပွႆႇဝၢင်းတီႈၼႆႈ",clearBoard:"လၢင်ႉပၢင်",freePrompt:"ႁဵတ်းဝူင်းတၢင်းၸႂ်",lampPrompt:"ၸႂ်ႉ DC source၊ လွတ်ႇၾႆး လႄႈ သၢႆ ႁဵတ်းဝူင်းပိၵ်ႉ။",dividerPrompt:"ၸႂ်ႉ source လႄႈ resistor သွင်ဢၼ် ယဝ်ႉတႅၵ်ႈ voltage တီႈၵၢင်။",rcPrompt:"ၸႂ်ႉ source၊ resistor လႄႈ capacitor ယဝ်ႉလိူၵ်ႈ transient analysis။"}
+  };
+  for (const code of SUPPORTED) Object.assign(TEXT[code], BUILDER_TEXT[code]);
+
   const TYPES = {
     resistor:{prefix:"R",label:"resistor",group:"passive",value:"1k",unit:"Ω",terminals:2}, capacitor:{prefix:"C",label:"capacitor",group:"passive",value:"10u",unit:"F",terminals:2}, inductor:{prefix:"L",label:"inductor",group:"passive",value:"10m",unit:"H",terminals:2}, wire:{prefix:"W",label:"wire",group:"passive",value:"1u",unit:"Ω",terminals:2}, switch:{prefix:"S",label:"switch",group:"passive",value:"1m",unit:"Ω",terminals:2,state:"closed"}, lamp:{prefix:"LA",label:"lamp",group:"passive",value:"60",unit:"Ω",terminals:2}, fuse:{prefix:"F",label:"fuse",group:"passive",value:"1m",unit:"Ω",terminals:2,rating:"1"},
     vdc:{prefix:"V",label:"dcVoltage",group:"sources",value:"10",unit:"V",terminals:2}, vsin:{prefix:"V",label:"sineVoltage",group:"sources",value:"5",unit:"V",terminals:2,frequency:"1k",offset:"0",phase:"0"}, idc:{prefix:"I",label:"dcCurrent",group:"sources",value:"1m",unit:"A",terminals:2}, isin:{prefix:"I",label:"sineCurrent",group:"sources",value:"1m",unit:"A",terminals:2,frequency:"1k",offset:"0",phase:"0"},
@@ -2681,9 +3119,10 @@ Error generating stack: `+e.message+`
   });
   PRESETS.bridgerectifier.components.push(comp("RREF","resistor",["acn","0"],"1meg"));
 
-  function makeState(preset = "divider") {
+  function makeState(preset = null) {
+    if (!preset) return {version:5,nodes:[node(GROUND,"GND",88,356)],components:[],analysis:Object.assign(baseAnalysis(),{probe:GROUND,reference:GROUND}),selected:null,lastPreset:null,learning:{mode:"guided",challenge:"free"}};
     const source = PRESETS[preset] || PRESETS.divider;
-    return {version:5,nodes:clone(source.nodes),components:clone(source.components),analysis:Object.assign(baseAnalysis(),source.analysis || {}),selected:source.components[0]?.id || null,lastPreset:preset};
+    return {version:5,nodes:clone(source.nodes),components:clone(source.components),analysis:Object.assign(baseAnalysis(),source.analysis || {}),selected:source.components[0]?.id || null,lastPreset:preset,learning:{mode:"guided",challenge:"free"}};
   }
 
   let state = makeState();
@@ -2693,6 +3132,10 @@ Error generating stack: `+e.message+`
   let language = "zh";
   let lastResult = null;
   let notice = "";
+  let wireStart = null;
+  let suppressPortClickUntil = 0;
+  let suppressPaletteClickUntil = 0;
+  let paletteGhost = null;
 
   const tr = key => (TEXT[language] || TEXT.en)[key] || TEXT.en[key] || key;
   const nodeIndexMap = circuit => new Map(circuit.nodes.filter(item => item.id !== GROUND).map((item,index) => [item.id,index]));
@@ -2779,45 +3222,178 @@ Error generating stack: `+e.message+`
   function pushHistory(){history.push(clone(state));if(history.length>50)history.shift();future=[];}
   function mutate(callback,{solve=true}={}){pushHistory();callback(state);persist();if(solve)runAnalysis();else render();}
   function persist(){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch{}}
-  function restore(){try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");if(saved&&saved.version===4&&Array.isArray(saved.nodes)&&Array.isArray(saved.components)){state=saved;return true;}}catch{}return false;}
+  function restore(){try{const saved=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");if(saved&&saved.version===5&&Array.isArray(saved.nodes)&&Array.isArray(saved.components)){state=Object.assign(makeState(),saved,{learning:Object.assign({mode:"guided",challenge:"free"},saved.learning||{})});return true;}}catch{}return false;}
   function loadPreset(key){const preset=PRESETS[key];if(!preset)return;pushHistory();state=makeState(key);notice=tr("presetLoaded");persist();runAnalysis();}
 
   function nextName(type){const prefix=TYPES[type].prefix,used=new Set(state.components.map(c=>c.name||c.id));let i=1;while(used.has(`${prefix}${i}`))i++;return `${prefix}${i}`;}
-  function addComponent(type){const def=TYPES[type],ids=state.nodes.map(n=>n.id),name=nextName(type),nodes=Array.from({length:def.terminals},(_,i)=>ids[Math.min(i,ids.length-1)]||GROUND);if(nodes.length>1&&nodes[0]===nodes[1])nodes[1]=GROUND;mutate(s=>{s.components.push(Object.assign(comp(name,type,nodes,def.value),Object.fromEntries(["frequency","offset","phase","state","rating","n","beta","vth","lambda","saturation"].filter(k=>def[k]!=null).map(k=>[k,def[k]]))));s.selected=name;},{solve:false});}
+  function nextNodeId(circuit=state){const ids=new Set(circuit.nodes.map(item=>item.id));let i=1;while(ids.has(`n${i}`))i++;return `n${i}`;}
+  function componentDefaults(type){const def=TYPES[type];return Object.fromEntries(["frequency","offset","phase","state","rating","n","beta","vth","lambda","saturation"].filter(key=>def[key]!=null).map(key=>[key,def[key]]));}
+  function suggestedDropPoint(type){const count=state.components.filter(item=>item.type!=="wire").length;if(!count&&["vdc","vsin","idc","isin"].includes(type))return {x:145,y:215};return {x:190+(count%3)*170,y:115+(Math.floor(count/3)%3)*118};}
+  function addComponentAt(type,x,y){const def=TYPES[type];if(!def)return;lastResult=null;const px=clamp(Number(x)||360,88,632),py=clamp(Number(y)||215,72,358),name=nextName(type);mutate(s=>{const terminalIds=[],firstSource=def.terminals===2&&["vdc","vsin","idc","isin"].includes(type)&&s.components.length===0;const positions=def.terminals===2?(firstSource?[[px,py-58],[px,py+58]]:[[px-58,py],[px+58,py]]):def.terminals===3?[[px-62,py-24],[px+62,py-24],[px,py+62]]:[[px-66,py-28],[px+66,py-28],[px-42,py+62],[px+42,py+62]];for(let index=0;index<def.terminals;index++){if(index===1&&firstSource){const ground=s.nodes.find(item=>item.id===GROUND);if(ground){ground.x=Math.round(positions[index][0]);ground.y=Math.round(positions[index][1]);terminalIds.push(GROUND);continue;}}const id=nextNodeId(s);s.nodes.push(node(id,`N${id.slice(1)}`,Math.round(positions[index][0]),Math.round(positions[index][1])));terminalIds.push(id);}s.components.push(Object.assign(comp(name,type,terminalIds,def.value),componentDefaults(type)));s.selected=name;s.lastPreset=null;if(!s.nodes.some(item=>item.id===s.analysis.probe))s.analysis.probe=terminalIds[0]||GROUND;if(s.analysis.probe===GROUND&&terminalIds[0]!==GROUND)s.analysis.probe=terminalIds[0];notice=tr("placedComponent");},{solve:false});}
+  function addComponent(type){const point=suggestedDropPoint(type);addComponentAt(type,point.x,point.y);}
+  function connectNodes(from,to){if(!from||!to||from===to)return;const pair=[from,to].sort().join("|");const duplicate=state.components.some(item=>item.type==="wire"&&[...item.nodes.slice(0,2)].sort().join("|")===pair);if(duplicate){notice=tr("alreadyConnected");renderStatus();return;}lastResult=null;const name=nextName("wire");mutate(s=>{s.components.push(comp(name,"wire",[from,to],TYPES.wire.value));s.selected=name;s.lastPreset=null;notice=tr("wireConnected");},{solve:false});}
+  function clientToSchematic(clientX,clientY,svg){const rect=svg?.getBoundingClientRect?.();if(!rect||!rect.width||!rect.height)return {x:360,y:215};return {x:clamp((clientX-rect.left)/rect.width*720,40,680),y:clamp((clientY-rect.top)/rect.height*430,35,395)};}
 
   function autoLayout(){mutate(s=>{const movable=s.nodes.filter(n=>n.id!==GROUND),count=movable.length;const cx=360,cy=215,rx=250,ry=145;movable.forEach((n,i)=>{const angle=-Math.PI/2+2*Math.PI*i/Math.max(1,count);n.x=Math.round(cx+rx*Math.cos(angle));n.y=Math.round(cy+ry*Math.sin(angle));});const g=s.nodes.find(n=>n.id===GROUND);if(g){g.x=90;g.y=360;}},{solve:false});}
   function nodeOptions(selected){return state.nodes.map(n=>`<option value="${esc(n.id)}" ${n.id===selected?"selected":""}>${esc(n.label)} · ${esc(n.id)}</option>`).join("");}
 
   function symbolMarkup(component,x1,y1,x2,y2){const mx=(x1+x2)/2,my=(y1+y2)/2,angle=Math.atan2(y2-y1,x2-x1)*180/Math.PI,type=component.type,label=esc(component.name||component.id),value=esc(component.value),active=state.selected===component.id?" selected":"";let body="";if(type==="resistor"||type==="wire"||type==="lamp"||type==="fuse"||type==="voltmeter"){body=type==="wire"?`<line x1="-34" y1="0" x2="34" y2="0"/>`:type==="resistor"?`<path d="M-34 0h8l5-10 10 20 10-20 10 20 10-20 5 10h10"/>`:`<rect x="-27" y="-13" width="54" height="26" rx="5"/><text y="4" text-anchor="middle">${type==="lamp"?"◯":type==="fuse"?"F":"V"}</text>`;}else if(type==="capacitor")body=`<line x1="-34" y1="0" x2="-7" y2="0"/><line x1="-7" y1="-15" x2="-7" y2="15"/><line x1="7" y1="-15" x2="7" y2="15"/><line x1="7" y1="0" x2="34" y2="0"/>`;else if(type==="inductor")body=`<path d="M-34 0h8c0-18 16-18 16 0 0-18 16-18 16 0 0-18 16-18 16 0h12"/>`;else if(type==="switch")body=`<line x1="-34" y1="0" x2="-10" y2="0"/><circle cx="-8" cy="0" r="3"/><circle cx="18" cy="0" r="3"/><line x1="-6" y1="-1" x2="${component.state==="open"?14:18}" y2="${component.state==="open"?-14:0}"/><line x1="21" y1="0" x2="34" y2="0"/>`;else if(["vdc","vsin","idc","isin","ammeter"].includes(type))body=`<line x1="-34" y1="0" x2="-18" y2="0"/><circle cx="0" cy="0" r="18"/><line x1="18" y1="0" x2="34" y2="0"/><text y="4" text-anchor="middle">${type==="ammeter"?"A":type.includes("sin")?"∿":type.startsWith("i")?"→":"±"}</text>`;else if(type==="diode"||type==="led")body=`<line x1="-34" y1="0" x2="-13" y2="0"/><path d="M-13 -12L8 0-13 12Z"/><line x1="9" y1="-14" x2="9" y2="14"/><line x1="9" y1="0" x2="34" y2="0"/>`;else body=`<line x1="-34" y1="0" x2="-25" y2="0"/><rect x="-25" y="-15" width="50" height="30" rx="5"/><line x1="25" y1="0" x2="34" y2="0"/><text y="4" text-anchor="middle">${esc(TYPES[type].prefix)}</text>`;return `<g class="cw-component cw-${type}${active}" data-cw-select="${esc(component.id)}" transform="translate(${mx} ${my}) rotate(${angle})"><line class="cw-wire" x1="${-(Math.hypot(x2-x1,y2-y1)/2)}" y1="0" x2="-34" y2="0"/><line class="cw-wire" x1="34" y1="0" x2="${Math.hypot(x2-x1,y2-y1)/2}" y2="0"/><g class="cw-symbol">${body}</g><g transform="rotate(${-angle})"><text class="cw-symbol-name" y="-25" text-anchor="middle">${label}</text><text class="cw-symbol-value" y="30" text-anchor="middle">${value}</text></g></g>`;}
 
-  function schematicMarkup(){if(!state.components.length)return `<div class="cw-empty">${esc(tr("emptyCircuit"))}</div>`;const nodes=new Map(state.nodes.map(n=>[n.id,n])),lines=state.components.map((component,index)=>{const a=nodes.get(component.nodes[0]),b=nodes.get(component.nodes[1]);if(!a||!b)return "";const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,offset=((index%3)-1)*14,ox=-dy/len*offset,oy=dx/len*offset,control=component.nodes.slice(2).map((id,i)=>{const n=nodes.get(id);return n?`<path class="cw-control-wire" d="M${n.x} ${n.y} Q${(n.x+(a.x+b.x)/2)/2} ${n.y+(i?22:-22)} ${(a.x+b.x)/2+ox} ${(a.y+b.y)/2+oy}"/>`:"";}).join("");return control+symbolMarkup(component,a.x+ox,a.y+oy,b.x+ox,b.y+oy);}).join("");const dots=state.nodes.map(n=>`<g class="cw-node ${n.id===GROUND?"ground":""}" data-cw-node="${esc(n.id)}" transform="translate(${n.x} ${n.y})"><circle r="7"/><text y="-13" text-anchor="middle">${esc(n.label)}</text>${n.id===GROUND?`<path d="M0 7v9m-14 0h28m-10 6h20m-14 6h8"/>`:""}</g>`).join("");return `<svg class="cw-schematic" viewBox="0 0 720 430" role="img" aria-label="${esc(tr("schematic"))}"><defs><pattern id="cw-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24"/></pattern></defs><rect width="720" height="430" fill="url(#cw-grid)"/>${lines}${dots}</svg>`;}
+  function schematicMarkup(){
+    const nodes=new Map(state.nodes.map(item=>[item.id,item]));
+    const lines=state.components.map((component,index)=>{
+      const a=nodes.get(component.nodes[0]),b=nodes.get(component.nodes[1]);
+      if(!a||!b)return "";
+      const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,offset=component.type==="wire"?0:((index%3)-1)*10,ox=-dy/len*offset,oy=dx/len*offset;
+      const control=component.nodes.slice(2).map((id,i)=>{const n=nodes.get(id);return n?`<path class="cw-control-wire" d="M${n.x} ${n.y} Q${(n.x+(a.x+b.x)/2)/2} ${n.y+(i?22:-22)} ${(a.x+b.x)/2+ox} ${(a.y+b.y)/2+oy}"/>`:"";}).join("");
+      return control+symbolMarkup(component,a.x+ox,a.y+oy,b.x+ox,b.y+oy);
+    }).join("");
+    const dots=state.nodes.map(item=>`<g class="cw-node ${item.id===GROUND?"ground":""} ${wireStart===item.id?"is-wiring":""}" data-cw-node="${esc(item.id)}" data-cw-port="${esc(item.id)}" transform="translate(${item.x} ${item.y})"><circle class="cw-node-halo" r="15"/><circle class="cw-node-port" r="7"/><text y="-15" text-anchor="middle">${esc(item.label)}</text>${item.id===GROUND?`<path d="M0 7v9m-14 0h28m-10 6h20m-14 6h8"/>`:""}</g>`).join("");
+    const svg=`<svg class="cw-schematic" viewBox="0 0 720 430" role="img" aria-label="${esc(tr("schematic"))}"><defs><pattern id="cw-grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24"/></pattern></defs><rect width="720" height="430" fill="url(#cw-grid)"/><path class="cw-wire-preview" d="" hidden/>${lines}${dots}</svg>`;
+    if(state.components.length)return svg;
+    return `${svg}<div class="cw-empty"><div><small>${esc(tr("choosePath"))}</small><strong>${esc(tr("blankTitle"))}</strong><p>${esc(tr("blankLead"))}</p><span>${esc(tr("blankHint"))}</span><div><button type="button" data-cw-challenge="free">${esc(tr("freeBuild"))}</button><button type="button" data-cw-challenge="lamp">${esc(tr("guidedLamp"))}</button><button type="button" data-cw-challenge="divider">${esc(tr("guidedDivider"))}</button><button type="button" data-cw-challenge="rc">${esc(tr("guidedRC"))}</button><button type="button" data-cw-preset="divider">${esc(tr("loadExample"))}</button></div></div></div>`;
+  }
 
   function chartMarkup(){if(!lastResult||lastResult.mode==="dc"||lastResult.mode==="error")return "";const series=lastResult.series||[];if(!series.length)return "";const W=720,H=250,L=62,R=24,T=22,B=42,xValues=series.map(p=>lastResult.mode==="ac"?Math.log10(p.x):p.x),yValues=series.map(p=>p.y),xmin=Math.min(...xValues),xmax=Math.max(...xValues),ymin=Math.min(...yValues),ymax=Math.max(...yValues),pad=(ymax-ymin||1)*.12,mapX=x=>L+(x-xmin)/(xmax-xmin||1)*(W-L-R),mapY=y=>T+(ymax+pad-y)/(ymax-ymin+2*pad||1)*(H-T-B),path=series.map((p,i)=>`${i?"L":"M"}${mapX(xValues[i]).toFixed(2)} ${mapY(p.y).toFixed(2)}`).join(" "),xLabel=lastResult.mode==="ac"?tr("frequency"):lastResult.mode==="transient"?tr("time"):tr("source"),yLabel=lastResult.mode==="ac"?tr("db"):tr("voltage");return `<svg class="cw-chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(tr("waveform"))}"><line x1="${L}" y1="${H-B}" x2="${W-R}" y2="${H-B}"/><line x1="${L}" y1="${T}" x2="${L}" y2="${H-B}"/><path d="${path}"/><text x="${W-R}" y="${H-12}" text-anchor="end">${esc(xLabel)}</text><text x="${L}" y="14">${esc(yLabel)}</text><text x="${L}" y="${H-B+18}">${lastResult.mode==="ac"?formatEngineering(10**xmin,"Hz"):formatEngineering(xmin,lastResult.mode==="transient"?"s":"")}</text><text x="${W-R}" y="${H-B+18}" text-anchor="end">${lastResult.mode==="ac"?formatEngineering(10**xmax,"Hz"):formatEngineering(xmax,lastResult.mode==="transient"?"s":"")}</text><text x="${L-8}" y="${T+5}" text-anchor="end">${Number((ymax+pad).toPrecision(3))}</text><text x="${L-8}" y="${H-B}" text-anchor="end">${Number((ymin-pad).toPrecision(3))}</text></svg>`;}
 
-  function paletteMarkup(){return GROUPS.map(group=>`<details class="cw-palette-group" ${group!=="instruments"?"open":""}><summary>${esc(tr(group))}</summary><div>${Object.entries(TYPES).filter(([,def])=>def.group===group).map(([type,def])=>`<button type="button" data-cw-add="${type}" title="${esc(tr(def.label))}"><b>${esc(def.prefix)}</b><span>${esc(tr(def.label))}</span></button>`).join("")}</div></details>`).join("");}
+  function componentButton(type,compact=false){const def=TYPES[type];return `<button type="button" class="${compact?"cw-part-button compact":"cw-part-button"}" draggable="true" data-cw-add="${type}" data-cw-drag-type="${type}" title="${esc(tr(def.label))} · ${esc(tr("dragHint"))}"><b>${esc(def.prefix)}</b><span>${esc(tr(def.label))}</span></button>`;}
+  function paletteMarkup(){return GROUPS.map(group=>`<details class="cw-palette-group"><summary>${esc(tr(group))}</summary><div>${Object.entries(TYPES).filter(([,def])=>def.group===group).map(([type])=>componentButton(type)).join("")}</div></details>`).join("");}
+  function quickPaletteMarkup(){return `<div class="cw-quick-grid">${["vdc","resistor","lamp","switch","capacitor","voltmeter","ammeter"].map(type=>componentButton(type,true)).join("")}</div>`;}
   function nodesMarkup(){return `<div class="cw-node-list">${state.nodes.map(n=>`<div><label><span>${n.id===GROUND?esc(tr("ground")):esc(n.id)}</span><input value="${esc(n.label)}" data-cw-node-label="${esc(n.id)}" ${n.id===GROUND?"disabled":""}></label>${n.id!==GROUND?`<button type="button" data-cw-delete-node="${esc(n.id)}" aria-label="${esc(tr("deleteNode"))}">×</button>`:""}</div>`).join("")}</div><button class="cw-wide" type="button" data-cw-action="add-node">＋ ${esc(tr("addNode"))}</button>`;}
   function inspectorMarkup(){const component=state.components.find(c=>c.id===state.selected);if(!component)return `<p class="cw-muted">${esc(tr("noSelection"))}</p>`;const def=TYPES[component.type],terminalLabels=component.type==="npn"?["collector","base","emitter"]:component.type==="nmos"?["drain","gate","sourceTerminal"]:(component.type==="opamp"?["output","outputReference","nonInverting","inverting"]:component.type==="vcvs"||component.type==="vccs"?["positiveNode","negativeNode","controlPositive","controlNegative"]:["positiveNode","negativeNode","terminal3","terminal4"]);const nodeFields=component.nodes.map((n,i)=>`<label><span>${esc(tr(terminalLabels[i]||`terminal${i+1}`))}</span><select data-cw-component-node="${i}">${nodeOptions(n)}</select></label>`).join("");const extras=[];if(["vsin","isin"].includes(component.type))extras.push(["frequency","sourceFrequency"],["offset","offset"],["phase","sourcePhase"]);if(component.type==="switch")extras.push(["state","toggle"]);if(component.type==="fuse")extras.push(["rating","rating"],["state","toggle"]);if(["diode","led"].includes(component.type))extras.push(["n","model"]);if(component.type==="npn")extras.push(["beta","gain"]);if(component.type==="nmos")extras.push(["vth","saturation"],["lambda","model"]);if(component.type==="opamp")extras.push(["saturation","saturation"]);return `<div class="cw-inspector-head"><span>${esc(tr("selected"))}</span><strong>${esc(tr(def.label))}</strong></div><div class="cw-form-grid"><label><span>${esc(tr("name"))}</span><input value="${esc(component.name||component.id)}" data-cw-component-field="name"></label><label><span>${esc(tr("value"))} · ${esc(def.unit)}</span><input value="${esc(component.value)}" data-cw-component-field="value"></label>${nodeFields}${extras.map(([field,label])=>field==="state"?`<label><span>${esc(tr(label))}</span><select data-cw-component-field="state"><option value="closed" ${component.state!=="open"&&component.state!=="blown"?"selected":""}>${esc(tr("closed"))}</option><option value="open" ${component.state==="open"?"selected":""}>${esc(tr("open"))}</option>${component.type==="fuse"?`<option value="blown" ${component.state==="blown"?"selected":""}>${esc(tr("blown"))}</option>`:""}</select></label>`:`<label><span>${esc(tr(label))}</span><input value="${esc(component[field]??"")}" data-cw-component-field="${field}"></label>`).join("")}</div><small class="cw-unit-help">${esc(tr("unitHelp"))}</small><div class="cw-action-row"><button type="button" data-cw-action="duplicate">${esc(tr("duplicate"))}</button><button type="button" class="danger" data-cw-action="delete-component">${esc(tr("deleteComponent"))}</button></div>`;}
+  function challengePrompt(){return {free:"freePrompt",lamp:"lampPrompt",divider:"dividerPrompt",rc:"rcPrompt"}[state.learning?.challenge||"free"]||"freePrompt";}
+  function learningMarkup(){const placed=state.components.some(item=>item.type!=="wire"),wired=state.components.some(item=>item.type==="wire"),measured=Boolean(lastResult&&lastResult.mode!=="error"),mode=state.learning?.mode||"guided";return `<section class="cw-learning-bar"><div class="cw-mode-switch" aria-label="${esc(tr("choosePath"))}"><button type="button" data-cw-learning="guided" class="${mode==="guided"?"active":""}">${esc(tr("learnMode"))}</button><button type="button" data-cw-learning="pro" class="${mode==="pro"?"active":""}">${esc(tr("proMode"))}</button></div><div class="cw-learning-prompt"><small>${esc(tr(state.learning?.challenge==="free"?"freeBuild":`guided${state.learning.challenge==="lamp"?"Lamp":state.learning.challenge==="divider"?"Divider":"RC"}`))}</small><strong>${esc(tr(challengePrompt()))}</strong></div><div class="cw-learning-steps"><span class="${placed?"done":""}"><i>1</i>${esc(tr("stepParts"))}</span><span class="${wired?"done":""}"><i>2</i>${esc(tr("stepWires"))}</span><span class="${measured?"done":""}"><i>3</i>${esc(tr("stepMeasure"))}</span></div></section>`;}
+  function simpleRunMarkup(){return `<section class="cw-simple-run"><div><small>${esc(tr("stepMeasure"))}</small><strong>${esc(tr("simpleRunHint"))}</strong></div><button type="button" data-cw-action="run" ${state.components.length?"":"disabled"}>▶ ${esc(tr("simpleRun"))}</button></section>`;}
   function analysisMarkup(){const a=state.analysis,sourceOptions=state.components.filter(c=>["vdc","idc"].includes(c.type)).map(c=>`<option value="${esc(c.id)}" ${c.id===a.source?"selected":""}>${esc(c.name||c.id)}</option>`).join("");const common=`<label><span>${esc(tr("probe"))}</span><select data-cw-analysis="probe">${nodeOptions(a.probe)}</select></label><label><span>${esc(tr("reference"))}</span><select data-cw-analysis="reference">${nodeOptions(a.reference)}</select></label>`;let fields="";if(a.mode==="dc-sweep")fields=`<label><span>${esc(tr("source"))}</span><select data-cw-analysis="source">${sourceOptions}</select></label><label><span>${esc(tr("start"))}</span><input data-cw-analysis="start" value="${esc(a.start)}"></label><label><span>${esc(tr("stop"))}</span><input data-cw-analysis="stop" value="${esc(a.stop)}"></label><label><span>${esc(tr("points"))}</span><input type="number" min="11" max="301" data-cw-analysis="points" value="${esc(a.points)}"></label>`;if(a.mode==="ac")fields=`<label><span>${esc(tr("frequencyStart"))}</span><input data-cw-analysis="fStart" value="${esc(a.fStart)}"></label><label><span>${esc(tr("frequencyStop"))}</span><input data-cw-analysis="fStop" value="${esc(a.fStop)}"></label><label><span>${esc(tr("points"))}</span><input type="number" min="20" max="301" data-cw-analysis="acPoints" value="${esc(a.acPoints)}"></label>`;if(a.mode==="transient")fields=`<label><span>${esc(tr("duration"))}</span><input data-cw-analysis="duration" value="${esc(a.duration)}"></label><label><span>${esc(tr("timeStep"))}</span><input data-cw-analysis="dt" value="${esc(a.dt)}"></label>`;const note={dc:"dcNote","dc-sweep":"sweepNote",ac:"acNote",transient:"transientNote"}[a.mode];return `<div class="cw-analysis-tabs">${[["dc","operatingPoint"],["dc-sweep","dcSweep"],["ac","acSweep"],["transient","transient"]].map(([mode,label])=>`<button type="button" data-cw-mode="${mode}" class="${a.mode===mode?"active":""}">${esc(tr(label))}</button>`).join("")}</div><div class="cw-analysis-form">${common}${fields}</div><p class="cw-analysis-note">${esc(tr(note))}</p><button class="cw-run" type="button" data-cw-action="run">▶ ${esc(tr("run"))}</button>${chartMarkup()}`;}
   function resultMarkup(){if(!lastResult)return `<p class="cw-muted">${esc(tr("statusReady"))}</p>`;if(lastResult.mode==="error")return `<div class="cw-error"><strong>${esc(tr("warnings"))}</strong><p>${esc(notice)}</p></div>`;const op=lastResult.op||lastResult.last||lastResult.bias,probe=state.analysis.probe,reference=state.analysis.reference,value=op?probeValue(op,probe,reference):0,summary=lastResult.mode==="ac"&&lastResult.series?.length?lastResult.series.at(-1):null;let cards=summary?`<div><span>${esc(tr("magnitude"))}</span><strong>${Number(summary.y.toFixed(3))} dB</strong></div><div><span>${esc(tr("phase"))}</span><strong>${Number(summary.phase.toFixed(2))}°</strong></div>`:`<div><span>${esc(tr("nodeVoltage"))} · ${esc(probe)}</span><strong>${formatEngineering(typeof value==="number"?value:cabs(value),"V")}</strong></div>`;if(op)cards+=`<div><span>${esc(tr("iteration"))}</span><strong>${op.iterations||1}</strong></div>`;const rows=op?state.components.slice(0,10).map(c=>`<tr><th>${esc(c.name||c.id)}</th><td>${formatEngineering(op.currents?.[c.id]||0,"A")}</td><td>${formatEngineering(op.powers?.[c.id]||0,"W")}</td></tr>`).join(""):"";return `<div class="cw-result-cards">${cards}</div>${rows?`<details class="cw-result-table"><summary>${esc(tr("resultTable"))}</summary><table><thead><tr><th>${esc(tr("name"))}</th><th>${esc(tr("current"))}</th><th>${esc(tr("power"))}</th></tr></thead><tbody>${rows}</tbody></table></details>`:""}`;}
   function diagnosticsMarkup(){const connected=new Set([GROUND]);let changed=true;while(changed){changed=false;for(const c of state.components){if(connected.has(c.nodes[0])||connected.has(c.nodes[1]))for(const n of c.nodes){if(!connected.has(n)){connected.add(n);changed=true;}}}}const floating=state.nodes.filter(n=>!connected.has(n.id));return `<div class="cw-diagnostics ${floating.length?"warn":"ok"}"><strong>${esc(tr("warnings"))}</strong><span>${floating.length?`${esc(tr("floatingWarning"))}: ${floating.map(n=>esc(n.label)).join(", ")}`:esc(tr("noWarnings"))}</span></div>`;}
-  function controlsMarkup(){return `<div class="cw-controls-scroll"><section><header><span>${esc(tr("componentLibrary"))}</span><small>${state.components.length} ${esc(tr("componentCount"))}</small></header>${paletteMarkup()}</section><details open><summary>${esc(tr("inspector"))}</summary>${inspectorMarkup()}</details><details><summary>${esc(tr("nodes"))} · ${state.nodes.length}</summary>${nodesMarkup()}</details><details><summary>${esc(tr("presets"))}</summary><div class="cw-preset-grid">${Object.entries(PRESETS).map(([key,p])=>`<button type="button" data-cw-preset="${key}" class="${state.lastPreset===key?"active":""}"><b>${esc(key.toUpperCase())}</b><span>${esc(tr(p.label))}</span></button>`).join("")}</div></details><details><summary>${esc(tr("fileTools"))}</summary><div class="cw-file-actions"><button type="button" data-cw-action="save">${esc(tr("save"))}</button><button type="button" data-cw-action="load-saved">${esc(tr("loadSaved"))}</button><button type="button" data-cw-action="export-json">${esc(tr("exportJson"))}</button><button type="button" data-cw-action="export-spice">${esc(tr("exportSpice"))}</button></div><textarea class="cw-json" aria-label="${esc(tr("netlist"))}"></textarea><button class="cw-wide" type="button" data-cw-action="import-json">${esc(tr("importJson"))}</button></details><p class="cw-model-note">${esc(tr("educationalModel"))}</p></div>`;}
+  function controlsMarkup(){const pro=state.learning?.mode==="pro";return `<div class="cw-controls-scroll"><section class="cw-starter-library"><header><span>${esc(tr("quickParts"))}</span><small>${state.components.length} ${esc(tr("componentCount"))}</small></header>${quickPaletteMarkup()}<p>${esc(tr("dragHint"))}</p></section><details class="cw-inspector-panel" ${state.selected?"open":""}><summary>${esc(tr("inspector"))}</summary>${inspectorMarkup()}</details><details class="cw-full-library" ${pro?"open":""}><summary>${esc(tr("fullLibrary"))}</summary>${paletteMarkup()}</details><details><summary>${esc(tr("presets"))}</summary><div class="cw-preset-grid">${Object.entries(PRESETS).map(([key,p])=>`<button type="button" data-cw-preset="${key}" class="${state.lastPreset===key?"active":""}"><b>${esc(key.toUpperCase())}</b><span>${esc(tr(p.label))}</span></button>`).join("")}</div></details><details><summary>${esc(tr("nodes"))} · ${state.nodes.length}</summary>${nodesMarkup()}</details><details><summary>${esc(tr("fileTools"))}</summary><div class="cw-file-actions"><button type="button" data-cw-action="save">${esc(tr("save"))}</button><button type="button" data-cw-action="load-saved">${esc(tr("loadSaved"))}</button><button type="button" data-cw-action="export-json">${esc(tr("exportJson"))}</button><button type="button" data-cw-action="export-spice">${esc(tr("exportSpice"))}</button></div><textarea class="cw-json" aria-label="${esc(tr("netlist"))}"></textarea><button class="cw-wide" type="button" data-cw-action="import-json">${esc(tr("importJson"))}</button></details><p class="cw-model-note">${esc(tr("educationalModel"))}</p></div>`;}
 
-  function spiceNetlist(){return [`* Physics Visual Lab v5.3.0`,...state.components.map(c=>{const d=TYPES[c.type];return `${c.name||c.id} ${c.nodes.join(" ")} ${c.value} ; ${d.label}`;}),`.op`,`.end`].join("\n");}
+  function spiceNetlist(){return [`* Physics Visual Lab v5.4.0`,...state.components.map(c=>{const d=TYPES[c.type];return `${c.name||c.id} ${c.nodes.join(" ")} ${c.value} ; ${d.label}`;}),`.op`,`.end`].join("\n");}
   async function copyText(text){try{await navigator.clipboard.writeText(text);notice=tr("copied");}catch{const area=mounts?.controls?.querySelector(".cw-json");if(area){area.value=text;area.select();try{document.execCommand("copy");}catch{}}}renderStatus();}
   function renderStatus(){if(mounts?.status)mounts.status.textContent=notice||`${state.nodes.length} ${tr("nodeCount")} · ${state.components.length} ${tr("componentCount")}`;}
 
-  function bind(){const root=mounts?.root;if(!root)return;$$ (root,"[data-cw-select]").forEach(el=>el.addEventListener("click",()=>{state.selected=el.dataset.cwSelect;render();}));$$ (root,"[data-cw-add]").forEach(el=>el.addEventListener("click",()=>addComponent(el.dataset.cwAdd)));$$ (root,"[data-cw-preset]").forEach(el=>el.addEventListener("click",()=>loadPreset(el.dataset.cwPreset)));$$ (root,"[data-cw-mode]").forEach(el=>el.addEventListener("click",()=>mutate(s=>{s.analysis.mode=el.dataset.cwMode;},{solve:false})));$$ (root,"[data-cw-analysis]").forEach(el=>el.addEventListener("change",()=>{state.analysis[el.dataset.cwAnalysis]=el.value;persist();}));$$ (root,"[data-cw-component-field]").forEach(el=>el.addEventListener("change",()=>mutate(s=>{const c=s.components.find(c=>c.id===s.selected);if(c)c[el.dataset.cwComponentField]=el.value;})));$$ (root,"[data-cw-component-node]").forEach(el=>el.addEventListener("change",()=>mutate(s=>{const c=s.components.find(c=>c.id===s.selected);if(c)c.nodes[Number(el.dataset.cwComponentNode)]=el.value;})));$$ (root,"[data-cw-node-label]").forEach(el=>el.addEventListener("change",()=>mutate(s=>{const n=s.nodes.find(n=>n.id===el.dataset.cwNodeLabel);if(n)n.label=el.value.trim()||n.id;},{solve:false})));$$ (root,"[data-cw-delete-node]").forEach(el=>el.addEventListener("click",()=>mutate(s=>{const id=el.dataset.cwDeleteNode;s.nodes=s.nodes.filter(n=>n.id!==id);s.components=s.components.filter(c=>!c.nodes.includes(id));if(s.selected&&!s.components.some(c=>c.id===s.selected))s.selected=s.components[0]?.id||null;if(s.analysis.probe===id)s.analysis.probe=GROUND;if(s.analysis.reference===id)s.analysis.reference=GROUND;})));$$ (root,"[data-cw-action]").forEach(el=>el.addEventListener("click",()=>{const action=el.dataset.cwAction;if(action==="run")runAnalysis();else if(action==="undo"&&history.length){future.push(clone(state));state=history.pop();runAnalysis();}else if(action==="redo"&&future.length){history.push(clone(state));state=future.pop();runAnalysis();}else if(action==="auto-layout")autoLayout();else if(action==="new"){pushHistory();state=makeState("divider");lastResult=null;notice="";persist();runAnalysis();}else if(action==="add-node")mutate(s=>{let i=1;const ids=new Set(s.nodes.map(n=>n.id));while(ids.has(`n${i}`))i++;s.nodes.push(node(`n${i}`,`N${i}`,100+(i*67)%520,95+(i*83)%250));},{solve:false});else if(action==="delete-component")mutate(s=>{s.components=s.components.filter(c=>c.id!==s.selected);s.selected=s.components[0]?.id||null;});else if(action==="duplicate")mutate(s=>{const c=s.components.find(c=>c.id===s.selected);if(!c)return;const copy=clone(c),name=nextName(c.type);copy.id=name;copy.name=name;s.components.push(copy);s.selected=name;},{solve:false});else if(action==="save"){persist();notice=tr("savedLocally");renderStatus();}else if(action==="load-saved"){if(restore())runAnalysis();}else if(action==="export-json"){const text=JSON.stringify(state,null,2);const area=mounts.controls.querySelector(".cw-json");if(area)area.value=text;copyText(text);}else if(action==="export-spice"){const text=spiceNetlist();const area=mounts.controls.querySelector(".cw-json");if(area)area.value=text;copyText(text);}else if(action==="import-json"){const area=mounts.controls.querySelector(".cw-json");try{const next=JSON.parse(area.value);validate(next);pushHistory();state=Object.assign(makeState(),next,{version:4});persist();runAnalysis();}catch{notice=tr("importError");renderStatus();}}}));}
 
-  function render(){if(!mounts)return;mounts.canvas.innerHTML=`<div class="cw-stage"><div class="cw-toolbar"><div><span>${esc(tr("live"))}</span><strong>${esc(tr("schematic"))}</strong></div><div><button type="button" data-cw-action="undo" ${history.length?"":"disabled"}>↶ ${esc(tr("undo"))}</button><button type="button" data-cw-action="redo" ${future.length?"":"disabled"}>↷ ${esc(tr("redo"))}</button><button type="button" data-cw-action="auto-layout">⌁ ${esc(tr("autoLayout"))}</button><button type="button" data-cw-action="new">＋ ${esc(tr("newCircuit"))}</button></div></div><div class="cw-schematic-wrap">${schematicMarkup()}</div><section class="cw-analysis">${analysisMarkup()}</section></div>`;mounts.controls.innerHTML=controlsMarkup();mounts.readouts.innerHTML=`<div class="cw-results">${resultMarkup()}${diagnosticsMarkup()}</div>`;renderStatus();bind();}
+  function render(){if(!mounts)return;const pro=state.learning?.mode==="pro";mounts.canvas.innerHTML=`<div class="cw-stage ${pro?"is-pro":"is-guided"}"><div class="cw-toolbar"><div><span>${esc(tr("live"))}</span><strong>${esc(tr("schematic"))}</strong></div><div><button type="button" data-cw-action="undo" ${history.length?"":"disabled"}>↶ ${esc(tr("undo"))}</button><button type="button" data-cw-action="redo" ${future.length?"":"disabled"}>↷ ${esc(tr("redo"))}</button><button type="button" data-cw-action="auto-layout" ${state.components.length?"":"disabled"}>⌁ ${esc(tr("autoLayout"))}</button><button type="button" data-cw-action="new">＋ ${esc(tr("clearBoard"))}</button></div></div>${learningMarkup()}<div class="cw-schematic-wrap" data-cw-drop-zone="true" aria-label="${esc(tr("dropHere"))}">${schematicMarkup()}<div class="cw-drop-label">＋ ${esc(tr("dropHere"))}</div></div>${simpleRunMarkup()}<details class="cw-advanced-analysis" ${pro?"open":""}><summary><span>${esc(tr("proAnalysis"))}</span><small>DC · SWEEP · AC · TRANSIENT</small></summary><section class="cw-analysis">${analysisMarkup()}</section></details></div>`;mounts.controls.innerHTML=controlsMarkup();mounts.readouts.innerHTML=`<div class="cw-results">${resultMarkup()}${diagnosticsMarkup()}</div>`;renderStatus();bind();}
 
-  function mount(options){if(!options?.canvas||!options?.controls||!options?.readouts)return;language=SUPPORTED.includes(options.language)?options.language:"en";mounts={canvas:options.canvas,controls:options.controls,readouts:options.readouts,status:options.status,root:options.root||options.canvas.closest(".foundation-lab-shell")||document};if(!lastResult)runAnalysis();else render();}
+  function bind(){
+    const root=mounts?.root;
+    if(!root)return;
+
+    $$ (root,"[data-cw-select]").forEach(element=>element.addEventListener("click",event=>{
+      if(event.target.closest?.("[data-cw-port]"))return;
+      state.selected=element.dataset.cwSelect;
+      render();
+    }));
+
+    $$ (root,"[data-cw-add]").forEach(element=>{
+      element.addEventListener("click",event=>{
+        if(Date.now()<suppressPaletteClickUntil){event.preventDefault();return;}
+        addComponent(element.dataset.cwAdd);
+      });
+      element.addEventListener("dragstart",event=>{
+        event.dataTransfer?.setData("text/pvl-component",element.dataset.cwDragType||element.dataset.cwAdd);
+        if(event.dataTransfer)event.dataTransfer.effectAllowed="copy";
+        element.classList.add("is-dragging");
+      });
+      element.addEventListener("dragend",()=>element.classList.remove("is-dragging"));
+      element.addEventListener("pointerdown",event=>{
+        if(event.pointerType==="mouse")return;
+        const startX=event.clientX,startY=event.clientY,type=element.dataset.cwAdd;
+        let moved=false;
+        element.setPointerCapture?.(event.pointerId);
+        const move=moveEvent=>{
+          if(!moved&&Math.hypot(moveEvent.clientX-startX,moveEvent.clientY-startY)<9)return;
+          moved=true;
+          if(!paletteGhost){paletteGhost=document.createElement("div");paletteGhost.className="cw-drag-ghost";paletteGhost.textContent=tr(TYPES[type].label);document.body.append(paletteGhost);}
+          paletteGhost.style.transform=`translate(${moveEvent.clientX+14}px,${moveEvent.clientY+14}px)`;
+          const zone=$(root,"[data-cw-drop-zone]");const rect=zone?.getBoundingClientRect?.();zone?.classList.toggle("is-drop-target",Boolean(rect&&moveEvent.clientX>=rect.left&&moveEvent.clientX<=rect.right&&moveEvent.clientY>=rect.top&&moveEvent.clientY<=rect.bottom));
+        };
+        const finish=upEvent=>{
+          element.removeEventListener("pointermove",move);element.removeEventListener("pointerup",finish);element.removeEventListener("pointercancel",finish);
+          const zone=$(root,"[data-cw-drop-zone]");zone?.classList.remove("is-drop-target");
+          if(moved){suppressPaletteClickUntil=Date.now()+500;const rect=zone?.getBoundingClientRect?.();if(rect&&upEvent.clientX>=rect.left&&upEvent.clientX<=rect.right&&upEvent.clientY>=rect.top&&upEvent.clientY<=rect.bottom){const point=clientToSchematic(upEvent.clientX,upEvent.clientY,$(zone,".cw-schematic"));addComponentAt(type,point.x,point.y);}}
+          paletteGhost?.remove();paletteGhost=null;
+        };
+        element.addEventListener("pointermove",move);element.addEventListener("pointerup",finish);element.addEventListener("pointercancel",finish);
+      });
+    });
+
+    const dropZone=$(root,"[data-cw-drop-zone]");
+    dropZone?.addEventListener("dragenter",event=>{event.preventDefault();dropZone.classList.add("is-drop-target");});
+    dropZone?.addEventListener("dragover",event=>{event.preventDefault();if(event.dataTransfer)event.dataTransfer.dropEffect="copy";dropZone.classList.add("is-drop-target");});
+    dropZone?.addEventListener("dragleave",event=>{if(!dropZone.contains(event.relatedTarget))dropZone.classList.remove("is-drop-target");});
+    dropZone?.addEventListener("drop",event=>{event.preventDefault();dropZone.classList.remove("is-drop-target");const type=event.dataTransfer?.getData("text/pvl-component")||event.dataTransfer?.getData("text/plain");if(!TYPES[type])return;const point=clientToSchematic(event.clientX,event.clientY,$(dropZone,".cw-schematic"));addComponentAt(type,point.x,point.y);});
+
+    $$ (root,"[data-cw-port]").forEach(port=>{
+      port.addEventListener("click",event=>{
+        event.stopPropagation();
+        if(Date.now()<suppressPortClickUntil)return;
+        const id=port.dataset.cwPort;
+        if(wireStart&&wireStart!==id){const from=wireStart;wireStart=null;connectNodes(from,id);}
+        else if(wireStart===id){wireStart=null;notice="";render();}
+        else{wireStart=id;notice=tr("selectSecondTerminal");render();}
+      });
+      port.addEventListener("pointerdown",event=>{
+        if(event.button!=null&&event.button!==0)return;
+        const svg=port.closest(".cw-schematic"),startId=port.dataset.cwPort,startNode=state.nodes.find(item=>item.id===startId),preview=$(svg,".cw-wire-preview");
+        if(!svg||!startNode||!preview)return;
+        const startX=event.clientX,startY=event.clientY;
+        let moved=false;
+        port.setPointerCapture?.(event.pointerId);
+        const move=moveEvent=>{
+          if(!moved&&Math.hypot(moveEvent.clientX-startX,moveEvent.clientY-startY)<6)return;
+          moved=true;const point=clientToSchematic(moveEvent.clientX,moveEvent.clientY,svg),bend=(startNode.x+point.x)/2;
+          preview.hidden=false;preview.setAttribute("d",`M${startNode.x} ${startNode.y} C${bend} ${startNode.y} ${bend} ${point.y} ${point.x} ${point.y}`);
+        };
+        const finish=upEvent=>{
+          document.removeEventListener("pointermove",move);document.removeEventListener("pointerup",finish);document.removeEventListener("pointercancel",finish);
+          preview.hidden=true;preview.setAttribute("d","");
+          if(!moved)return;
+          suppressPortClickUntil=Date.now()+500;
+          const target=document.elementFromPoint?.(upEvent.clientX,upEvent.clientY)?.closest?.("[data-cw-port]");
+          if(target&&target.dataset.cwPort!==startId){wireStart=null;connectNodes(startId,target.dataset.cwPort);}
+          else{wireStart=startId;notice=tr("selectSecondTerminal");render();}
+        };
+        document.addEventListener("pointermove",move);document.addEventListener("pointerup",finish);document.addEventListener("pointercancel",finish);
+      });
+    });
+
+    $$ (root,"[data-cw-challenge]").forEach(element=>element.addEventListener("click",()=>mutate(s=>{s.learning=Object.assign({mode:"guided"},s.learning,{challenge:element.dataset.cwChallenge});notice=tr(challengePrompt());},{solve:false})));
+    $$ (root,"[data-cw-learning]").forEach(element=>element.addEventListener("click",()=>mutate(s=>{s.learning=Object.assign({challenge:"free"},s.learning,{mode:element.dataset.cwLearning});},{solve:false})));
+    $$ (root,"[data-cw-preset]").forEach(element=>element.addEventListener("click",()=>{wireStart=null;loadPreset(element.dataset.cwPreset);}));
+    $$ (root,"[data-cw-mode]").forEach(element=>element.addEventListener("click",()=>mutate(s=>{s.analysis.mode=element.dataset.cwMode;},{solve:false})));
+    $$ (root,"[data-cw-analysis]").forEach(element=>element.addEventListener("change",()=>{state.analysis[element.dataset.cwAnalysis]=element.value;persist();}));
+    $$ (root,"[data-cw-component-field]").forEach(element=>element.addEventListener("change",()=>mutate(s=>{const component=s.components.find(item=>item.id===s.selected);if(component)component[element.dataset.cwComponentField]=element.value;})));
+    $$ (root,"[data-cw-component-node]").forEach(element=>element.addEventListener("change",()=>mutate(s=>{const component=s.components.find(item=>item.id===s.selected);if(component)component.nodes[Number(element.dataset.cwComponentNode)]=element.value;})));
+    $$ (root,"[data-cw-node-label]").forEach(element=>element.addEventListener("change",()=>mutate(s=>{const item=s.nodes.find(nodeItem=>nodeItem.id===element.dataset.cwNodeLabel);if(item)item.label=element.value.trim()||item.id;},{solve:false})));
+    $$ (root,"[data-cw-delete-node]").forEach(element=>element.addEventListener("click",()=>mutate(s=>{const id=element.dataset.cwDeleteNode;s.nodes=s.nodes.filter(item=>item.id!==id);s.components=s.components.filter(component=>!component.nodes.includes(id));if(s.selected&&!s.components.some(component=>component.id===s.selected))s.selected=s.components[0]?.id||null;if(s.analysis.probe===id)s.analysis.probe=GROUND;if(s.analysis.reference===id)s.analysis.reference=GROUND;})));
+    $$ (root,"[data-cw-action]").forEach(element=>element.addEventListener("click",()=>{
+      const action=element.dataset.cwAction;
+      if(action==="run"&&state.components.length)runAnalysis();
+      else if(action==="undo"&&history.length){future.push(clone(state));state=history.pop();wireStart=null;if(state.components.length)runAnalysis();else{lastResult=null;render();}}
+      else if(action==="redo"&&future.length){history.push(clone(state));state=future.pop();wireStart=null;if(state.components.length)runAnalysis();else{lastResult=null;render();}}
+      else if(action==="auto-layout"&&state.components.length)autoLayout();
+      else if(action==="new"){pushHistory();state=makeState();lastResult=null;wireStart=null;notice="";persist();render();}
+      else if(action==="add-node"){lastResult=null;mutate(s=>{const id=nextNodeId(s);s.nodes.push(node(id,`N${id.slice(1)}`,100+(Number(id.slice(1))*67)%520,95+(Number(id.slice(1))*83)%250));},{solve:false});}
+      else if(action==="delete-component"){lastResult=null;mutate(s=>{s.components=s.components.filter(component=>component.id!==s.selected);const used=new Set(s.components.flatMap(component=>component.nodes));s.nodes=s.nodes.filter(item=>item.id===GROUND||used.has(item.id));s.selected=s.components[0]?.id||null;},{solve:false});}
+      else if(action==="duplicate"){lastResult=null;mutate(s=>{const component=s.components.find(item=>item.id===s.selected);if(!component)return;const copy=clone(component),name=nextName(component.type);copy.id=name;copy.name=name;s.components.push(copy);s.selected=name;},{solve:false});}
+      else if(action==="save"){persist();notice=tr("savedLocally");renderStatus();}
+      else if(action==="load-saved"){if(restore()){wireStart=null;if(state.components.length)runAnalysis();else{lastResult=null;render();}}}
+      else if(action==="export-json"){const text=JSON.stringify(state,null,2),area=mounts.controls.querySelector(".cw-json");if(area)area.value=text;copyText(text);}
+      else if(action==="export-spice"){const text=spiceNetlist(),area=mounts.controls.querySelector(".cw-json");if(area)area.value=text;copyText(text);}
+      else if(action==="import-json"){const area=mounts.controls.querySelector(".cw-json");try{const next=JSON.parse(area.value);validate(next);pushHistory();state=Object.assign(makeState(),next,{version:5,learning:Object.assign({mode:"guided",challenge:"free"},next.learning||{})});wireStart=null;persist();runAnalysis();}catch{notice=tr("importError");renderStatus();}}
+    }));
+  }
+
+  function mount(options){if(!options?.canvas||!options?.controls||!options?.readouts)return;language=SUPPORTED.includes(options.language)?options.language:"en";mounts={canvas:options.canvas,controls:options.controls,readouts:options.readouts,status:options.status,root:options.root||options.canvas.closest(".foundation-lab-shell")||document};if(!state.components.length){lastResult=null;render();}else if(!lastResult)runAnalysis();else render();}
   function setLanguage(next){language=SUPPORTED.includes(next)?next:"en";render();}
   window.PVLCircuitWorkbench={mount,setLanguage,run:runAnalysis,getState:()=>clone(state),load:next=>{validate(next);state=clone(next);runAnalysis();},__test:{parseEngineering,formatEngineering,makeState,solveDC,solveACAt,simulateTransient,PRESETS,TYPES,TEXT}};
 })();
 
 </script>
   <script data-pvl-inline="assets/ja-content.js">
-/* Reviewed Japanese content layer · Physics Visual Lab v5.3.0 */
+/* Reviewed Japanese content layer · Physics Visual Lab v5.4.0 */
 (() => {
   "use strict";
 
@@ -2987,7 +3563,7 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/app.js">
-/* Catalog, foundation labs, studios, and theory · Physics Visual Lab v5.3.0 */
+/* Catalog, foundation labs, studios, and theory · Physics Visual Lab v5.4.0 */
 (() => {
   "use strict";
 
@@ -3247,7 +3823,7 @@ Error generating stack: `+e.message+`
     return `<header class="pvl-app-header">
       <a class="brand" href="#home" data-home-link data-aria-zh="物理可视化实验室首页" data-aria-en="Physics Visual Lab home" aria-label="物理可视化实验室首页"><span class="brand-mark" aria-hidden="true"><span></span></span><span class="brand-copy"><strong data-zh="物理可视化实验室" data-en="Physics Visual Lab">物理可视化实验室</strong><small>PHYSICS VISUAL LAB</small></span></a>
       <nav class="pvl-global-nav" data-aria-zh="主导航" data-aria-en="Main navigation" aria-label="主导航"><a href="#home" data-nav="home" data-zh="首页" data-en="Home">首页</a><a href="#catalog" data-nav="catalog" data-zh="专题目录" data-en="Collections">专题目录</a></nav>
-      <div class="header-meta"><span class="pvl-version-badge" title="Release 2026-07-17">v5.3.0</span><button class="theme-toggle" id="pvl-theme-toggle" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">日间</span></button></div>
+      <div class="header-meta"><span class="pvl-version-badge" title="Release 2026-07-17">v5.4.0</span><button class="theme-toggle" id="pvl-theme-toggle" type="button" aria-pressed="false"><span class="theme-toggle-icon" aria-hidden="true">☼</span><span class="theme-toggle-label">日间</span></button></div>
     </header>
     <div class="pvl-experiment-bar">
       <div class="pvl-experiment-identity"><a class="pvl-back-home" href="#collection/stern-gerlach" data-zh="← SG 专题" data-en="← SG Collection">← SG 专题</a><span class="pvl-experiment-copy"><small id="pvl-route-code">EXPERIMENT</small><strong id="pvl-route-title">—</strong></span></div>
@@ -3813,7 +4389,7 @@ Error generating stack: `+e.message+`
 
   function applyTheme(nextTheme, remember=false) {
     theme=nextTheme==="day"?"day":"night";if(theme==="day")document.documentElement.dataset.theme="day";else delete document.documentElement.dataset.theme;
-    document.documentElement.style.colorScheme=theme==="day"?"light":"dark";const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=theme==="day"?"#f3eddf":"#030812";
+    document.documentElement.style.colorScheme=theme==="day"?"light":"dark";const themeColor=document.querySelector('meta[name="theme-color"]');if(themeColor)themeColor.content=theme==="day"?"#f4f3ee":"#101c24";
     if(remember){try{localStorage.setItem(THEME_KEY,theme);}catch{}}
     updateThemeToggle();window.dispatchEvent(new CustomEvent("pvl:themechange",{detail:{theme}}));
   }
@@ -3942,7 +4518,7 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/i18n.js">
-/* Language detection and complete offline translation · Physics Visual Lab v5.3.0 */
+/* Language detection and complete offline translation · Physics Visual Lab v5.4.0 */
 (() => {
   "use strict";
 
@@ -4298,12 +4874,12 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/ui-foundation.js">
-/* Physics Visual Lab · foundation interface layer · v5.3.0 */
+/* Physics Visual Lab · foundation interface layer · v5.4.0 */
 (() => {
   "use strict";
 
   const SVG_NS = "http://www.w3.org/2000/svg";
-  const VERSION = "5.3.0";
+  const VERSION = "5.4.0";
   let passQueued = false;
   let applyingCircuit = false;
 
@@ -4960,10 +5536,10 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/ui-instrument.js">
-/* Physics Visual Lab · instrument interactions · v5.3.0 */
+/* Physics Visual Lab · instrument interactions · v5.4.0 */
 (() => {
   "use strict";
-  const VERSION = "5.3.0";
+  const VERSION = "5.4.0";
   const motionPreference=window.matchMedia?.("(prefers-reduced-motion: reduce)")||{matches:false};
   const esc = value => String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
   const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
@@ -5298,11 +5874,11 @@ Error generating stack: `+e.message+`
 
 </script>
   <script data-pvl-inline="assets/ui-v5.js">
-/* Physics Visual Lab · release shell · v5.3.0 */
+/* Physics Visual Lab · release shell · v5.4.0 */
 (() => {
   "use strict";
 
-  const release = window.PVL_RELEASE || { version: "5.3.0", date: "2026-07-17" };
+  const release = window.PVL_RELEASE || { version: "5.4.0", date: "2026-07-17" };
   const root = document.documentElement;
 
   function syncReleaseIdentity() {
@@ -5320,7 +5896,7 @@ Error generating stack: `+e.message+`
   function syncThemeColor() {
     const day = root.dataset.theme === "day";
     const meta = document.querySelector('meta[name="theme-color"]');
-    if (meta) meta.content = day ? "#f2f0e9" : "#101c24";
+    if (meta) meta.content = day ? "#f4f3ee" : "#101c24";
   }
 
   function syncNavIndicator() {
